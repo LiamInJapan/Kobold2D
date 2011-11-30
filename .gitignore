@@ -27,7 +27,7 @@ dsa_priv.pem
 
 # Xcode 4
 xcuserdata/
-project.xcworkspace/
+templates/project/
 
 # build products
 build/

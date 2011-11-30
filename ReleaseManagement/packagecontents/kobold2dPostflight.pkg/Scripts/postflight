@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+#RESULT=`/usr/bin/open 'http://www.kobold2d.com/display/KKDOC'`
+#RESULT=`/usr/bin/open -b 'com.kobold2d.Kobold2D-Project-Starter'`
+#RESULT=`/usr/bin/osascript -e 'tell application "Finder" to reveal application file id "com.kobold2d.Kobold2D-Project-Starter"'`
+
+RESULT=`~/Kobold2D/___KOBOLD2D-VERSION___/__Kobold2D__/tools/post-install/post-install/post-install ~/Kobold2D/___KOBOLD2D-VERSION___`
+RESULT=`~/Kobold2D/___KOBOLD2D-VERSION___/__Kobold2D__/docs/install-all-docsets.sh ~/Kobold2D/___KOBOLD2D-VERSION___/__Kobold2D__/docs/`
+RESULT=`/usr/bin/open 'http://www.kobold2d.com/display/KKDOC/Kobold2D+Release+Notes'`
+RESULT=`/usr/bin/open ~/Kobold2D/___KOBOLD2D-VERSION___/'Kobold2D Project Starter.app'`
+
+exit 0

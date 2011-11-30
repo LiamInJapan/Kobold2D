@@ -1,0 +1,18 @@
+//
+// Kobold2D™ --- http://www.kobold2d.org
+//
+// Copyright (c) 2010-2011 Steffen Itterheim. 
+// Released under MIT License in Germany (LICENSE-Kobold2D.txt).
+//
+
+//ARCHS = $(ARCHS_STANDARD_32_BIT)
+ARCHS = armv6 armv7
+ARCHS[sdk=iphonesimulator*] = i386
+VALID_ARCHS = armv6 armv7
+VALID_ARCHS[sdk=iphonesimulator*] = i386
+//GCC_VERSION = com.apple.compilers.llvmgcc42
+
+SDKROOT = iphoneos
+TARGETED_DEVICE_FAMILY = 1,2
+IPHONEOS_DEPLOYMENT_TARGET = 4.0
+GCC_THUMB_SUPPORT[arch=armv6] = NO
