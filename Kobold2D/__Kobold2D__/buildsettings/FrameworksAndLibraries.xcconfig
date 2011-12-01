@@ -26,11 +26,12 @@ KKFW_OpenGLES = -framework OpenGLES
 KKFW_UIKit = -framework UIKit
 
 LINK_WITH_ADMOB = $(KKLIBROOT)/GoogleAdMobAdsSDK/libGoogleAdMobAds.a
+FORCE_LOAD_COCOS2D = -force_load $(BUILT_PRODUCTS_DIR)/libcocos2d-ios.a
 FORCE_LOAD_KOBOLD2D = -force_load $(BUILT_PRODUCTS_DIR)/libkobold2d-ios.a
 FORCE_LOAD_ISIMULATE = -force_load $(KKLIBROOT)/iSimulateSDK/libisimulate-4.x-opengl.a
 FORCE_LOAD_COCOS3D = -force_load $(BUILT_PRODUCTS_DIR)/libcocos3d-ios.a
 
-KKFW_IOS = $(KKFW_SysConfig) $(KKFW_AVFoundation) $(KKFW_CoreGraphics) $(KKFW_CoreLocation) $(KKFW_MediaPlayer) $(KKFW_OpenGLES) $(KKFW_UIKit) $(LINK_WITH_ADMOB) $(FORCE_LOAD_KOBOLD2D)
+KKFW_IOS = $(KKFW_SysConfig) $(KKFW_AVFoundation) $(KKFW_CoreGraphics) $(KKFW_CoreLocation) $(KKFW_MediaPlayer) $(KKFW_OpenGLES) $(KKFW_UIKit) $(LINK_WITH_ADMOB) $(FORCE_LOAD_KOBOLD2D) $(FORCE_LOAD_COCOS2D)
 
 
 // iOS Weak Frameworks

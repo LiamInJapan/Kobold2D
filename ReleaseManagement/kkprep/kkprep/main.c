@@ -113,6 +113,12 @@ int main (int argc, const char * argv[])
 			}
 		}
 	}
+
+	// remove github readme
+	{
+		NSString* readme = [NSString stringWithFormat:@"%@/README", currentDir];
+		[fileManager removeItemAtPath:readme error:nil];
+	}
 	
 	// remove templates from Kobold2D.xcworkspace
 	{

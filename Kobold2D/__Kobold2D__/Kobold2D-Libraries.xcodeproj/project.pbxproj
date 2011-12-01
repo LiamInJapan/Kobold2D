@@ -2443,8 +2443,6 @@
 				DCEE4DD0144EE96700ADF521 /* kkMacros.h */,
 				DCB7C163144F0795000BA956 /* kkARCSupport.h */,
 				DCDD50BB13A9178100EC4F3A /* kobold2d.h */,
-				DCDD50BC13A9178100EC4F3A /* kobold2d_version.h */,
-				DCEC0A821423CEE900A03E81 /* kobold2d_version.m */,
 			);
 			name = "Kobold2D Headers";
 			sourceTree = "<group>";
@@ -3005,6 +3003,8 @@
 			isa = PBXGroup;
 			children = (
 				DC87CBF3143DD816001875E7 /* kkUserConfig.h */,
+				DCDD50BC13A9178100EC4F3A /* kobold2d_version.h */,
+				DCEC0A821423CEE900A03E81 /* kobold2d_version.m */,
 				DC0124F4141B89BD001EE27D /* Kobold2D Input */,
 				DC0124EF141B890F001EE27D /* Kobold2D Startup */,
 				DC0124F1141B8939001EE27D /* Kobold2D Lua */,
