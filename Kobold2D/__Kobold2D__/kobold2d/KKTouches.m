@@ -101,10 +101,25 @@ const NSUInteger kTouchesPoolSize = 10;
 		// must delay removal of the touch from list because player needs to be able to check for
 		// touches that ended or were cancelled in this frame
 		KKTouch* touch = [self getTouchByID:(NSUInteger)uiTouch];
-		[touchesToBeRemoved addObject:touch];
+		if (touch)
+		{
+			[touchesToBeRemoved addObject:touch];
+		}
 	}
 
 	[self updateTouches];
+}
+
+-(void) removeAllTouches
+{
+	KKTouch* touch;
+	CCARRAY_FOREACH(touches, touch)
+	{
+		UITouch* uiTouch = (UITouch*)(touch.touchID);
+		[uiTouches removeObject:uiTouch];
+		[touches removeObject:touch];
+		[touch invalidate];
+	}
 }
 
 #endif

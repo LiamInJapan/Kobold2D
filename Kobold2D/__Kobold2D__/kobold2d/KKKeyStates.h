@@ -36,6 +36,8 @@
 -(void) addKeyDown:(UInt16)keyCode;
 -(void) removeKeyDown:(UInt16)keyCode;
 
+-(void) reset;
+
 -(BOOL) isAnyKeyDown;
 -(BOOL) isAnyKeyDownThisFrame;
 -(BOOL) isAnyKeyUpThisFrame;

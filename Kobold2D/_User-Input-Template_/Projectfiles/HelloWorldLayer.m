@@ -5,14 +5,14 @@
  * Released under MIT License in Germany (LICENSE-Kobold2D.txt).
  */
 
-#import "HelloWorldScene.h"
+#import "HelloWorldLayer.h"
 
-@interface HelloWorldScene (PrivateMethods)
+@interface HelloWorldLayer (PrivateMethods)
 -(void) addLabels;
 -(void) changeInputType:(ccTime)delta;
 @end
 
-@implementation HelloWorldScene
+@implementation HelloWorldLayer
 
 -(id) init
 {

@@ -27,6 +27,7 @@
 	KKTouchPhase phase;
 
 @public
+	NSUInteger touchBeganFrame;
 	BOOL isInvalid;
 	BOOL didPhaseChange;
 }

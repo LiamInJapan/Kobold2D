@@ -244,6 +244,10 @@ typedef enum {
 /** returns the singleton instance */
 +(KKInput*) sharedInput;
 
+/** Resets the entire KKInput system, meaning all current touches, keypresses, etc. will be removed and state
+ variables are reset. However gesture recognizers will remain enabled and so are other "enabled" states.
+ Note: This method is called automatically when changing scenes (replaceScene, pushScene, popScene). */
+-(void) resetInputStates;
 
 #pragma mark General Input Helpers
 
@@ -352,6 +356,8 @@ typedef enum {
 @property (nonatomic, readonly) BOOL anyTouchBeganThisFrame;
 /** Returns YES if any touch ended this frame. */
 @property (nonatomic, readonly) BOOL anyTouchEndedThisFrame;
+/** Returns the location of any touch, or CGPointZero if there's no touch. Useful mostly when not using multi touch and you just want to get the touch location easily. */
+@property (nonatomic, readonly) CGPoint anyTouchLocation;
 /** Returns the location (in cocos2d coordinates) of any touch in the given phase. If there is no finger touching the screen, CGPointZero is returned. */
 -(CGPoint) locationOfAnyTouchInPhase:(KKTouchPhase)touchPhase;
 /** Tests if a touch in the given touchPhase was on a node. The test is correct even if the node was rotated and/or scaled. */

@@ -37,11 +37,56 @@
 #import "KKStartupConfig.h"
 #import "KKHitTest.h"
 
+#import "JRSwizzle.h"
+#import "cocos2d-extensions.h"
+
 @implementation KKAppDelegate
 
 /* ********************************************************************************************************************* */
 // AppDelegate code for both iOS & Mac OS X targets
 /* ********************************************************************************************************************* */
+
+-(void) performMethodSwizzling
+{
+	// swizzle some Cocos2D methods to Kobold2D extensions
+	NSError* error;
+	
+#if KK_PLATFORM_IOS
+	if ([CCDirectorFastThreaded jr_swizzleMethod:@selector(mainLoop) 
+						  withMethod:@selector(mainLoopReplacement) error:&error] == NO) {
+		NSAssert1(nil, @"Method swizzling error: %@", error);
+	}
+	if ([CCDirectorTimer jr_swizzleMethod:@selector(mainLoop) 
+									  withMethod:@selector(mainLoopReplacement) error:&error] == NO) {
+		NSAssert1(nil, @"Method swizzling error: %@", error);
+	}
+	if ([CCDirectorDisplayLink jr_swizzleMethod:@selector(mainLoop:) 
+									 withMethod:@selector(mainLoopReplacement:) error:&error] == NO) {
+		NSAssert1(nil, @"Method swizzling error: %@", error);
+	}
+#elif KK_PLATFORM_MAC
+	if ([CCDirectorDisplayLink jr_swizzleMethod:@selector(drawScene) 
+									 withMethod:@selector(mainLoopReplacement) error:&error] == NO) {
+		NSAssert1(nil, @"Method swizzling error: %@", error);
+	}
+#endif
+	if ([CCDirector jr_swizzleMethod:@selector(replaceScene:) 
+						  withMethod:@selector(replaceSceneReplacement:) error:&error] == NO) {
+		NSAssert1(nil, @"Method swizzling error: %@", error);
+	}
+	if ([CCDirector jr_swizzleMethod:@selector(runWithScene:) 
+						  withMethod:@selector(runWithSceneReplacement:) error:&error] == NO) {
+		NSAssert1(nil, @"Method swizzling error: %@", error);
+	}
+	if ([CCDirector jr_swizzleMethod:@selector(pushScene:) 
+						  withMethod:@selector(pushSceneReplacement:) error:&error] == NO) {
+		NSAssert1(nil, @"Method swizzling error: %@", error);
+	}
+	if ([CCDirector jr_swizzleMethod:@selector(popScene) 
+						  withMethod:@selector(popSceneReplacement) error:&error] == NO) {
+		NSAssert1(nil, @"Method swizzling error: %@", error);
+	}
+}
 
 -(void) initializationComplete
 {
@@ -116,6 +161,7 @@
 -(void) applicationDidFinishLaunching:(UIApplication*)application
 {
 	config = [[KKStartupConfig config] retain];
+	[self performMethodSwizzling];
 
 	if ([application respondsToSelector:@selector(setStatusBarHidden:withAnimation:)])
 	{
@@ -211,7 +257,11 @@
 	
 	// attach the OpenGLView
 	[director setOpenGLView:glView];
-	
+
+	// this must be called right AFTER the glView has been attached to the director!
+	BOOL usesRetina = [director enableRetinaDisplay:config.enableRetinaDisplaySupport];
+	NSLog(@"Retina Display enabled: %@", usesRetina ? @"YES" : @"NO");
+
 	// viewController's view will be the Director's glView, unless an alternate View is available
 	UIView* alternateView = [[self alternateView] retain];
 	if (alternateView)
@@ -227,11 +277,7 @@
 	// the viewController's loadView method add the Director's glView via loadView. Failing to do so will not call viewDidLoad in the controller.
 	// See: http://stackoverflow.com/questions/1479576/viewdidload-not-called-in-subclassed-uiviewcontroller
 	[window addSubview:rootViewController.view];
-	
-	// this must be called AFTER the glView has been attached to the director!
-	BOOL usesRetina = [director enableRetinaDisplay:config.enableRetinaDisplaySupport];
-	NSLog(@"Retina Display enabled: %@", usesRetina ? @"YES" : @"NO");
-	
+
 	// Must add the root view controller for GameKitHelper to work!
 	// Also generally a good idea because it allows you to access the rootViewController from anywhere
 	// via: [UIApplication sharedApplication].keyWindow.rootViewController
@@ -316,6 +362,7 @@
 -(void) applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	config = [[KKStartupConfig config] retain];
+	[self performMethodSwizzling];
 
 	CCDirectorMac* director = (CCDirectorMac*)[CCDirector sharedDirector];
 	[director setDisplayFPS:config.displayFPS];

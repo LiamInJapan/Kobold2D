@@ -21,6 +21,7 @@
 		phase = KKTouchPhaseLifted;
 		didPhaseChange = NO;
 		isInvalid = YES;
+		touchBeganFrame = INT_MAX;
     }
     
     return self;
@@ -35,6 +36,14 @@
 	didPhaseChange = (phase != ph);
 	phase = ph;
 	isInvalid = NO;
+
+	if (didPhaseChange)
+	{
+		if (phase == KKTouchPhaseBegan)
+		{
+			touchBeganFrame = [CCDirector sharedDirector].frameCount;
+		}
+	}
 }
 
 -(void) setValidWithID:(NSUInteger)ID
@@ -47,6 +56,7 @@
 {
 	isInvalid = YES;
 	touchID = 0;
+	touchBeganFrame = INT_MAX;
 	phase = KKTouchPhaseLifted;
 }
 

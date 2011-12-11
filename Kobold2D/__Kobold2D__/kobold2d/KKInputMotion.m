@@ -53,6 +53,11 @@
 	[super dealloc];
 }
 
+-(void) resetInputStates
+{
+	[deviceMotion reset];
+}
+
 -(void) accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)accel
 {
 	[deviceMotion.acceleration setAccelerationWithTimestamp:accel.timestamp x:accel.x y:accel.y z:accel.z];

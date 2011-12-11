@@ -27,6 +27,7 @@
 // Internal use only
 -(void) addTouches:(NSSet*)touchesSet;
 -(void) removeTouches:(NSSet*)touchesSet;
+-(void) removeAllTouches;
 #endif
 
 @end

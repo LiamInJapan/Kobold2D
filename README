@@ -28,28 +28,21 @@ You can download the Kobold2D installer package here: http://www.kobold2d.com/di
 REASONING
 ---------
 
-The experience from the cocos2d-iphone have taught us to treat source code distribution with greater care. Too many users are pulling the head version of cocos2d-iphone without understanding the implications of working with untested or work-in-progress code. Therefore:
-
-
 ----->
 Unless you plan to submit changes back to the Kobold2D project, collaborate in its development or help in beta-testing new code and tools, it is STRONGLY RECOMMENDED that you install the official installer version of Kobold2D! The Kobold2D installer version provides you with all the features marked as UNAVAILABLE above, and you can start creating new projects right away. The Kobold2D documentation also assumes you are using the installer version.
 
 Kobold2D was made to make your life easier. Don't make it harder for yourself by choosing to use it in a way that demands more from you and takes away convenience features. Before you proceed with pulling the Kobold2D source code, ask yourself how you would benefit from using the Kobold2D source code repository, and how important these benefits are compared to what you lose (convenience, tools, documentation).
 <-----
 
-
-Thus we ask that ONLY THOSE PULL the Kobold2D source code from github who are SUFFICIENTLY EXPERIENCED working with Xcode, Xcode projects and git source code repositories. Preferably you have an interest in helping the Kobold2D project grow and improve by submitting your code improvements, bugfixes or even new features. 
-
-You should be willing and able to help yourself - ie you are not impatient and will perform your due diligence in resolving issues before asking questions. You should have an interest in finding solutions to unknown or unexpected problems and help out by making suggestions and reporting issues. If any of this makes you feel uneasy, the installer package is the better choice for you.
-
 -----------------
 WHEN NOT TO PULL:
 -----------------
 
 You should definitely NOT pull the source code if you haven't been working with Kobold2D before. Get acquainted with Kobold2D first by using the installer version.
-You should NOT pull the source code if you merely desire to be using the very latest code. The installer version always provides you with the latest code that's also in the 'master' branch. The installer version also provides you with an upgrade tool that makes upgrading apps even easier than pulling new code from github.
-You should NOT pull the source code if your first and foremost goal is to create and release an app/game made with Kobold2D. Working from the source code repository will ultimately only serve to distract you from that goal unless you're an experienced git user.
 
+You should NOT pull the source code if you merely desire to be using the very latest code. The installer version always provides you with the latest code that's in the 'master' branch. The installer version also provides you with an upgrade tool that actually makes upgrading apps even easier than pulling new code from github.
+
+You should NOT pull the source code if your first and foremost goal is to create and release an app/game made with Kobold2D. Working from the source code repository will ultimately only serve to distract you from that goal if you're not an experienced git user.
 
 =========
 BRANCHES:
@@ -59,8 +52,9 @@ The Kobold2D 'master' branch is always the same version as the latest installer 
 
 Pulling the 'develop' or other feature branches will provide you with the development code, but you should only do so if you urgently need to use or test the code features under development. The 'develop' and other branches may be unstable, untested and buggy. By switching branches from 'master' to 'develop' or any other it is assumed that you have read, understood and acknowledged the above notice.
 
-For what it's worth, Kobold2D will NEVER bother you with distinctions like "stable" and "unstable" releases, or alpha/beta versions for that matter. Each installer package respectively label has a version number, and that's it. Everything in the 'master' branch is considered stable code. Code in any of the other branches is code that is in development, meaning it may or may not be tested, it may or may not be working, it may or may not be complete. Simply put: there are no guarantees, use at your own risk.
+For what it's worth, Kobold2D will NEVER bother you with distinctions like "stable" and "unstable" releases, or alpha/beta versions for that matter. Each installer package respectively label has a version number, and that's it. Everything in the 'master' branch is considered stable code. 
 
+Code in any of the other branches is code that is in development, meaning it may or may not be tested, it may or may not be working, it may or may not be complete. Simply put: there are no guarantees, use at your own risk.
 
 ============
 DEVELOPMENT:

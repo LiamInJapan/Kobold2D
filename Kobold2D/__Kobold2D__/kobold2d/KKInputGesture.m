@@ -10,6 +10,7 @@
 @interface KKInputGesture (PrivateMethods)
 -(void) determineGestureRecognizersAvailable;
 -(void) scheduleOrUnscheduleUpdateAsNeeded;
+-(void) update:(ccTime)delta;
 #if KK_PLATFORM_IOS
 -(void) removeGestureRecognizer:(UIGestureRecognizer*)gestureRecognizer;
 #endif
@@ -87,11 +88,40 @@
 
 #if KK_PLATFORM_IOS
 
+-(void) resetInputStates
+{
+	// turn recognizers off and on to stop them from recognizing a gesture until new touches occur
+	tapGestureRecognizer.enabled = !tapGestureRecognizer.enabled;
+	tapGestureRecognizer.enabled = !tapGestureRecognizer.enabled;
+	
+	doubleTapGestureRecognizer.enabled = !doubleTapGestureRecognizer.enabled;
+	doubleTapGestureRecognizer.enabled = !doubleTapGestureRecognizer.enabled;
+	
+	for (int i = 0; i < kNumSwipeGestureRecognizers; i++)
+	{
+		swipeGestureRecognizers[i].enabled = !swipeGestureRecognizers[i].enabled;
+		swipeGestureRecognizers[i].enabled = !swipeGestureRecognizers[i].enabled;
+	}
+	
+	longPressGestureRecognizer.enabled = !longPressGestureRecognizer.enabled;
+	longPressGestureRecognizer.enabled = !longPressGestureRecognizer.enabled;
+
+	panGestureRecognizer.enabled = !panGestureRecognizer.enabled;
+	panGestureRecognizer.enabled = !panGestureRecognizer.enabled;
+
+	rotationGestureRecognizer.enabled = !rotationGestureRecognizer.enabled;
+	rotationGestureRecognizer.enabled = !rotationGestureRecognizer.enabled;
+
+	pinchGestureRecognizer.enabled = !pinchGestureRecognizer.enabled;
+	pinchGestureRecognizer.enabled = !pinchGestureRecognizer.enabled;
+	
+	// this clears the states that need to be cleared every frame
+	[self update:0];
+}
+
 -(void) handleGestureDummy:(UIGestureRecognizer*)gestureRecognizer {}
 -(void) determineGestureRecognizersAvailable
 {
-	gesturesAvailable = YES;
-	
 	// gestures are not available if gestureRecognizer is nil, or does not support the locationInView selector added in iOS 3.2
 	UIGestureRecognizer* gestureRecognizer = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(handleGestureDummy:)];
 	gesturesAvailable = [gestureRecognizer respondsToSelector:@selector(locationInView:)];
@@ -116,13 +146,23 @@
 	{
 		if (isUpdateScheduled)
 		{
-			if (tapGestureRecognizer == nil && doubleTapGestureRecognizer == nil && swipeGestureRecognizers[0] == nil)
+			if (!tapGestureRecognizer && 
+				!doubleTapGestureRecognizer && 
+				!swipeGestureRecognizers[0] && 
+				!panGestureRecognizer &&
+				!rotationGestureRecognizer &&
+				!pinchGestureRecognizer)
 			{
 				[[CCScheduler sharedScheduler] unscheduleUpdateForTarget:self];
 				isUpdateScheduled = NO;
 			}
 		}
-		else if (tapGestureRecognizer || doubleTapGestureRecognizer || swipeGestureRecognizers[0])
+		else if (tapGestureRecognizer || 
+				 doubleTapGestureRecognizer || 
+				 swipeGestureRecognizers[0] || 
+				 panGestureRecognizer ||
+				 rotationGestureRecognizer ||
+				 pinchGestureRecognizer)
 		{
 			[[CCScheduler sharedScheduler] scheduleUpdateForTarget:self priority:INT_MAX paused:NO];
 			isUpdateScheduled = YES;
@@ -314,7 +354,8 @@
 		gesturePanLocation = [director convertToGL:[recognizer locationInView:glView]];
 		gesturePanTranslation = [panRecognizer translationInView:glView];
 		gesturePanTranslation.y *= -1.0f;
-		gesturePanVelocity = [director convertToGL:[panRecognizer velocityInView:glView]];
+		gesturePanVelocity = [panRecognizer velocityInView:glView];
+		gesturePanVelocity.y *= -1.0f;
 		gesturePanVelocity = ccpMult(gesturePanVelocity, director.animationInterval);
 	}
 }
@@ -467,6 +508,8 @@
 			[self removeGestureRecognizer:longPressGestureRecognizer];
 			longPressGestureRecognizer = nil;
 		}
+		
+		[self scheduleOrUnscheduleUpdateAsNeeded];
 	}
 #endif
 }
@@ -489,6 +532,8 @@
 			[self removeGestureRecognizer:panGestureRecognizer];
 			panGestureRecognizer = nil;
 		}
+
+		[self scheduleOrUnscheduleUpdateAsNeeded];
 	}
 #endif
 }
@@ -511,6 +556,8 @@
 			[self removeGestureRecognizer:rotationGestureRecognizer];
 			rotationGestureRecognizer = nil;
 		}
+
+		[self scheduleOrUnscheduleUpdateAsNeeded];
 	}
 #endif
 }
@@ -533,6 +580,8 @@
 			[self removeGestureRecognizer:pinchGestureRecognizer];
 			pinchGestureRecognizer = nil;
 		}
+
+		[self scheduleOrUnscheduleUpdateAsNeeded];
 	}
 #endif
 }

@@ -77,6 +77,10 @@
 	float gesturePinchVelocity;
 }
 
+#if KK_PLATFORM_IOS
+-(void) resetInputStates;
+#endif
+
 @property (nonatomic, readonly) BOOL gesturesAvailable;
 
 // tap

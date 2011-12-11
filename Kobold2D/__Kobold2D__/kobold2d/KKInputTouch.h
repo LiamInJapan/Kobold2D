@@ -24,6 +24,10 @@
 
 @property (nonatomic, readonly) CCArray* touches;
 
+#if KK_PLATFORM_IOS
+-(void) resetInputStates;
+#endif
+
 -(BOOL) anyTouchBeganThisFrame;
 -(BOOL) anyTouchEndedThisFrame;
 

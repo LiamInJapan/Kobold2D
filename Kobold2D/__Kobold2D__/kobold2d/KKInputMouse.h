@@ -23,8 +23,7 @@
 	CGPoint scrollWheelDelta;
 	
 	BOOL hasPreciseScrollingDeltas;
-	
-#if KK_PLATFORM_MAC
+#if KK_PLATFORM_MAC // to prevent analyzer warning
 	BOOL isDragging;
 #endif
 }
@@ -34,5 +33,9 @@
 @property (nonatomic, readonly) CGPoint previousLocationInWindow;
 @property (nonatomic, readonly) CGPoint scrollWheelDelta;
 @property (nonatomic, readonly) BOOL hasPreciseScrollingDeltas;
+
+#if KK_PLATFORM_MAC
+-(void) resetInputStates;
+#endif
 
 @end

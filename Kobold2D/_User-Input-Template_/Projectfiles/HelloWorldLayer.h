@@ -18,7 +18,7 @@ typedef enum
 	kInputTypes_End,
 } InputTypes;
 
-@interface HelloWorldScene : CCLayer
+@interface HelloWorldLayer : CCLayer
 {
 	CCSprite* ship;
 	CCParticleSystem* particleFX;

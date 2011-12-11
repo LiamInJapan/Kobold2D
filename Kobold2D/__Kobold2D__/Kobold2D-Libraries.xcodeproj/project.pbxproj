@@ -31,6 +31,10 @@
 		DC1FBAD81416A31600036F5F /* TMXGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1FBAC91416A31600036F5F /* TMXGenerator.h */; };
 		DC1FBAD91416A31600036F5F /* TMXGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FBACA1416A31600036F5F /* TMXGenerator.m */; };
 		DC1FBADA1416A31600036F5F /* TMXGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FBACA1416A31600036F5F /* TMXGenerator.m */; };
+		DC2024F914939E3E0026EF0A /* JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2024F714939E3E0026EF0A /* JRSwizzle.h */; };
+		DC2024FA14939E3E0026EF0A /* JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2024F714939E3E0026EF0A /* JRSwizzle.h */; };
+		DC2024FB14939E3E0026EF0A /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2024F814939E3E0026EF0A /* JRSwizzle.m */; };
+		DC2024FC14939E3E0026EF0A /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2024F814939E3E0026EF0A /* JRSwizzle.m */; };
 		DC275D3213B282AC009C5098 /* NSMutableArray+WeakReferences.h in Headers */ = {isa = PBXBuildFile; fileRef = DC275D3013B282AC009C5098 /* NSMutableArray+WeakReferences.h */; };
 		DC275D3313B282AC009C5098 /* NSMutableArray+WeakReferences.m in Sources */ = {isa = PBXBuildFile; fileRef = DC275D3113B282AC009C5098 /* NSMutableArray+WeakReferences.m */; };
 		DC4108B9142548F800FDF467 /* KKRotationRate.h in Headers */ = {isa = PBXBuildFile; fileRef = DC4108B7142548F800FDF467 /* KKRotationRate.h */; };
@@ -1391,6 +1395,8 @@
 		DC1FBAC81416A31600036F5F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		DC1FBAC91416A31600036F5F /* TMXGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMXGenerator.h; sourceTree = "<group>"; };
 		DC1FBACA1416A31600036F5F /* TMXGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMXGenerator.m; sourceTree = "<group>"; };
+		DC2024F714939E3E0026EF0A /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
+		DC2024F814939E3E0026EF0A /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
 		DC275D3013B282AC009C5098 /* NSMutableArray+WeakReferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+WeakReferences.h"; path = "libs/ObjectAL-for-iPhone/libs/ObjectAL/Support/NSMutableArray+WeakReferences.h"; sourceTree = SOURCE_ROOT; };
 		DC275D3113B282AC009C5098 /* NSMutableArray+WeakReferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+WeakReferences.m"; path = "libs/ObjectAL-for-iPhone/libs/ObjectAL/Support/NSMutableArray+WeakReferences.m"; sourceTree = SOURCE_ROOT; };
 		DC4108B7142548F800FDF467 /* KKRotationRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKRotationRate.h; sourceTree = "<group>"; };
@@ -2481,6 +2487,15 @@
 			path = TMXGenerator;
 			sourceTree = "<group>";
 		};
+		DC2024F514939DF60026EF0A /* JRSwizzle */ = {
+			isa = PBXGroup;
+			children = (
+				DC2024F714939E3E0026EF0A /* JRSwizzle.h */,
+				DC2024F814939E3E0026EF0A /* JRSwizzle.m */,
+			);
+			name = JRSwizzle;
+			sourceTree = "<group>";
+		};
 		DC275D2E13B28266009C5098 /* Avoid ForceLoad Other Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -3013,6 +3028,7 @@
 				DC72238D13FC35E00014EB8F /* VTPG */,
 				DC72234E13FC35790014EB8F /* Kobold2D Cocos2D Extensions */,
 				DC275D2E13B28266009C5098 /* Avoid ForceLoad Other Libraries */,
+				DC2024F514939DF60026EF0A /* JRSwizzle */,
 			);
 			path = kobold2d;
 			sourceTree = "<group>";
@@ -4424,6 +4440,7 @@
 				DC53B8C61438F11700EBF5A5 /* KKHitTest.h in Headers */,
 				DC87CBF4143DD816001875E7 /* kkUserConfig.h in Headers */,
 				DCEE4DD1144EE96700ADF521 /* kkMacros.h in Headers */,
+				DC2024F914939E3E0026EF0A /* JRSwizzle.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4474,6 +4491,7 @@
 				DC53B8C71438F11700EBF5A5 /* KKHitTest.h in Headers */,
 				DC87CBF5143DD816001875E7 /* kkUserConfig.h in Headers */,
 				DCEE4DD2144EE96700ADF521 /* kkMacros.h in Headers */,
+				DC2024FA14939E3E0026EF0A /* JRSwizzle.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5634,6 +5652,7 @@
 				DC91AC97142A247A007AFFE4 /* KKTouches.m in Sources */,
 				DC7F433D1438884700FF7A65 /* KKTouch.m in Sources */,
 				DC53B8C81438F11700EBF5A5 /* KKHitTest.m in Sources */,
+				DC2024FB14939E3E0026EF0A /* JRSwizzle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5674,6 +5693,7 @@
 				DC91AC98142A247A007AFFE4 /* KKTouches.m in Sources */,
 				DC7F433E1438884700FF7A65 /* KKTouch.m in Sources */,
 				DC53B8C91438F11700EBF5A5 /* KKHitTest.m in Sources */,
+				DC2024FC14939E3E0026EF0A /* JRSwizzle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

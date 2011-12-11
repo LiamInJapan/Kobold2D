@@ -39,6 +39,13 @@
 	[super dealloc];
 }
 
+-(void) resetInputStates
+{
+	[keyStates reset];
+	isDragging = NO;
+	scrollWheelDelta = CGPointZero;
+}
+
 #pragma mark Helper methods
 
 -(UInt16) buttonCodeFromEvent:(NSEvent*)event

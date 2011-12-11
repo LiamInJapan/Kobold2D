@@ -35,9 +35,17 @@
 	[super dealloc];
 }
 
+-(void) resetInputStates
+{
+	// don't reset keyboard states because they're always repeating
+	// resetting them would cause a continued key press to be registered as "key down this frame"
+	// in the next scene, which is undesirable
+	//[keyStates reset];
+}
+
 -(BOOL) ccKeyDown:(NSEvent*)event
 {
-	//CCLOG(@"key down: %@", event);
+	CCLOG(@"key down: %@", event);
 	[keyStates addKeyDown:[event keyCode]];
 	return NO;
 }

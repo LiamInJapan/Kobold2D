@@ -7,9 +7,12 @@
 
 #import "CCDirectorExtensions.h"
 #import "ccMoreMacros.h"
+#import "KKInput.h"
 
 #import "FixCategoryBug.h"
 FIX_CATEGORY_BUG(CCDirector)
+
+static NSUInteger CCDirectorExtensionFrameCounter = 0;
 
 @implementation CCDirector (KoboldExtensions)
 
@@ -97,7 +100,63 @@ FIX_CATEGORY_BUG(CCDirector)
 	return NO;
 }
 
+@dynamic frameCount;
+-(NSUInteger) frameCount
+{
+	return CCDirectorExtensionFrameCounter;
+}
+
 @end
+
+
+@implementation CCDirector (SwizzledMethods)
+
+-(void) mainLoopReplacement
+{
+	// call original implementation
+	[self mainLoopReplacement];
+	// important: frame counter must be increased at end of main loop otherwise touchBeganThisFrame may not become true
+	CCDirectorExtensionFrameCounter++;
+}
+-(void) mainLoopReplacement:(id)sender
+{
+	// call original implementation
+	[self mainLoopReplacement:sender];
+	// important: frame counter must be increased at end of main loop otherwise touchBeganThisFrame may not become true
+	CCDirectorExtensionFrameCounter++;
+}
+
+-(void) replaceSceneReplacement:(CCScene*)scene
+{
+	[[KKInput sharedInput] resetInputStates];
+	
+	// call original implementation - if this look wrong to you, read up on Method Swizzling: http://www.cocoadev.com/index.pl?MethodSwizzling)
+	[self replaceSceneReplacement:scene];
+}
+-(void) runWithSceneReplacement:(CCScene*)scene
+{
+	[[KKInput sharedInput] resetInputStates];
+	
+	// call original implementation - if this look wrong to you, read up on Method Swizzling: http://www.cocoadev.com/index.pl?MethodSwizzling)
+	[self runWithSceneReplacement:scene];
+}
+-(void) pushSceneReplacement:(CCScene*)scene
+{
+	[[KKInput sharedInput] resetInputStates];
+	
+	// call original implementation - if this look wrong to you, read up on Method Swizzling: http://www.cocoadev.com/index.pl?MethodSwizzling)
+	[self pushSceneReplacement:scene];
+}
+-(void) popSceneReplacement
+{
+	[[KKInput sharedInput] resetInputStates];
+	
+	// call original implementation - if this look wrong to you, read up on Method Swizzling: http://www.cocoadev.com/index.pl?MethodSwizzling)
+	[self popSceneReplacement];
+}
+@end
+
+
 
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
 @implementation CCDirectorIOS (KoboldExtensions)

@@ -3,6 +3,7 @@
  *
  * Copyright (c) 2010-2011 Steffen Itterheim. 
  * Copyright (c) 2011 Simon Jewell (http://blog.sygem.com)
+ * Ad Provider Autorotation by Tomohisa: http://cocos2d-central.com/topic/614-second-admob-not-showing/
  * Released under MIT License in Germany (LICENSE-Kobold2D.txt).
  */
 
@@ -18,7 +19,7 @@
 
 /** Singleton wrapper for ADBannerView class */
 @interface KKAdBanner : NSObject 
-#ifdef KK_ADMOB_SUPPORT_ENABLED
+#if KK_ADMOB_SUPPORT_ENABLED
 	<ADBannerViewDelegate, GADBannerViewDelegate>
 #else
 	<ADBannerViewDelegate>
@@ -26,12 +27,14 @@
 {
 @protected
 	ADBannerView* iAdBannerView;
-#ifdef KK_ADMOB_SUPPORT_ENABLED
+#if KK_ADMOB_SUPPORT_ENABLED
 	GADBannerView* adMobBannerView;
     NSTimer* adMobTimer;
     double lastAdMobRequestTime;
 #endif
-	
+
+	NSTimer* adLoadFailRetryTimer;
+
 	BOOL isVeryFirstAd;
 	BOOL isIAdEnabled;
 	BOOL isAdMobEnabled;
@@ -47,7 +50,7 @@
 @property (nonatomic, readonly) ADBannerView* iAdBannerView;
 
 /** Gives access to the single AdMob GADBannerView managed by KKAdBanner */
-#ifdef KK_ADMOB_SUPPORT_ENABLED
+#if KK_ADMOB_SUPPORT_ENABLED
 @property (nonatomic, readonly) GADBannerView* adMobBannerView;
 #endif
 

@@ -38,21 +38,21 @@
 	[super dealloc];
 }
 
-
 #if KK_PLATFORM_IOS
+-(void) resetInputStates
+{
+	[touches removeAllTouches];
+}
+
 -(void) ccTouchesBegan:(NSSet*)touchesSet withEvent:(UIEvent*)event
 {
+	//CCLOG(@"touch began...");
 	[touches addTouches:touchesSet];
 }
 
-/*
--(void) ccTouchesMoved:(NSSet*)touchesSet withEvent:(UIEvent*)event
-{
-}
-*/
-
 -(void) ccTouchesEnded:(NSSet*)touchesSet withEvent:(UIEvent*)event
 {
+	//CCLOG(@"touch ended...");
 	[touches removeTouches:touchesSet];
 }
 
@@ -66,10 +66,11 @@
 
 -(BOOL) anyTouchBeganThisFrame
 {
+	NSUInteger currentFrame = [CCDirector sharedDirector].frameCount;
 	KKTouch* touch;
 	CCARRAY_FOREACH(touches.touches, touch)
 	{
-		if (touch && touch->didPhaseChange && [touch phase] == KKTouchPhaseBegan)
+		if (touch && touch->touchBeganFrame == currentFrame)
 		{
 			return YES;
 		}

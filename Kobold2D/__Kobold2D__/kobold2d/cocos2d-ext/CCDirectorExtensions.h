@@ -44,7 +44,21 @@ typedef enum
 @property (nonatomic, readonly) BOOL currentDeviceIsSimulator;
 /** Tells you if the app is currently running on the iPad rather than iPhone or iPod Touch. */
 @property (nonatomic, readonly) BOOL currentDeviceIsIPad;
+/** Returns the number of frames drawn since the start of the app. You can use this to check if certain events occured
+ in the same frame, to ensure that something happens exactly n frames from now regardless of framerate, or to implement
+ a custom framerate display. The frameCount variable is never reset at runtime, only when the app is restarted. 
+ An overflow occurs if the app remains running for over 828 days of continuous operation, assuming a steady 60 frames per second. */
+@property (nonatomic, readonly) NSUInteger frameCount;
 
+@end
+
+@interface CCDirector (SwizzledMethods)
+-(void) mainLoopReplacement;
+-(void) mainLoopReplacement:(id)sender;
+-(void) replaceSceneReplacement:(CCScene*)scene;
+-(void) runWithSceneReplacement:(CCScene*)scene;
+-(void) pushSceneReplacement:(CCScene*)scene;
+-(void) popSceneReplacement;
 @end
 
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED

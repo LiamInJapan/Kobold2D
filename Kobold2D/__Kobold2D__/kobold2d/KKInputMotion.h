@@ -30,6 +30,10 @@
 	BOOL deviceMotionActive;
 }
 
+#if KK_PLATFORM_IOS
+-(void) resetInputStates;
+#endif
+
 // accelerometer
 @property (nonatomic) BOOL accelerometerActive;
 @property (nonatomic, readonly) BOOL accelerometerAvailable;

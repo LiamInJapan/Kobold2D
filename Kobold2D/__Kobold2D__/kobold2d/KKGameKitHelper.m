@@ -9,6 +9,7 @@
 
 #import "KKGameKitHelper.h"
 #import "KKAppDelegate.h"
+#import "KKConfig.h"
 
 static NSString* kCachedAchievementsFile = @"CachedAchievements.archive";
 
@@ -19,7 +20,6 @@ static NSString* kCachedAchievementsFile = @"CachedAchievements.archive";
 -(void) cacheAchievement:(GKAchievement*)achievement;
 -(void) uncacheAchievement:(GKAchievement*)achievement;
 -(void) loadAchievements;
--(void) initMatchInvitationHandler;
 -(UIViewController*) getRootViewController;
 @end
 
@@ -33,8 +33,7 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 	@synchronized(self)	
 	{
 		NSAssert(instanceOfGameKitHelper == nil, @"Attempted to allocate a second instance of the singleton: KKGameKitHelper");
-		instanceOfGameKitHelper = [[super alloc] retain];
-		return instanceOfGameKitHelper;
+		return [[super alloc] retain];
 	}
 	
 	// to avoid compiler warning
@@ -47,7 +46,7 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 	{
 		if (instanceOfGameKitHelper == nil)
 		{
-			[[KKGameKitHelper alloc] init];
+			instanceOfGameKitHelper = [[KKGameKitHelper alloc] init];
 		}
 		
 		return instanceOfGameKitHelper;
@@ -59,11 +58,22 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 
 #pragma mark Init & Dealloc
 
-@synthesize delegate;
+@dynamic delegate;
+-(id<KKGameKitHelperProtocol>) delegate
+{
+	return delegate;
+}
+-(void) setDelegate:(id<KKGameKitHelperProtocol>)theDelegate
+{
+	delegate = theDelegate;
+	delegateRespondsToReceiveDataSelector = [delegate respondsToSelector:@selector(onReceivedData:fromPlayer:)];
+}
+
+@dynamic currentMatch;
+
 @synthesize isGameCenterAvailable;
 @synthesize lastError;
 @synthesize achievements;
-@synthesize currentMatch;
 @synthesize matchStarted;
 
 -(id) init
@@ -139,30 +149,9 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 			
 			if (error == nil)
 			{
-				[self initMatchInvitationHandler];
 				[self reportCachedAchievements];
-				[self loadAchievements];
 			}
 		}];
-		
-		/*
-		 // NOTE: bad example ahead!
-		 
-		 // If you want to modify a local variable inside a block object, you have to prefix it with the __block keyword.
-		 __block bool success = NO;
-		 
-		 [localPlayer authenticateWithCompletionHandler:^(NSError* error)
-		 {
-		 	success = (error == nil);
-		 }];
-		 
-		 // CAUTION: success will always be NO here! The block isn't run until later, when the authentication call was
-		 // confirmed by the Game Center server. Set a breakpoint inside the block to see what is happening in what order.
-		 if (success)
-		 	NSLog(@"Local player logged in!");
-		 else
-		 	NSLog(@"Local player NOT logged in!");
-		 */
 	}
 }
 
@@ -198,7 +187,10 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 		[localPlayer loadFriendsWithCompletionHandler:^(NSArray* friends, NSError* error)
 		{
 			[self setLastError:error];
-			[delegate onFriendListReceived:friends];
+			if ([delegate respondsToSelector:@selector(onFriendListReceived:)])
+			{
+				[delegate onFriendListReceived:friends];
+			}
 		}];
 	}
 }
@@ -214,7 +206,10 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 		[GKPlayer loadPlayersForIdentifiers:playerList withCompletionHandler:^(NSArray* players, NSError* error)
 		{
 			[self setLastError:error];
-			[delegate onPlayerInfoReceived:players];
+			if ([delegate respondsToSelector:@selector(onPlayerInfoReceived:)])
+			{
+				[delegate onPlayerInfoReceived:players];
+			}
 		}];
 	}
 }
@@ -234,7 +229,10 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 		[self setLastError:error];
 		
 		bool success = (error == nil);
-		[delegate onScoresSubmitted:success];
+		if ([delegate respondsToSelector:@selector(onScoresSubmitted:)])
+		{
+			[delegate onScoresSubmitted:success];
+		}
 	}];
 }
 
@@ -266,7 +264,11 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 		[leaderboard loadScoresWithCompletionHandler:^(NSArray* scores, NSError* error)
 		{
 			[self setLastError:error];
-			[delegate onScoresReceived:scores];
+			
+			if ([delegate respondsToSelector:@selector(onScoresReceived:)])
+			{
+				[delegate onScoresReceived:scores];
+			}
 		}];
 	}
 }
@@ -304,8 +306,11 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 		{
 			[achievements setObject:achievement forKey:achievement.identifier];
 		}
-		 
-		[delegate onAchievementsLoaded:achievements];
+		
+		if ([delegate respondsToSelector:@selector(onAchievementsLoaded:)]) 
+		{
+			[delegate onAchievementsLoaded:achievements];
+		}
 	}];
 }
 
@@ -347,7 +352,10 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 				[self cacheAchievement:achievement];
 			}
 			
-			[delegate onAchievementReported:achievement];
+			if ([delegate respondsToSelector:@selector(onAchievementReported:)])
+			{
+				[delegate onAchievementReported:achievement];
+			}
 		}];
 	}
 }
@@ -364,7 +372,10 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 	{
 		[self setLastError:error];
 		bool success = (error == nil);
-		[delegate onResetAchievements:success];
+		if ([delegate respondsToSelector:@selector(onResetAchievements:)])
+		{
+			[delegate onResetAchievements:success];
+		}
 	}];
 }
 
@@ -431,10 +442,13 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 
 -(void) disconnectCurrentMatch
 {
-	[currentMatch disconnect];
-	currentMatch.delegate = nil;
-	[currentMatch release];
-	currentMatch = nil;
+	if (currentMatch)
+	{
+		[currentMatch disconnect];
+		currentMatch.delegate = nil;
+		[currentMatch release];
+		currentMatch = nil;
+	}
 }
 
 -(void) setCurrentMatch:(GKMatch*)match
@@ -447,7 +461,7 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 	}
 }
 
--(void) initMatchInvitationHandler
+-(void) setupMatchInvitationHandlerWithMinPlayers:(int)minPlayers maxPlayers:(int)maxPlayers
 {
 	if (isGameCenterAvailable == NO)
 		return;
@@ -463,8 +477,8 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 		else if (playersToInvite)
 		{
 			GKMatchRequest* request = [[[GKMatchRequest alloc] init] autorelease];
-			request.minPlayers = 2;
-			request.maxPlayers = 4;
+			request.minPlayers = minPlayers;
+			request.maxPlayers = maxPlayers;
 			request.playersToInvite = playersToInvite;
 
 			[self showMatchmakerWithRequest:request];
@@ -484,7 +498,10 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 		if (match != nil)
 		{
 			[self setCurrentMatch:match];
-			[delegate onMatchFound:match];
+			if ([delegate respondsToSelector:@selector(onMatchFound:)])
+			{
+				[delegate onMatchFound:match];
+			}
 		}
 	}];
 }
@@ -502,7 +519,10 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 		[self setLastError:error];
 		
 		bool success = (error == nil);
-		[delegate onPlayersAddedToMatch:success];
+		if ([delegate respondsToSelector:@selector(onPlayersAddedToMatch:)])
+		{
+			[delegate onPlayersAddedToMatch:success];
+		}
 	}];
 }
 
@@ -525,7 +545,10 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 		
 		if (error == nil)
 		{
-			[delegate onReceivedMatchmakingActivity:activity];
+			if ([delegate respondsToSelector:@selector(onReceivedMatchmakingActivity:)])
+			{
+				[delegate onReceivedMatchmakingActivity:activity];
+			}
 		}
 	}];
 }
@@ -537,34 +560,65 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 	switch (state)
 	{
 		case GKPlayerStateConnected:
-			[delegate onPlayerConnected:playerID];
+			if ([delegate respondsToSelector:@selector(onPlayerConnected:)])
+			{
+				[delegate onPlayerConnected:playerID];
+			}
 			break;
 		case GKPlayerStateDisconnected:
-			[delegate onPlayerDisconnected:playerID];
+			if ([delegate respondsToSelector:@selector(onPlayerDisconnected:)])
+			{
+				[delegate onPlayerDisconnected:playerID];
+			}
 			break;
 	}
 	
 	if (matchStarted == NO && match.expectedPlayerCount == 0)
 	{
 		matchStarted = YES;
-		[delegate onStartMatch];
+		if ([delegate respondsToSelector:@selector(onStartMatch)])
+		{
+			[delegate onStartMatch];
+		}
 	}
 }
 
--(void) sendDataToAllPlayers:(void*)data length:(NSUInteger)length
+
+// -(void) sendData:(NSData*)data toPlayers:(NSArray*)playerIDs reliable:(BOOL)reliable;
+
+-(void) sendDataToAllPlayers:(NSData*)data reliable:(BOOL)reliable
+{
+	NSError* error = nil;
+	GKMatchSendDataMode mode = (reliable ? GKMatchSendDataReliable : GKMatchSendDataUnreliable);
+	[currentMatch sendDataToAllPlayers:data withDataMode:mode error:&error];
+	[self setLastError:error];
+}
+
+-(void) sendDataToAllPlayers:(NSData*)data
+{
+	[self sendDataToAllPlayers:data reliable:NO];
+}
+
+-(void) sendDataToAllPlayers:(void*)data length:(NSUInteger)length reliable:(BOOL)reliable
 {
 	if (isGameCenterAvailable == NO)
 		return;
 	
-	NSError* error = nil;
 	NSData* packet = [NSData dataWithBytes:data length:length];
-	[currentMatch sendDataToAllPlayers:packet withDataMode:GKMatchSendDataUnreliable error:&error];
-	[self setLastError:error];
+	[self sendDataToAllPlayers:packet reliable:(BOOL)reliable];
+}
+
+-(void) sendDataToAllPlayers:(void*)data length:(NSUInteger)length
+{
+	[self sendDataToAllPlayers:data length:length reliable:NO];
 }
 
 -(void) match:(GKMatch*)match didReceiveData:(NSData*)data fromPlayer:(NSString*)playerID
 {
-	[delegate onReceivedData:data fromPlayer:playerID];
+	if (delegateRespondsToReceiveDataSelector)
+	{
+		[delegate onReceivedData:data fromPlayer:playerID];
+	}
 }
 
 #pragma mark Views (Leaderboard, Achievements)
@@ -606,7 +660,10 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 -(void) leaderboardViewControllerDidFinish:(GKLeaderboardViewController*)viewController
 {
 	[self dismissModalViewController];
-	[delegate onLeaderboardViewDismissed];
+	if ([delegate respondsToSelector:@selector(onLeaderboardViewDismissed)])
+	{
+		[delegate onLeaderboardViewDismissed];
+	}
 }
 
 // Achievements
@@ -627,7 +684,10 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 -(void) achievementViewControllerDidFinish:(GKAchievementViewController*)viewController
 {
 	[self dismissModalViewController];
-	[delegate onAchievementsViewDismissed];
+	if ([delegate respondsToSelector:@selector(onAchievementsViewDismissed)])
+	{
+		[delegate onAchievementsViewDismissed];
+	}
 }
 
 // Matchmaking
@@ -655,21 +715,66 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 -(void) matchmakerViewControllerWasCancelled:(GKMatchmakerViewController*)viewController
 {
 	[self dismissModalViewController];
-	[delegate onMatchmakingViewDismissed];
+	if ([delegate respondsToSelector:@selector(onMatchmakingViewDismissed)])
+	{
+		[delegate onMatchmakingViewDismissed];
+	}
 }
 
 -(void) matchmakerViewController:(GKMatchmakerViewController*)viewController didFailWithError:(NSError*)error
 {
 	[self dismissModalViewController];
 	[self setLastError:error];
-	[delegate onMatchmakingViewError];
+	if ([delegate respondsToSelector:@selector(onMatchmakingViewError)])
+	{
+		[delegate onMatchmakingViewError];
+	}
 }
 
 -(void) matchmakerViewController:(GKMatchmakerViewController*)viewController didFindMatch:(GKMatch*)match
 {
 	[self dismissModalViewController];
 	[self setCurrentMatch:match];
-	[delegate onMatchFound:match];
+	if ([delegate respondsToSelector:@selector(onMatchFound:)])
+	{
+		[delegate onMatchFound:match];
+	}
+}
+
+@end
+
+
+@implementation GKMatchmakerViewController (OrientationFix)
+-(BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+	// if RootViewController manages autorotation, just return its result for autorotation
+	KKAppDelegate* appDelegate = (KKAppDelegate*)[UIApplication sharedApplication].delegate;
+	if (appDelegate.rootViewController.autorotationType == KKAutorotationUIViewController)
+	{
+		return [appDelegate.rootViewController shouldAutorotateToInterfaceOrientation:interfaceOrientation];
+	}
+
+	// all other autorotation types use the current device orientation
+	ccDeviceOrientation orientation = [CCDirector sharedDirector].deviceOrientation;
+	switch (interfaceOrientation)
+	{
+		case UIInterfaceOrientationPortrait:
+			return (orientation == kCCDeviceOrientationPortrait);
+			break;
+		case UIInterfaceOrientationPortraitUpsideDown:
+			return (orientation == kCCDeviceOrientationPortraitUpsideDown);
+			break;
+		case UIInterfaceOrientationLandscapeLeft:
+			return (orientation == kCCDeviceOrientationLandscapeRight);
+			break;
+		case UIInterfaceOrientationLandscapeRight:
+			return (orientation == kCCDeviceOrientationLandscapeLeft);
+			break;
+		default:
+			break;
+	}
+
+	return NO;
 }
 
 @end

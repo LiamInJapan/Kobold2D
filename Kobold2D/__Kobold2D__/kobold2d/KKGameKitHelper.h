@@ -10,11 +10,12 @@
 #import <GameKit/GameKit.h>
 
 /** Defines the delegate methods that are forwarded from GameKitHelper. */
-@protocol KKGameKitHelperProtocol
+@protocol KKGameKitHelperProtocol <NSObject>
 
 /** Called when local player was authenticated or logged off. */
 -(void) onLocalPlayerAuthenticationChanged;
 
+@optional
 /** Called when friend list was received from Game Center. */
 -(void) onFriendListReceived:(NSArray*)friends;
 /** Called when player info was received from Game Center. */
@@ -67,7 +68,8 @@
 {
 @protected
 	id<KKGameKitHelperProtocol> delegate;
-	bool isGameCenterAvailable;
+	BOOL delegateRespondsToReceiveDataSelector;
+	BOOL isGameCenterAvailable;
 	NSError* lastError;
 	
 	NSMutableDictionary* achievements;
@@ -76,13 +78,13 @@
 	// TODO: cache scores
 	
 	GKMatch* currentMatch;
-	bool matchStarted;
+	BOOL matchStarted;
 }
 
 /** Set your delegate that should receive the KKGameKitHelperProtocol messages. */
-@property (nonatomic, retain) id<KKGameKitHelperProtocol> delegate;
+@property (nonatomic, assign) id<KKGameKitHelperProtocol> delegate;
 /** Check this to see if Game Center is supported on the current Device. See: http://support.apple.com/kb/HT4314 */
-@property (nonatomic, readonly) bool isGameCenterAvailable;
+@property (nonatomic, readonly) BOOL isGameCenterAvailable;
 /** If your delegate receives an error message, you can check this property for the actual NSError object.
  This allows you to print out the cause of the error to console log or display an Alert view. */
 @property (nonatomic, readonly) NSError* lastError;
@@ -90,9 +92,9 @@
  to ensure that achievements are updated on Game Center on next app start even if connection was lost. */
 @property (nonatomic, readonly) NSMutableDictionary* achievements;
 /** The current match object. May be nil if there's no match. */
-@property (nonatomic, readonly) GKMatch* currentMatch;
+@property (nonatomic, retain) GKMatch* currentMatch;
 /** Indicates whether the current match has already started. */
-@property (nonatomic, readonly) bool matchStarted;
+@property (nonatomic, readonly) BOOL matchStarted;
 
 /** returns the singleton object, like this: [GameKitHelper sharedGameKitHelper] */
 +(KKGameKitHelper*) sharedGameKitHelper;
@@ -139,6 +141,8 @@
 // Matchmaking
 /** Disconnect from the current match */
 -(void) disconnectCurrentMatch;
+/** creates the handler for processing match invitations from other players */
+-(void) setupMatchInvitationHandlerWithMinPlayers:(int)minPlayers maxPlayers:(int)maxPlayers;
 /** Request a match for the given request. */
 -(void) findMatchForRequest:(GKMatchRequest*)request;
 /** Request to add players to a match. */
@@ -147,6 +151,16 @@
 -(void) cancelMatchmakingRequest;
 /** Request the matchmaking activity to get an indicator on how many games are played. */
 -(void) queryMatchmakingActivity;
+
+// Sending/Receiving Data
+/** sends the given NSData to all players (unreliably) */
+-(void) sendDataToAllPlayers:(NSData*)data;
+/** sends the given NSData to all players either reliably (safe but slow) or unreliably (arrival not guaranteed, but fast) */
+-(void) sendDataToAllPlayers:(NSData*)data reliable:(BOOL)reliable;
+/** sends the given pointer with the given length to all players (unreliably) */
+-(void) sendDataToAllPlayers:(void*)data length:(NSUInteger)length;
+/** sends the given pointer with the given length to all players either reliably (safe but slow) or unreliably (arrival not guaranteed, but fast) */
+-(void) sendDataToAllPlayers:(void*)data length:(NSUInteger)length reliable:(BOOL)reliable;
 
 // Game Center Views
 /** Brings up the Game Center Leaderboard view. */
@@ -158,6 +172,11 @@
 /** Brings up the Game Center Matchmaking view with a match request. */
 -(void) showMatchmakerWithRequest:(GKMatchRequest*)request;
 
+@end
+
+
+@interface GKMatchmakerViewController (OrientationFix)
+-(BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 @end
 
 #endif

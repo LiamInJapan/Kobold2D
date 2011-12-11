@@ -50,8 +50,8 @@
 		DCC1A27013A94EE6005BD75D /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = DCC1A26F13A94EE6005BD75D /* icon.icns */; };
 		DCC1A3A913A94F1A005BD75D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A38E13A94F1A005BD75D /* AppDelegate.m */; };
 		DCC1A3AA13A94F1A005BD75D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A38E13A94F1A005BD75D /* AppDelegate.m */; };
-		DCC1A3AB13A94F1A005BD75D /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A39013A94F1A005BD75D /* HelloWorldScene.m */; };
-		DCC1A3AC13A94F1A005BD75D /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A39013A94F1A005BD75D /* HelloWorldScene.m */; };
+		DCC1A3AB13A94F1A005BD75D /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A39013A94F1A005BD75D /* HelloWorldLayer.m */; };
+		DCC1A3AC13A94F1A005BD75D /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A39013A94F1A005BD75D /* HelloWorldLayer.m */; };
 		DCC1A3AD13A94F1A005BD75D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A39113A94F1A005BD75D /* main.m */; };
 		DCC1A3AE13A94F1A005BD75D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A39113A94F1A005BD75D /* main.m */; };
 		DCC1A3AF13A94F1A005BD75D /* config.lua in Resources */ = {isa = PBXBuildFile; fileRef = DCC1A39513A94F1A005BD75D /* config.lua */; };
@@ -107,8 +107,8 @@
 		DCC1A27113A94EE6005BD75D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
 		DCC1A38D13A94F1A005BD75D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DCC1A38E13A94F1A005BD75D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DCC1A38F13A94F1A005BD75D /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
-		DCC1A39013A94F1A005BD75D /* HelloWorldScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldScene.m; sourceTree = "<group>"; };
+		DCC1A38F13A94F1A005BD75D /* HelloWorldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
+		DCC1A39013A94F1A005BD75D /* HelloWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		DCC1A39113A94F1A005BD75D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DCC1A39213A94F1A005BD75D /* Prefix-iOS.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Prefix-iOS.pch"; sourceTree = "<group>"; };
 		DCC1A39313A94F1A005BD75D /* Prefix-Mac.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Prefix-Mac.pch"; sourceTree = "<group>"; };
@@ -241,8 +241,8 @@
 		DCC1A38C13A94F1A005BD75D /* Projectfiles */ = {
 			isa = PBXGroup;
 			children = (
-				DCC1A38F13A94F1A005BD75D /* HelloWorldScene.h */,
-				DCC1A39013A94F1A005BD75D /* HelloWorldScene.m */,
+				DCC1A38F13A94F1A005BD75D /* HelloWorldLayer.h */,
+				DCC1A39013A94F1A005BD75D /* HelloWorldLayer.m */,
 				DCC1A38D13A94F1A005BD75D /* AppDelegate.h */,
 				DCC1A38E13A94F1A005BD75D /* AppDelegate.m */,
 				DCC1A39413A94F1A005BD75D /* Resources */,
@@ -402,7 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCC1A3A913A94F1A005BD75D /* AppDelegate.m in Sources */,
-				DCC1A3AB13A94F1A005BD75D /* HelloWorldScene.m in Sources */,
+				DCC1A3AB13A94F1A005BD75D /* HelloWorldLayer.m in Sources */,
 				DCC1A3AD13A94F1A005BD75D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,7 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCC1A3AA13A94F1A005BD75D /* AppDelegate.m in Sources */,
-				DCC1A3AC13A94F1A005BD75D /* HelloWorldScene.m in Sources */,
+				DCC1A3AC13A94F1A005BD75D /* HelloWorldLayer.m in Sources */,
 				DCC1A3AE13A94F1A005BD75D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

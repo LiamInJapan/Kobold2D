@@ -25,4 +25,8 @@
 @property (nonatomic, readonly) KKKeyStates* keyStates;
 @property (nonatomic, readonly) NSUInteger modifiersDown;
 
+#if KK_PLATFORM_MAC
+-(void) resetInputStates;
+#endif
+
 @end

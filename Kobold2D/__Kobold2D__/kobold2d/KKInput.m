@@ -49,6 +49,18 @@ static KKInput *instanceOfInput;
 	[super dealloc];
 }
 
+-(void) resetInputStates
+{
+#if KK_PLATFORM_IOS
+	[touch resetInputStates];
+	[motion resetInputStates];
+	[gesture resetInputStates];
+#elif KK_PLATFORM_MAC
+	[keyboard resetInputStates];
+	[mouse resetInputStates];
+#endif
+}
+
 
 -(BOOL) userInteractionEnabled
 {
@@ -306,6 +318,11 @@ static KKInput *instanceOfInput;
 -(CGPoint) locationOfAnyTouchInPhase:(KKTouchPhase)touchPhase
 {
 	return [touch locationOfAnyTouchInPhase:touchPhase];
+}
+@dynamic anyTouchLocation;
+-(CGPoint) anyTouchLocation
+{
+	return [touch locationOfAnyTouchInPhase:KKTouchPhaseAny];
 }
 -(BOOL) isAnyTouchOnNode:(CCNode*)node touchPhase:(KKTouchPhase)touchPhase
 {

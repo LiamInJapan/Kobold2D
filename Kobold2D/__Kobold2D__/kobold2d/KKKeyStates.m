@@ -71,6 +71,23 @@ const NSUInteger kKeyStatePoolSize = 16;
 	[super dealloc];
 }
 
+-(void) reset
+{
+	KKKeyState* keyState = nil;
+	CCARRAY_FOREACH(keysDown, keyState)
+	{
+		[keyState invalidate];
+	}
+	
+	CCARRAY_FOREACH(keysRemovedThisFrame, keyState)
+	{
+		[keyState invalidate];
+	}
+	
+	[keysDown removeAllObjects];
+	[keysRemovedThisFrame removeAllObjects];
+}
+
 -(NSString*) description
 {
 	return [NSString stringWithFormat:@"%@ - keys down: %lu", [super description], [keysDown count]];
