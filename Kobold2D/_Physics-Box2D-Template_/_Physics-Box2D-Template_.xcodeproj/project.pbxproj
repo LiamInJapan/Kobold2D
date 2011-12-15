@@ -15,6 +15,8 @@
 		DC193EC213B6969B00500B56 /* Author&License.txt in Resources */ = {isa = PBXBuildFile; fileRef = DC193EBF13B6969B00500B56 /* Author&License.txt */; };
 		DC193EC313B6969B00500B56 /* dg_grounds32.png in Resources */ = {isa = PBXBuildFile; fileRef = DC193EC013B6969B00500B56 /* dg_grounds32.png */; };
 		DC193EC413B6969B00500B56 /* dg_grounds32.png in Resources */ = {isa = PBXBuildFile; fileRef = DC193EC013B6969B00500B56 /* dg_grounds32.png */; };
+		DC2A3EC4149A30B400EF78B0 /* Box2DDebugLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3EC3149A30B400EF78B0 /* Box2DDebugLayer.mm */; };
+		DC2A3EC5149A30B400EF78B0 /* Box2DDebugLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3EC3149A30B400EF78B0 /* Box2DDebugLayer.mm */; };
 		DC485B1113AA0E5600F2BC70 /* libchipmunk-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC485B0D13AA0E5600F2BC70 /* libchipmunk-mac.a */; };
 		DC485B1713AA0EBB00F2BC70 /* libbox2d-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC485B1613AA0EBB00F2BC70 /* libbox2d-mac.a */; };
 		DC485B4613AA18A600F2BC70 /* libcocosdenshion-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC485B4513AA18A600F2BC70 /* libcocosdenshion-mac.a */; };
@@ -64,6 +66,8 @@
 		DC193EBB13B6956F00500B56 /* ContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ContactListener.mm; sourceTree = "<group>"; };
 		DC193EBF13B6969B00500B56 /* Author&License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Author&License.txt"; sourceTree = "<group>"; };
 		DC193EC013B6969B00500B56 /* dg_grounds32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dg_grounds32.png; sourceTree = "<group>"; };
+		DC2A3EC2149A30B400EF78B0 /* Box2DDebugLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2DDebugLayer.h; sourceTree = "<group>"; };
+		DC2A3EC3149A30B400EF78B0 /* Box2DDebugLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Box2DDebugLayer.mm; sourceTree = "<group>"; };
 		DC3BE97813B4FB71003739CC /* BuildSettings-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-iOS.xcconfig"; sourceTree = "<group>"; };
 		DC485B0D13AA0E5600F2BC70 /* libchipmunk-mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libchipmunk-mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC485B1613AA0EBB00F2BC70 /* libbox2d-mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libbox2d-mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,6 +250,8 @@
 		DCC1A38C13A94F1A005BD75D /* Projectfiles */ = {
 			isa = PBXGroup;
 			children = (
+				DC2A3EC2149A30B400EF78B0 /* Box2DDebugLayer.h */,
+				DC2A3EC3149A30B400EF78B0 /* Box2DDebugLayer.mm */,
 				DCC1A38F13A94F1A005BD75D /* PhysicsLayer.h */,
 				DCC1A39013A94F1A005BD75D /* PhysicsLayer.mm */,
 				DC193EBA13B6956F00500B56 /* ContactListener.h */,
@@ -402,6 +408,7 @@
 				DCC1A3AD13A94F1A005BD75D /* main.m in Sources */,
 				DC193EB813B692D100500B56 /* GLES-Render.mm in Sources */,
 				DC193EBC13B6956F00500B56 /* ContactListener.mm in Sources */,
+				DC2A3EC4149A30B400EF78B0 /* Box2DDebugLayer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +421,7 @@
 				DCC1A3AE13A94F1A005BD75D /* main.m in Sources */,
 				DC193EB713B692D100500B56 /* GLES-Render.mm in Sources */,
 				DC193EBD13B6956F00500B56 /* ContactListener.mm in Sources */,
+				DC2A3EC5149A30B400EF78B0 /* Box2DDebugLayer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

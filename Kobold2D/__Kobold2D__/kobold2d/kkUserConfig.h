@@ -21,4 +21,10 @@
  */
 #define KK_ADMOB_SUPPORT_ENABLED 1
 
+/** @def KK_PIXELMASKSPRITE_USE_BITARRAY
+If set to 1, KKPixelMaskSprite will use a BitArray instead of BOOL array. 
+ BitArray uses 1/8th (12.5%) of the memory of the regular BOOL array, but is around 20-30% slower.
+ */
+#define KK_PIXELMASKSPRITE_USE_BITARRAY 0
+
 #endif

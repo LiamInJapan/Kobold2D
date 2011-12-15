@@ -14,6 +14,7 @@
 
 #import "kkTypes.h"
 #import "kkMacros.h"
+#import "kobold2d_version.h"
 
 #import "KKAdBanner.h"
 #import "KKAppDelegate.h"
@@ -24,4 +25,6 @@
 #import "KKMain.h"
 #import "KKRootViewController.h"
 #import "KKStartupConfig.h"
-
+#import "KKPixelMaskSprite.h"
+#import "KKScreenshot.h"
+#import "KKAppStoreHelper.h"

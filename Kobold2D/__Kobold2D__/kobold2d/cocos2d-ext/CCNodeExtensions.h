@@ -29,6 +29,8 @@
 -(BOOL) containsTouch:(UITouch*)touch;
 #endif
 
+/** Returns true if the node's boundingBox intersects with the boundingBox of another node. */
+-(BOOL) intersectsNode:(CCNode*)other;
 
 /** Calls the node's "node" method to initialize it, then adds it to a CCScene object and returns that CCScene.
  Useful as a convenience method for creating a CCLayer instance wrapped in a scene, so that you can write:

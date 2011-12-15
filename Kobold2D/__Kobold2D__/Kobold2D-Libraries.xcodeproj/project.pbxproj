@@ -37,6 +37,46 @@
 		DC2024FC14939E3E0026EF0A /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2024F814939E3E0026EF0A /* JRSwizzle.m */; };
 		DC275D3213B282AC009C5098 /* NSMutableArray+WeakReferences.h in Headers */ = {isa = PBXBuildFile; fileRef = DC275D3013B282AC009C5098 /* NSMutableArray+WeakReferences.h */; };
 		DC275D3313B282AC009C5098 /* NSMutableArray+WeakReferences.m in Sources */ = {isa = PBXBuildFile; fileRef = DC275D3113B282AC009C5098 /* NSMutableArray+WeakReferences.m */; };
+		DC2A3E3E149A1FC800EF78B0 /* KKPixelMaskSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3E3A149A1FC800EF78B0 /* KKPixelMaskSprite.h */; };
+		DC2A3E3F149A1FC800EF78B0 /* KKPixelMaskSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3E3A149A1FC800EF78B0 /* KKPixelMaskSprite.h */; };
+		DC2A3E40149A1FC800EF78B0 /* KKPixelMaskSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3E3B149A1FC800EF78B0 /* KKPixelMaskSprite.m */; };
+		DC2A3E41149A1FC800EF78B0 /* KKPixelMaskSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3E3B149A1FC800EF78B0 /* KKPixelMaskSprite.m */; };
+		DC2A3E42149A1FC800EF78B0 /* KKScreenshot.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3E3C149A1FC800EF78B0 /* KKScreenshot.h */; };
+		DC2A3E43149A1FC800EF78B0 /* KKScreenshot.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3E3C149A1FC800EF78B0 /* KKScreenshot.h */; };
+		DC2A3E44149A1FC800EF78B0 /* KKScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3E3D149A1FC800EF78B0 /* KKScreenshot.m */; };
+		DC2A3E45149A1FC800EF78B0 /* KKScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3E3D149A1FC800EF78B0 /* KKScreenshot.m */; };
+		DC2A3E5F149A205900EF78B0 /* bitarray.c in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3E58149A205900EF78B0 /* bitarray.c */; settings = {COMPILER_FLAGS = "-Wno-sign-compare"; }; };
+		DC2A3E60149A205900EF78B0 /* bitarray.c in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3E58149A205900EF78B0 /* bitarray.c */; settings = {COMPILER_FLAGS = "-Wno-sign-compare"; }; };
+		DC2A3E61149A205900EF78B0 /* bitarray.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3E59149A205900EF78B0 /* bitarray.h */; };
+		DC2A3E62149A205900EF78B0 /* bitarray.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3E59149A205900EF78B0 /* bitarray.h */; };
+		DC2A3F32149A381900EF78B0 /* PVRTContext.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3F15149A381900EF78B0 /* PVRTContext.h */; };
+		DC2A3F33149A381900EF78B0 /* PVRTFixedPointAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3F16149A381900EF78B0 /* PVRTFixedPointAPI.h */; };
+		DC2A3F34149A381900EF78B0 /* PVRTglesExt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3F17149A381900EF78B0 /* PVRTglesExt.cpp */; };
+		DC2A3F35149A381900EF78B0 /* PVRTglesExt.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3F18149A381900EF78B0 /* PVRTglesExt.h */; };
+		DC2A3F36149A381900EF78B0 /* PVRTBoneBatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3F1A149A381900EF78B0 /* PVRTBoneBatch.cpp */; };
+		DC2A3F37149A381A00EF78B0 /* PVRTBoneBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3F1B149A381900EF78B0 /* PVRTBoneBatch.h */; };
+		DC2A3F38149A381A00EF78B0 /* PVRTError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3F1C149A381900EF78B0 /* PVRTError.cpp */; };
+		DC2A3F39149A381A00EF78B0 /* PVRTError.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3F1D149A381900EF78B0 /* PVRTError.h */; };
+		DC2A3F3A149A381A00EF78B0 /* PVRTFixedPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3F1E149A381900EF78B0 /* PVRTFixedPoint.cpp */; };
+		DC2A3F3B149A381A00EF78B0 /* PVRTFixedPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3F1F149A381900EF78B0 /* PVRTFixedPoint.h */; };
+		DC2A3F3C149A381A00EF78B0 /* PVRTGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3F20149A381900EF78B0 /* PVRTGlobal.h */; };
+		DC2A3F3D149A381A00EF78B0 /* PVRTMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3F21149A381900EF78B0 /* PVRTMatrix.h */; };
+		DC2A3F3E149A381A00EF78B0 /* PVRTMatrixF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3F22149A381900EF78B0 /* PVRTMatrixF.cpp */; };
+		DC2A3F3F149A381A00EF78B0 /* PVRTMemoryFileSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3F23149A381900EF78B0 /* PVRTMemoryFileSystem.h */; };
+		DC2A3F40149A381A00EF78B0 /* PVRTModelPOD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3F24149A381900EF78B0 /* PVRTModelPOD.cpp */; };
+		DC2A3F41149A381A00EF78B0 /* PVRTModelPOD.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3F25149A381900EF78B0 /* PVRTModelPOD.h */; };
+		DC2A3F42149A381A00EF78B0 /* PVRTQuaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3F26149A381900EF78B0 /* PVRTQuaternion.h */; };
+		DC2A3F43149A381A00EF78B0 /* PVRTQuaternionF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3F27149A381900EF78B0 /* PVRTQuaternionF.cpp */; };
+		DC2A3F44149A381A00EF78B0 /* PVRTResourceFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3F28149A381900EF78B0 /* PVRTResourceFile.cpp */; };
+		DC2A3F45149A381A00EF78B0 /* PVRTResourceFile.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3F29149A381900EF78B0 /* PVRTResourceFile.h */; };
+		DC2A3F46149A381A00EF78B0 /* PVRTString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3F2A149A381900EF78B0 /* PVRTString.cpp */; };
+		DC2A3F47149A381A00EF78B0 /* PVRTString.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3F2B149A381900EF78B0 /* PVRTString.h */; };
+		DC2A3F48149A381A00EF78B0 /* PVRTTrans.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3F2C149A381900EF78B0 /* PVRTTrans.cpp */; };
+		DC2A3F49149A381A00EF78B0 /* PVRTTrans.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3F2D149A381900EF78B0 /* PVRTTrans.h */; };
+		DC2A3F4A149A381A00EF78B0 /* PVRTVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3F2E149A381900EF78B0 /* PVRTVector.cpp */; };
+		DC2A3F4B149A381A00EF78B0 /* PVRTVector.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3F2F149A381900EF78B0 /* PVRTVector.h */; };
+		DC2A3F4C149A381A00EF78B0 /* PVRTVertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC2A3F30149A381900EF78B0 /* PVRTVertex.cpp */; };
+		DC2A3F4D149A381A00EF78B0 /* PVRTVertex.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2A3F31149A381900EF78B0 /* PVRTVertex.h */; };
 		DC4108B9142548F800FDF467 /* KKRotationRate.h in Headers */ = {isa = PBXBuildFile; fileRef = DC4108B7142548F800FDF467 /* KKRotationRate.h */; };
 		DC4108BA142548F800FDF467 /* KKRotationRate.h in Headers */ = {isa = PBXBuildFile; fileRef = DC4108B7142548F800FDF467 /* KKRotationRate.h */; };
 		DC4108BB142548F800FDF467 /* KKRotationRate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4108B8142548F800FDF467 /* KKRotationRate.m */; };
@@ -1233,54 +1273,6 @@
 		DCFA08A81470133400FB3BDB /* CC3PVRTModelPOD.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA07F01470133300FB3BDB /* CC3PVRTModelPOD.h */; };
 		DCFA08A91470133400FB3BDB /* CC3VertexArraysPODExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA07F11470133300FB3BDB /* CC3VertexArraysPODExtensions.h */; };
 		DCFA08AA1470133400FB3BDB /* CC3VertexArraysPODExtensions.mm in Sources */ = {isa = PBXBuildFile; fileRef = DCFA07F21470133300FB3BDB /* CC3VertexArraysPODExtensions.mm */; };
-		DCFA08AB1470133400FB3BDB /* PVRTBackground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA07F51470133300FB3BDB /* PVRTBackground.cpp */; };
-		DCFA08AC1470133400FB3BDB /* PVRTContext.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA07F61470133300FB3BDB /* PVRTContext.h */; };
-		DCFA08AD1470133400FB3BDB /* PVRTFixedPointAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA07F71470133300FB3BDB /* PVRTFixedPointAPI.h */; };
-		DCFA08AE1470133400FB3BDB /* PVRTglesExt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA07F81470133300FB3BDB /* PVRTglesExt.cpp */; };
-		DCFA08AF1470133400FB3BDB /* PVRTglesExt.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA07F91470133300FB3BDB /* PVRTglesExt.h */; };
-		DCFA08B01470133400FB3BDB /* PVRTTextureAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA07FA1470133300FB3BDB /* PVRTTextureAPI.cpp */; };
-		DCFA08B11470133400FB3BDB /* PVRTTextureAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA07FB1470133300FB3BDB /* PVRTTextureAPI.h */; };
-		DCFA08B21470133400FB3BDB /* PVRTBackground.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA07FD1470133300FB3BDB /* PVRTBackground.h */; };
-		DCFA08B31470133400FB3BDB /* PVRTBoneBatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA07FE1470133300FB3BDB /* PVRTBoneBatch.cpp */; };
-		DCFA08B41470133400FB3BDB /* PVRTBoneBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA07FF1470133300FB3BDB /* PVRTBoneBatch.h */; };
-		DCFA08B51470133400FB3BDB /* PVRTDecompress.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA08001470133300FB3BDB /* PVRTDecompress.cpp */; };
-		DCFA08B61470133400FB3BDB /* PVRTDecompress.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA08011470133300FB3BDB /* PVRTDecompress.h */; };
-		DCFA08B71470133400FB3BDB /* PVRTError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA08021470133300FB3BDB /* PVRTError.cpp */; };
-		DCFA08B81470133400FB3BDB /* PVRTError.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA08031470133300FB3BDB /* PVRTError.h */; };
-		DCFA08B91470133400FB3BDB /* PVRTFixedPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA08041470133300FB3BDB /* PVRTFixedPoint.cpp */; };
-		DCFA08BA1470133400FB3BDB /* PVRTFixedPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA08051470133300FB3BDB /* PVRTFixedPoint.h */; };
-		DCFA08BB1470133400FB3BDB /* PVRTGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA08061470133300FB3BDB /* PVRTGeometry.cpp */; };
-		DCFA08BC1470133400FB3BDB /* PVRTGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA08071470133300FB3BDB /* PVRTGeometry.h */; };
-		DCFA08BD1470133400FB3BDB /* PVRTGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA08081470133300FB3BDB /* PVRTGlobal.h */; };
-		DCFA08BE1470133400FB3BDB /* PVRTMathTable.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA08091470133300FB3BDB /* PVRTMathTable.h */; };
-		DCFA08BF1470133400FB3BDB /* PVRTMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA080A1470133300FB3BDB /* PVRTMatrix.h */; };
-		DCFA08C01470133400FB3BDB /* PVRTMatrixF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA080B1470133300FB3BDB /* PVRTMatrixF.cpp */; };
-		DCFA08C11470133400FB3BDB /* PVRTMatrixX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA080C1470133300FB3BDB /* PVRTMatrixX.cpp */; };
-		DCFA08C21470133400FB3BDB /* PVRTMemoryFileSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA080D1470133300FB3BDB /* PVRTMemoryFileSystem.h */; };
-		DCFA08C31470133400FB3BDB /* PVRTMisc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA080E1470133300FB3BDB /* PVRTMisc.cpp */; };
-		DCFA08C41470133400FB3BDB /* PVRTMisc.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA080F1470133300FB3BDB /* PVRTMisc.h */; };
-		DCFA08C51470133400FB3BDB /* PVRTModelPOD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA08101470133300FB3BDB /* PVRTModelPOD.cpp */; };
-		DCFA08C61470133400FB3BDB /* PVRTModelPOD.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA08111470133300FB3BDB /* PVRTModelPOD.h */; };
-		DCFA08C71470133400FB3BDB /* PVRTQuaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA08121470133300FB3BDB /* PVRTQuaternion.h */; };
-		DCFA08C81470133400FB3BDB /* PVRTQuaternionF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA08131470133300FB3BDB /* PVRTQuaternionF.cpp */; };
-		DCFA08C91470133400FB3BDB /* PVRTQuaternionX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA08141470133300FB3BDB /* PVRTQuaternionX.cpp */; };
-		DCFA08CA1470133400FB3BDB /* PVRTResourceFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA08151470133300FB3BDB /* PVRTResourceFile.cpp */; };
-		DCFA08CB1470133400FB3BDB /* PVRTResourceFile.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA08161470133300FB3BDB /* PVRTResourceFile.h */; };
-		DCFA08CC1470133400FB3BDB /* PVRTShadowVol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA08171470133300FB3BDB /* PVRTShadowVol.cpp */; };
-		DCFA08CD1470133400FB3BDB /* PVRTShadowVol.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA08181470133300FB3BDB /* PVRTShadowVol.h */; };
-		DCFA08CE1470133400FB3BDB /* PVRTSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA08191470133300FB3BDB /* PVRTSingleton.h */; };
-		DCFA08CF1470133400FB3BDB /* PVRTString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA081A1470133300FB3BDB /* PVRTString.cpp */; };
-		DCFA08D01470133400FB3BDB /* PVRTString.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA081B1470133300FB3BDB /* PVRTString.h */; };
-		DCFA08D11470133400FB3BDB /* PVRTTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA081C1470133300FB3BDB /* PVRTTexture.cpp */; };
-		DCFA08D21470133400FB3BDB /* PVRTTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA081D1470133300FB3BDB /* PVRTTexture.h */; };
-		DCFA08D31470133400FB3BDB /* PVRTTrans.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA081E1470133300FB3BDB /* PVRTTrans.cpp */; };
-		DCFA08D41470133400FB3BDB /* PVRTTrans.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA081F1470133300FB3BDB /* PVRTTrans.h */; };
-		DCFA08D51470133400FB3BDB /* PVRTTriStrip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA08201470133300FB3BDB /* PVRTTriStrip.cpp */; };
-		DCFA08D61470133400FB3BDB /* PVRTTriStrip.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA08211470133300FB3BDB /* PVRTTriStrip.h */; };
-		DCFA08D71470133400FB3BDB /* PVRTVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA08221470133300FB3BDB /* PVRTVector.cpp */; };
-		DCFA08D81470133400FB3BDB /* PVRTVector.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA08231470133300FB3BDB /* PVRTVector.h */; };
-		DCFA08D91470133400FB3BDB /* PVRTVertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCFA08241470133300FB3BDB /* PVRTVertex.cpp */; };
-		DCFA08DA1470133400FB3BDB /* PVRTVertex.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA08251470133300FB3BDB /* PVRTVertex.h */; };
 		DCFA08DB1470133400FB3BDB /* CCNodeController.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA08271470133300FB3BDB /* CCNodeController.h */; };
 		DCFA08DC1470133400FB3BDB /* CCNodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFA08281470133300FB3BDB /* CCNodeController.m */; };
 		DCFA08DD1470133400FB3BDB /* ControllableCCLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFA08291470133300FB3BDB /* ControllableCCLayer.h */; };
@@ -1399,6 +1391,41 @@
 		DC2024F814939E3E0026EF0A /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
 		DC275D3013B282AC009C5098 /* NSMutableArray+WeakReferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+WeakReferences.h"; path = "libs/ObjectAL-for-iPhone/libs/ObjectAL/Support/NSMutableArray+WeakReferences.h"; sourceTree = SOURCE_ROOT; };
 		DC275D3113B282AC009C5098 /* NSMutableArray+WeakReferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+WeakReferences.m"; path = "libs/ObjectAL-for-iPhone/libs/ObjectAL/Support/NSMutableArray+WeakReferences.m"; sourceTree = SOURCE_ROOT; };
+		DC2A3E3A149A1FC800EF78B0 /* KKPixelMaskSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKPixelMaskSprite.h; sourceTree = "<group>"; };
+		DC2A3E3B149A1FC800EF78B0 /* KKPixelMaskSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKPixelMaskSprite.m; sourceTree = "<group>"; };
+		DC2A3E3C149A1FC800EF78B0 /* KKScreenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKScreenshot.h; sourceTree = "<group>"; };
+		DC2A3E3D149A1FC800EF78B0 /* KKScreenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKScreenshot.m; sourceTree = "<group>"; };
+		DC2A3E58149A205900EF78B0 /* bitarray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitarray.c; sourceTree = "<group>"; };
+		DC2A3E59149A205900EF78B0 /* bitarray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitarray.h; sourceTree = "<group>"; };
+		DC2A3F15149A381900EF78B0 /* PVRTContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTContext.h; sourceTree = "<group>"; };
+		DC2A3F16149A381900EF78B0 /* PVRTFixedPointAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTFixedPointAPI.h; sourceTree = "<group>"; };
+		DC2A3F17149A381900EF78B0 /* PVRTglesExt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTglesExt.cpp; sourceTree = "<group>"; };
+		DC2A3F18149A381900EF78B0 /* PVRTglesExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTglesExt.h; sourceTree = "<group>"; };
+		DC2A3F19149A381900EF78B0 /* PVRT_Removed_Files.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PVRT_Removed_Files.txt; sourceTree = "<group>"; };
+		DC2A3F1A149A381900EF78B0 /* PVRTBoneBatch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTBoneBatch.cpp; sourceTree = "<group>"; };
+		DC2A3F1B149A381900EF78B0 /* PVRTBoneBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTBoneBatch.h; sourceTree = "<group>"; };
+		DC2A3F1C149A381900EF78B0 /* PVRTError.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTError.cpp; sourceTree = "<group>"; };
+		DC2A3F1D149A381900EF78B0 /* PVRTError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTError.h; sourceTree = "<group>"; };
+		DC2A3F1E149A381900EF78B0 /* PVRTFixedPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTFixedPoint.cpp; sourceTree = "<group>"; };
+		DC2A3F1F149A381900EF78B0 /* PVRTFixedPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTFixedPoint.h; sourceTree = "<group>"; };
+		DC2A3F20149A381900EF78B0 /* PVRTGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTGlobal.h; sourceTree = "<group>"; };
+		DC2A3F21149A381900EF78B0 /* PVRTMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTMatrix.h; sourceTree = "<group>"; };
+		DC2A3F22149A381900EF78B0 /* PVRTMatrixF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTMatrixF.cpp; sourceTree = "<group>"; };
+		DC2A3F23149A381900EF78B0 /* PVRTMemoryFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTMemoryFileSystem.h; sourceTree = "<group>"; };
+		DC2A3F24149A381900EF78B0 /* PVRTModelPOD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTModelPOD.cpp; sourceTree = "<group>"; };
+		DC2A3F25149A381900EF78B0 /* PVRTModelPOD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTModelPOD.h; sourceTree = "<group>"; };
+		DC2A3F26149A381900EF78B0 /* PVRTQuaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTQuaternion.h; sourceTree = "<group>"; };
+		DC2A3F27149A381900EF78B0 /* PVRTQuaternionF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTQuaternionF.cpp; sourceTree = "<group>"; };
+		DC2A3F28149A381900EF78B0 /* PVRTResourceFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTResourceFile.cpp; sourceTree = "<group>"; };
+		DC2A3F29149A381900EF78B0 /* PVRTResourceFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTResourceFile.h; sourceTree = "<group>"; };
+		DC2A3F2A149A381900EF78B0 /* PVRTString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTString.cpp; sourceTree = "<group>"; };
+		DC2A3F2B149A381900EF78B0 /* PVRTString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTString.h; sourceTree = "<group>"; };
+		DC2A3F2C149A381900EF78B0 /* PVRTTrans.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTTrans.cpp; sourceTree = "<group>"; };
+		DC2A3F2D149A381900EF78B0 /* PVRTTrans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTTrans.h; sourceTree = "<group>"; };
+		DC2A3F2E149A381900EF78B0 /* PVRTVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTVector.cpp; sourceTree = "<group>"; };
+		DC2A3F2F149A381900EF78B0 /* PVRTVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTVector.h; sourceTree = "<group>"; };
+		DC2A3F30149A381900EF78B0 /* PVRTVertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTVertex.cpp; sourceTree = "<group>"; };
+		DC2A3F31149A381900EF78B0 /* PVRTVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTVertex.h; sourceTree = "<group>"; };
 		DC4108B7142548F800FDF467 /* KKRotationRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKRotationRate.h; sourceTree = "<group>"; };
 		DC4108B8142548F800FDF467 /* KKRotationRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKRotationRate.m; sourceTree = "<group>"; };
 		DC45815F14334FF000D2DEFB /* b2CollideEdge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2CollideEdge.cpp; sourceTree = "<group>"; };
@@ -2110,55 +2137,6 @@
 		DCFA07F01470133300FB3BDB /* CC3PVRTModelPOD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3PVRTModelPOD.h; sourceTree = "<group>"; };
 		DCFA07F11470133300FB3BDB /* CC3VertexArraysPODExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3VertexArraysPODExtensions.h; sourceTree = "<group>"; };
 		DCFA07F21470133300FB3BDB /* CC3VertexArraysPODExtensions.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CC3VertexArraysPODExtensions.mm; sourceTree = "<group>"; };
-		DCFA07F51470133300FB3BDB /* PVRTBackground.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTBackground.cpp; sourceTree = "<group>"; };
-		DCFA07F61470133300FB3BDB /* PVRTContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTContext.h; sourceTree = "<group>"; };
-		DCFA07F71470133300FB3BDB /* PVRTFixedPointAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTFixedPointAPI.h; sourceTree = "<group>"; };
-		DCFA07F81470133300FB3BDB /* PVRTglesExt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTglesExt.cpp; sourceTree = "<group>"; };
-		DCFA07F91470133300FB3BDB /* PVRTglesExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTglesExt.h; sourceTree = "<group>"; };
-		DCFA07FA1470133300FB3BDB /* PVRTTextureAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTTextureAPI.cpp; sourceTree = "<group>"; };
-		DCFA07FB1470133300FB3BDB /* PVRTTextureAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTTextureAPI.h; sourceTree = "<group>"; };
-		DCFA07FC1470133300FB3BDB /* PVRT_Removed_Files.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PVRT_Removed_Files.txt; sourceTree = "<group>"; };
-		DCFA07FD1470133300FB3BDB /* PVRTBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTBackground.h; sourceTree = "<group>"; };
-		DCFA07FE1470133300FB3BDB /* PVRTBoneBatch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTBoneBatch.cpp; sourceTree = "<group>"; };
-		DCFA07FF1470133300FB3BDB /* PVRTBoneBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTBoneBatch.h; sourceTree = "<group>"; };
-		DCFA08001470133300FB3BDB /* PVRTDecompress.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTDecompress.cpp; sourceTree = "<group>"; };
-		DCFA08011470133300FB3BDB /* PVRTDecompress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTDecompress.h; sourceTree = "<group>"; };
-		DCFA08021470133300FB3BDB /* PVRTError.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTError.cpp; sourceTree = "<group>"; };
-		DCFA08031470133300FB3BDB /* PVRTError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTError.h; sourceTree = "<group>"; };
-		DCFA08041470133300FB3BDB /* PVRTFixedPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTFixedPoint.cpp; sourceTree = "<group>"; };
-		DCFA08051470133300FB3BDB /* PVRTFixedPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTFixedPoint.h; sourceTree = "<group>"; };
-		DCFA08061470133300FB3BDB /* PVRTGeometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTGeometry.cpp; sourceTree = "<group>"; };
-		DCFA08071470133300FB3BDB /* PVRTGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTGeometry.h; sourceTree = "<group>"; };
-		DCFA08081470133300FB3BDB /* PVRTGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTGlobal.h; sourceTree = "<group>"; };
-		DCFA08091470133300FB3BDB /* PVRTMathTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTMathTable.h; sourceTree = "<group>"; };
-		DCFA080A1470133300FB3BDB /* PVRTMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTMatrix.h; sourceTree = "<group>"; };
-		DCFA080B1470133300FB3BDB /* PVRTMatrixF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTMatrixF.cpp; sourceTree = "<group>"; };
-		DCFA080C1470133300FB3BDB /* PVRTMatrixX.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTMatrixX.cpp; sourceTree = "<group>"; };
-		DCFA080D1470133300FB3BDB /* PVRTMemoryFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTMemoryFileSystem.h; sourceTree = "<group>"; };
-		DCFA080E1470133300FB3BDB /* PVRTMisc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTMisc.cpp; sourceTree = "<group>"; };
-		DCFA080F1470133300FB3BDB /* PVRTMisc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTMisc.h; sourceTree = "<group>"; };
-		DCFA08101470133300FB3BDB /* PVRTModelPOD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTModelPOD.cpp; sourceTree = "<group>"; };
-		DCFA08111470133300FB3BDB /* PVRTModelPOD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTModelPOD.h; sourceTree = "<group>"; };
-		DCFA08121470133300FB3BDB /* PVRTQuaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTQuaternion.h; sourceTree = "<group>"; };
-		DCFA08131470133300FB3BDB /* PVRTQuaternionF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTQuaternionF.cpp; sourceTree = "<group>"; };
-		DCFA08141470133300FB3BDB /* PVRTQuaternionX.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTQuaternionX.cpp; sourceTree = "<group>"; };
-		DCFA08151470133300FB3BDB /* PVRTResourceFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTResourceFile.cpp; sourceTree = "<group>"; };
-		DCFA08161470133300FB3BDB /* PVRTResourceFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTResourceFile.h; sourceTree = "<group>"; };
-		DCFA08171470133300FB3BDB /* PVRTShadowVol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTShadowVol.cpp; sourceTree = "<group>"; };
-		DCFA08181470133300FB3BDB /* PVRTShadowVol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTShadowVol.h; sourceTree = "<group>"; };
-		DCFA08191470133300FB3BDB /* PVRTSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTSingleton.h; sourceTree = "<group>"; };
-		DCFA081A1470133300FB3BDB /* PVRTString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTString.cpp; sourceTree = "<group>"; };
-		DCFA081B1470133300FB3BDB /* PVRTString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTString.h; sourceTree = "<group>"; };
-		DCFA081C1470133300FB3BDB /* PVRTTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTTexture.cpp; sourceTree = "<group>"; };
-		DCFA081D1470133300FB3BDB /* PVRTTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTTexture.h; sourceTree = "<group>"; };
-		DCFA081E1470133300FB3BDB /* PVRTTrans.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTTrans.cpp; sourceTree = "<group>"; };
-		DCFA081F1470133300FB3BDB /* PVRTTrans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTTrans.h; sourceTree = "<group>"; };
-		DCFA08201470133300FB3BDB /* PVRTTriStrip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTTriStrip.cpp; sourceTree = "<group>"; };
-		DCFA08211470133300FB3BDB /* PVRTTriStrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTTriStrip.h; sourceTree = "<group>"; };
-		DCFA08221470133300FB3BDB /* PVRTVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTVector.cpp; sourceTree = "<group>"; };
-		DCFA08231470133300FB3BDB /* PVRTVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTVector.h; sourceTree = "<group>"; };
-		DCFA08241470133300FB3BDB /* PVRTVertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTVertex.cpp; sourceTree = "<group>"; };
-		DCFA08251470133300FB3BDB /* PVRTVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTVertex.h; sourceTree = "<group>"; };
 		DCFA08271470133300FB3BDB /* CCNodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNodeController.h; sourceTree = "<group>"; };
 		DCFA08281470133300FB3BDB /* CCNodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNodeController.m; sourceTree = "<group>"; };
 		DCFA08291470133300FB3BDB /* ControllableCCLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllableCCLayer.h; sourceTree = "<group>"; };
@@ -2429,6 +2407,10 @@
 		DC0124F2141B8959001EE27D /* Kobold2D Helper */ = {
 			isa = PBXGroup;
 			children = (
+				DC2A3E3A149A1FC800EF78B0 /* KKPixelMaskSprite.h */,
+				DC2A3E3B149A1FC800EF78B0 /* KKPixelMaskSprite.m */,
+				DC2A3E3C149A1FC800EF78B0 /* KKScreenshot.h */,
+				DC2A3E3D149A1FC800EF78B0 /* KKScreenshot.m */,
 				DCDD50A713A9178100EC4F3A /* KKAdBanner.h */,
 				DCDD50A813A9178100EC4F3A /* KKAdBanner.m */,
 				DCDD50AB13A9178100EC4F3A /* KKAppStoreHelper.h */,
@@ -2505,6 +2487,60 @@
 				DC275D3113B282AC009C5098 /* NSMutableArray+WeakReferences.m */,
 			);
 			name = "Avoid ForceLoad Other Libraries";
+			sourceTree = "<group>";
+		};
+		DC2A3E57149A205900EF78B0 /* bitarray_c */ = {
+			isa = PBXGroup;
+			children = (
+				DC2A3E58149A205900EF78B0 /* bitarray.c */,
+				DC2A3E59149A205900EF78B0 /* bitarray.h */,
+			);
+			name = bitarray_c;
+			path = libs/bitarray_c;
+			sourceTree = SOURCE_ROOT;
+		};
+		DC2A3F13149A381900EF78B0 /* PVRT 2.09 */ = {
+			isa = PBXGroup;
+			children = (
+				DC2A3F14149A381900EF78B0 /* OGLES */,
+				DC2A3F19149A381900EF78B0 /* PVRT_Removed_Files.txt */,
+				DC2A3F1A149A381900EF78B0 /* PVRTBoneBatch.cpp */,
+				DC2A3F1B149A381900EF78B0 /* PVRTBoneBatch.h */,
+				DC2A3F1C149A381900EF78B0 /* PVRTError.cpp */,
+				DC2A3F1D149A381900EF78B0 /* PVRTError.h */,
+				DC2A3F1E149A381900EF78B0 /* PVRTFixedPoint.cpp */,
+				DC2A3F1F149A381900EF78B0 /* PVRTFixedPoint.h */,
+				DC2A3F20149A381900EF78B0 /* PVRTGlobal.h */,
+				DC2A3F21149A381900EF78B0 /* PVRTMatrix.h */,
+				DC2A3F22149A381900EF78B0 /* PVRTMatrixF.cpp */,
+				DC2A3F23149A381900EF78B0 /* PVRTMemoryFileSystem.h */,
+				DC2A3F24149A381900EF78B0 /* PVRTModelPOD.cpp */,
+				DC2A3F25149A381900EF78B0 /* PVRTModelPOD.h */,
+				DC2A3F26149A381900EF78B0 /* PVRTQuaternion.h */,
+				DC2A3F27149A381900EF78B0 /* PVRTQuaternionF.cpp */,
+				DC2A3F28149A381900EF78B0 /* PVRTResourceFile.cpp */,
+				DC2A3F29149A381900EF78B0 /* PVRTResourceFile.h */,
+				DC2A3F2A149A381900EF78B0 /* PVRTString.cpp */,
+				DC2A3F2B149A381900EF78B0 /* PVRTString.h */,
+				DC2A3F2C149A381900EF78B0 /* PVRTTrans.cpp */,
+				DC2A3F2D149A381900EF78B0 /* PVRTTrans.h */,
+				DC2A3F2E149A381900EF78B0 /* PVRTVector.cpp */,
+				DC2A3F2F149A381900EF78B0 /* PVRTVector.h */,
+				DC2A3F30149A381900EF78B0 /* PVRTVertex.cpp */,
+				DC2A3F31149A381900EF78B0 /* PVRTVertex.h */,
+			);
+			path = "PVRT 2.09";
+			sourceTree = "<group>";
+		};
+		DC2A3F14149A381900EF78B0 /* OGLES */ = {
+			isa = PBXGroup;
+			children = (
+				DC2A3F15149A381900EF78B0 /* PVRTContext.h */,
+				DC2A3F16149A381900EF78B0 /* PVRTFixedPointAPI.h */,
+				DC2A3F17149A381900EF78B0 /* PVRTglesExt.cpp */,
+				DC2A3F18149A381900EF78B0 /* PVRTglesExt.h */,
+			);
+			path = OGLES;
 			sourceTree = "<group>";
 		};
 		DC4581A21433504B00D2DEFB /* Rope */ = {
@@ -3029,6 +3065,7 @@
 				DC72234E13FC35790014EB8F /* Kobold2D Cocos2D Extensions */,
 				DC275D2E13B28266009C5098 /* Avoid ForceLoad Other Libraries */,
 				DC2024F514939DF60026EF0A /* JRSwizzle */,
+				DC2A3E57149A205900EF78B0 /* bitarray_c */,
 			);
 			path = kobold2d;
 			sourceTree = "<group>";
@@ -3797,6 +3834,7 @@
 		DCFA07D71470133300FB3BDB /* cc3PVR */ = {
 			isa = PBXGroup;
 			children = (
+				DC2A3F13149A381900EF78B0 /* PVRT 2.09 */,
 				DCFA07D81470133300FB3BDB /* CC3IdentifiablePODExtensions.h */,
 				DCFA07D91470133300FB3BDB /* CC3IdentifiablePODExtensions.m */,
 				DCFA07DA1470133300FB3BDB /* CC3NodePODExtensions.h */,
@@ -3824,73 +3862,8 @@
 				DCFA07F01470133300FB3BDB /* CC3PVRTModelPOD.h */,
 				DCFA07F11470133300FB3BDB /* CC3VertexArraysPODExtensions.h */,
 				DCFA07F21470133300FB3BDB /* CC3VertexArraysPODExtensions.mm */,
-				DCFA07F31470133300FB3BDB /* PVRT 2.08 */,
 			);
 			path = cc3PVR;
-			sourceTree = "<group>";
-		};
-		DCFA07F31470133300FB3BDB /* PVRT 2.08 */ = {
-			isa = PBXGroup;
-			children = (
-				DCFA07F41470133300FB3BDB /* OGLES */,
-				DCFA07FC1470133300FB3BDB /* PVRT_Removed_Files.txt */,
-				DCFA07FD1470133300FB3BDB /* PVRTBackground.h */,
-				DCFA07FE1470133300FB3BDB /* PVRTBoneBatch.cpp */,
-				DCFA07FF1470133300FB3BDB /* PVRTBoneBatch.h */,
-				DCFA08001470133300FB3BDB /* PVRTDecompress.cpp */,
-				DCFA08011470133300FB3BDB /* PVRTDecompress.h */,
-				DCFA08021470133300FB3BDB /* PVRTError.cpp */,
-				DCFA08031470133300FB3BDB /* PVRTError.h */,
-				DCFA08041470133300FB3BDB /* PVRTFixedPoint.cpp */,
-				DCFA08051470133300FB3BDB /* PVRTFixedPoint.h */,
-				DCFA08061470133300FB3BDB /* PVRTGeometry.cpp */,
-				DCFA08071470133300FB3BDB /* PVRTGeometry.h */,
-				DCFA08081470133300FB3BDB /* PVRTGlobal.h */,
-				DCFA08091470133300FB3BDB /* PVRTMathTable.h */,
-				DCFA080A1470133300FB3BDB /* PVRTMatrix.h */,
-				DCFA080B1470133300FB3BDB /* PVRTMatrixF.cpp */,
-				DCFA080C1470133300FB3BDB /* PVRTMatrixX.cpp */,
-				DCFA080D1470133300FB3BDB /* PVRTMemoryFileSystem.h */,
-				DCFA080E1470133300FB3BDB /* PVRTMisc.cpp */,
-				DCFA080F1470133300FB3BDB /* PVRTMisc.h */,
-				DCFA08101470133300FB3BDB /* PVRTModelPOD.cpp */,
-				DCFA08111470133300FB3BDB /* PVRTModelPOD.h */,
-				DCFA08121470133300FB3BDB /* PVRTQuaternion.h */,
-				DCFA08131470133300FB3BDB /* PVRTQuaternionF.cpp */,
-				DCFA08141470133300FB3BDB /* PVRTQuaternionX.cpp */,
-				DCFA08151470133300FB3BDB /* PVRTResourceFile.cpp */,
-				DCFA08161470133300FB3BDB /* PVRTResourceFile.h */,
-				DCFA08171470133300FB3BDB /* PVRTShadowVol.cpp */,
-				DCFA08181470133300FB3BDB /* PVRTShadowVol.h */,
-				DCFA08191470133300FB3BDB /* PVRTSingleton.h */,
-				DCFA081A1470133300FB3BDB /* PVRTString.cpp */,
-				DCFA081B1470133300FB3BDB /* PVRTString.h */,
-				DCFA081C1470133300FB3BDB /* PVRTTexture.cpp */,
-				DCFA081D1470133300FB3BDB /* PVRTTexture.h */,
-				DCFA081E1470133300FB3BDB /* PVRTTrans.cpp */,
-				DCFA081F1470133300FB3BDB /* PVRTTrans.h */,
-				DCFA08201470133300FB3BDB /* PVRTTriStrip.cpp */,
-				DCFA08211470133300FB3BDB /* PVRTTriStrip.h */,
-				DCFA08221470133300FB3BDB /* PVRTVector.cpp */,
-				DCFA08231470133300FB3BDB /* PVRTVector.h */,
-				DCFA08241470133300FB3BDB /* PVRTVertex.cpp */,
-				DCFA08251470133300FB3BDB /* PVRTVertex.h */,
-			);
-			path = "PVRT 2.08";
-			sourceTree = "<group>";
-		};
-		DCFA07F41470133300FB3BDB /* OGLES */ = {
-			isa = PBXGroup;
-			children = (
-				DCFA07F51470133300FB3BDB /* PVRTBackground.cpp */,
-				DCFA07F61470133300FB3BDB /* PVRTContext.h */,
-				DCFA07F71470133300FB3BDB /* PVRTFixedPointAPI.h */,
-				DCFA07F81470133300FB3BDB /* PVRTglesExt.cpp */,
-				DCFA07F91470133300FB3BDB /* PVRTglesExt.h */,
-				DCFA07FA1470133300FB3BDB /* PVRTTextureAPI.cpp */,
-				DCFA07FB1470133300FB3BDB /* PVRTTextureAPI.h */,
-			);
-			path = OGLES;
 			sourceTree = "<group>";
 		};
 		DCFA08261470133300FB3BDB /* CCNodeController */ = {
@@ -4044,32 +4017,6 @@
 				DCFA08A61470133400FB3BDB /* CC3PVRFoundation.h in Headers */,
 				DCFA08A81470133400FB3BDB /* CC3PVRTModelPOD.h in Headers */,
 				DCFA08A91470133400FB3BDB /* CC3VertexArraysPODExtensions.h in Headers */,
-				DCFA08AC1470133400FB3BDB /* PVRTContext.h in Headers */,
-				DCFA08AD1470133400FB3BDB /* PVRTFixedPointAPI.h in Headers */,
-				DCFA08AF1470133400FB3BDB /* PVRTglesExt.h in Headers */,
-				DCFA08B11470133400FB3BDB /* PVRTTextureAPI.h in Headers */,
-				DCFA08B21470133400FB3BDB /* PVRTBackground.h in Headers */,
-				DCFA08B41470133400FB3BDB /* PVRTBoneBatch.h in Headers */,
-				DCFA08B61470133400FB3BDB /* PVRTDecompress.h in Headers */,
-				DCFA08B81470133400FB3BDB /* PVRTError.h in Headers */,
-				DCFA08BA1470133400FB3BDB /* PVRTFixedPoint.h in Headers */,
-				DCFA08BC1470133400FB3BDB /* PVRTGeometry.h in Headers */,
-				DCFA08BD1470133400FB3BDB /* PVRTGlobal.h in Headers */,
-				DCFA08BE1470133400FB3BDB /* PVRTMathTable.h in Headers */,
-				DCFA08BF1470133400FB3BDB /* PVRTMatrix.h in Headers */,
-				DCFA08C21470133400FB3BDB /* PVRTMemoryFileSystem.h in Headers */,
-				DCFA08C41470133400FB3BDB /* PVRTMisc.h in Headers */,
-				DCFA08C61470133400FB3BDB /* PVRTModelPOD.h in Headers */,
-				DCFA08C71470133400FB3BDB /* PVRTQuaternion.h in Headers */,
-				DCFA08CB1470133400FB3BDB /* PVRTResourceFile.h in Headers */,
-				DCFA08CD1470133400FB3BDB /* PVRTShadowVol.h in Headers */,
-				DCFA08CE1470133400FB3BDB /* PVRTSingleton.h in Headers */,
-				DCFA08D01470133400FB3BDB /* PVRTString.h in Headers */,
-				DCFA08D21470133400FB3BDB /* PVRTTexture.h in Headers */,
-				DCFA08D41470133400FB3BDB /* PVRTTrans.h in Headers */,
-				DCFA08D61470133400FB3BDB /* PVRTTriStrip.h in Headers */,
-				DCFA08D81470133400FB3BDB /* PVRTVector.h in Headers */,
-				DCFA08DA1470133400FB3BDB /* PVRTVertex.h in Headers */,
 				DCFA08DB1470133400FB3BDB /* CCNodeController.h in Headers */,
 				DCFA08DD1470133400FB3BDB /* ControllableCCLayer.h in Headers */,
 				DCFA08DF1470133400FB3BDB /* CC3ActionInterval.h in Headers */,
@@ -4120,6 +4067,22 @@
 				DCFA09391470133400FB3BDB /* CC3Logging.h in Headers */,
 				DCFA093A1470133400FB3BDB /* CC3Math.h in Headers */,
 				DCFA093B1470133400FB3BDB /* CC3MatrixMath.h in Headers */,
+				DC2A3F32149A381900EF78B0 /* PVRTContext.h in Headers */,
+				DC2A3F33149A381900EF78B0 /* PVRTFixedPointAPI.h in Headers */,
+				DC2A3F35149A381900EF78B0 /* PVRTglesExt.h in Headers */,
+				DC2A3F37149A381A00EF78B0 /* PVRTBoneBatch.h in Headers */,
+				DC2A3F39149A381A00EF78B0 /* PVRTError.h in Headers */,
+				DC2A3F3B149A381A00EF78B0 /* PVRTFixedPoint.h in Headers */,
+				DC2A3F3C149A381A00EF78B0 /* PVRTGlobal.h in Headers */,
+				DC2A3F3D149A381A00EF78B0 /* PVRTMatrix.h in Headers */,
+				DC2A3F3F149A381A00EF78B0 /* PVRTMemoryFileSystem.h in Headers */,
+				DC2A3F41149A381A00EF78B0 /* PVRTModelPOD.h in Headers */,
+				DC2A3F42149A381A00EF78B0 /* PVRTQuaternion.h in Headers */,
+				DC2A3F45149A381A00EF78B0 /* PVRTResourceFile.h in Headers */,
+				DC2A3F47149A381A00EF78B0 /* PVRTString.h in Headers */,
+				DC2A3F49149A381A00EF78B0 /* PVRTTrans.h in Headers */,
+				DC2A3F4B149A381A00EF78B0 /* PVRTVector.h in Headers */,
+				DC2A3F4D149A381A00EF78B0 /* PVRTVertex.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4441,6 +4404,9 @@
 				DC87CBF4143DD816001875E7 /* kkUserConfig.h in Headers */,
 				DCEE4DD1144EE96700ADF521 /* kkMacros.h in Headers */,
 				DC2024F914939E3E0026EF0A /* JRSwizzle.h in Headers */,
+				DC2A3E3E149A1FC800EF78B0 /* KKPixelMaskSprite.h in Headers */,
+				DC2A3E42149A1FC800EF78B0 /* KKScreenshot.h in Headers */,
+				DC2A3E61149A205900EF78B0 /* bitarray.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4492,6 +4458,9 @@
 				DC87CBF5143DD816001875E7 /* kkUserConfig.h in Headers */,
 				DCEE4DD2144EE96700ADF521 /* kkMacros.h in Headers */,
 				DC2024FA14939E3E0026EF0A /* JRSwizzle.h in Headers */,
+				DC2A3E3F149A1FC800EF78B0 /* KKPixelMaskSprite.h in Headers */,
+				DC2A3E43149A1FC800EF78B0 /* KKScreenshot.h in Headers */,
+				DC2A3E62149A205900EF78B0 /* bitarray.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5260,28 +5229,6 @@
 				DCFA08A51470133400FB3BDB /* CC3PODVertexSkinning.mm in Sources */,
 				DCFA08A71470133400FB3BDB /* CC3PVRFoundation.mm in Sources */,
 				DCFA08AA1470133400FB3BDB /* CC3VertexArraysPODExtensions.mm in Sources */,
-				DCFA08AB1470133400FB3BDB /* PVRTBackground.cpp in Sources */,
-				DCFA08AE1470133400FB3BDB /* PVRTglesExt.cpp in Sources */,
-				DCFA08B01470133400FB3BDB /* PVRTTextureAPI.cpp in Sources */,
-				DCFA08B31470133400FB3BDB /* PVRTBoneBatch.cpp in Sources */,
-				DCFA08B51470133400FB3BDB /* PVRTDecompress.cpp in Sources */,
-				DCFA08B71470133400FB3BDB /* PVRTError.cpp in Sources */,
-				DCFA08B91470133400FB3BDB /* PVRTFixedPoint.cpp in Sources */,
-				DCFA08BB1470133400FB3BDB /* PVRTGeometry.cpp in Sources */,
-				DCFA08C01470133400FB3BDB /* PVRTMatrixF.cpp in Sources */,
-				DCFA08C11470133400FB3BDB /* PVRTMatrixX.cpp in Sources */,
-				DCFA08C31470133400FB3BDB /* PVRTMisc.cpp in Sources */,
-				DCFA08C51470133400FB3BDB /* PVRTModelPOD.cpp in Sources */,
-				DCFA08C81470133400FB3BDB /* PVRTQuaternionF.cpp in Sources */,
-				DCFA08C91470133400FB3BDB /* PVRTQuaternionX.cpp in Sources */,
-				DCFA08CA1470133400FB3BDB /* PVRTResourceFile.cpp in Sources */,
-				DCFA08CC1470133400FB3BDB /* PVRTShadowVol.cpp in Sources */,
-				DCFA08CF1470133400FB3BDB /* PVRTString.cpp in Sources */,
-				DCFA08D11470133400FB3BDB /* PVRTTexture.cpp in Sources */,
-				DCFA08D31470133400FB3BDB /* PVRTTrans.cpp in Sources */,
-				DCFA08D51470133400FB3BDB /* PVRTTriStrip.cpp in Sources */,
-				DCFA08D71470133400FB3BDB /* PVRTVector.cpp in Sources */,
-				DCFA08D91470133400FB3BDB /* PVRTVertex.cpp in Sources */,
 				DCFA08DC1470133400FB3BDB /* CCNodeController.m in Sources */,
 				DCFA08DE1470133400FB3BDB /* ControllableCCLayer.m in Sources */,
 				DCFA08E01470133400FB3BDB /* CC3ActionInterval.m in Sources */,
@@ -5329,6 +5276,18 @@
 				DCFA09341470133400FB3BDB /* CC3OpenGLES11VertexArrays.m in Sources */,
 				DCFA09361470133400FB3BDB /* CC3Foundation.m in Sources */,
 				DCFA09381470133400FB3BDB /* CC3GLMatrix.m in Sources */,
+				DC2A3F34149A381900EF78B0 /* PVRTglesExt.cpp in Sources */,
+				DC2A3F36149A381900EF78B0 /* PVRTBoneBatch.cpp in Sources */,
+				DC2A3F38149A381A00EF78B0 /* PVRTError.cpp in Sources */,
+				DC2A3F3A149A381A00EF78B0 /* PVRTFixedPoint.cpp in Sources */,
+				DC2A3F3E149A381A00EF78B0 /* PVRTMatrixF.cpp in Sources */,
+				DC2A3F40149A381A00EF78B0 /* PVRTModelPOD.cpp in Sources */,
+				DC2A3F43149A381A00EF78B0 /* PVRTQuaternionF.cpp in Sources */,
+				DC2A3F44149A381A00EF78B0 /* PVRTResourceFile.cpp in Sources */,
+				DC2A3F46149A381A00EF78B0 /* PVRTString.cpp in Sources */,
+				DC2A3F48149A381A00EF78B0 /* PVRTTrans.cpp in Sources */,
+				DC2A3F4A149A381A00EF78B0 /* PVRTVector.cpp in Sources */,
+				DC2A3F4C149A381A00EF78B0 /* PVRTVertex.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5653,6 +5612,9 @@
 				DC7F433D1438884700FF7A65 /* KKTouch.m in Sources */,
 				DC53B8C81438F11700EBF5A5 /* KKHitTest.m in Sources */,
 				DC2024FB14939E3E0026EF0A /* JRSwizzle.m in Sources */,
+				DC2A3E40149A1FC800EF78B0 /* KKPixelMaskSprite.m in Sources */,
+				DC2A3E44149A1FC800EF78B0 /* KKScreenshot.m in Sources */,
+				DC2A3E5F149A205900EF78B0 /* bitarray.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5694,6 +5656,9 @@
 				DC7F433E1438884700FF7A65 /* KKTouch.m in Sources */,
 				DC53B8C91438F11700EBF5A5 /* KKHitTest.m in Sources */,
 				DC2024FC14939E3E0026EF0A /* JRSwizzle.m in Sources */,
+				DC2A3E41149A1FC800EF78B0 /* KKPixelMaskSprite.m in Sources */,
+				DC2A3E45149A1FC800EF78B0 /* KKScreenshot.m in Sources */,
+				DC2A3E60149A205900EF78B0 /* bitarray.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

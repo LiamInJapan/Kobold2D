@@ -51,6 +51,13 @@ FIX_CATEGORY_BUG(CCNode)
 }
 #endif
 
+-(BOOL) intersectsNode:(CCNode*)other
+{
+	CGRect bbox1 = [self boundingBox];
+	CGRect bbox2 = [other boundingBox];
+	return CGRectIntersectsRect(bbox1, bbox2);
+}
+
 +(id) nodeWithScene
 {
 	CCScene* scene = [CCScene node];

@@ -6,7 +6,7 @@
  */
 
 #import "PhysicsLayer.h"
-
+#import "Box2DDebugLayer.h"
 
 //Pixel to metres ratio. Box2D uses metres as the unit for measurement.
 //This ratio defines how many pixels correspond to 1 Box2D "metre"
@@ -44,7 +44,7 @@ const int TILESET_ROWS = 19;
 		//world->SetContinuousPhysics(YES);
 		
 		// uncomment this line to draw debug info
-		//[self enableBox2dDebugDrawing];
+		[self enableBox2dDebugDrawing];
 
 		contactListener = new ContactListener();
 		world->SetContactListener(contactListener);
@@ -117,25 +117,40 @@ const int TILESET_ROWS = 19;
 
 -(void) enableBox2dDebugDrawing
 {
+	// Using John Wordsworth's Box2DDebugLayer class now
+	// The advantage is that it draws the debug information over the normal cocos2d graphics,
+	// so you'll still see the textures of each object.
+	const BOOL useBox2DDebugLayer = YES;
+
+	
 	float debugDrawScaleFactor = 1.0f;
 #if KK_PLATFORM_IOS
 	debugDrawScaleFactor = [[CCDirector sharedDirector] contentScaleFactor];
 #endif
 	debugDrawScaleFactor *= PTM_RATIO;
-	
-	debugDraw = new GLESDebugDraw(debugDrawScaleFactor);
-	
-	if (debugDraw)
+
+	UInt32 debugDrawFlags = 0;
+	debugDrawFlags += b2Draw::e_shapeBit;
+	debugDrawFlags += b2Draw::e_jointBit;
+	//debugDrawFlags += b2Draw::e_aabbBit;
+	//debugDrawFlags += b2Draw::e_pairBit;
+	//debugDrawFlags += b2Draw::e_centerOfMassBit;
+
+	if (useBox2DDebugLayer)
 	{
-		UInt32 debugDrawFlags = 0;
-		debugDrawFlags += b2Draw::e_shapeBit;
-		debugDrawFlags += b2Draw::e_jointBit;
-		//debugDrawFlags += b2Draw::e_aabbBit;
-		//debugDrawFlags += b2Draw::e_pairBit;
-		//debugDrawFlags += b2Draw::e_centerOfMassBit;
-		
-		debugDraw->SetFlags(debugDrawFlags);
-		world->SetDebugDraw(debugDraw);
+		Box2DDebugLayer* debugLayer = [Box2DDebugLayer debugLayerWithWorld:world
+																  ptmRatio:PTM_RATIO
+																	 flags:debugDrawFlags];
+		[self addChild:debugLayer z:100];
+	}
+	else
+	{
+		debugDraw = new GLESDebugDraw(debugDrawScaleFactor);
+		if (debugDraw)
+		{
+			debugDraw->SetFlags(debugDrawFlags);
+			world->SetDebugDraw(debugDraw);
+		}
 	}
 }
 
