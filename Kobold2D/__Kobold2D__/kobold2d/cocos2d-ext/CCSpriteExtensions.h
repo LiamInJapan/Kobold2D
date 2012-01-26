@@ -24,7 +24,19 @@
  an explosion, smoke-puff, blood splat, etc. */
 -(void) playAnimAndRemoveWithFormat:(NSString*)format numFrames:(int)numFrames firstIndex:(int)firstIndex delay:(float)delay animateTag:(int)animateTag;
 
+
+/** Variant that allows to set the restoreOriginalFrame property. */
+-(void) playAnimWithFormat:(NSString*)format numFrames:(int)numFrames firstIndex:(int)firstIndex delay:(float)delay animateTag:(int)animateTag restoreOriginalFrame:(BOOL)restoreOriginalFrame;
+/** Variant that allows to set the restoreOriginalFrame property. */
+-(void) playAnimLoopedWithFormat:(NSString*)format numFrames:(int)numFrames firstIndex:(int)firstIndex delay:(float)delay animateTag:(int)animateTag restoreOriginalFrame:(BOOL)restoreOriginalFrame;
+/** Variant that allows to set the restoreOriginalFrame property. */
+-(void) playAnimAndRemoveWithFormat:(NSString*)format numFrames:(int)numFrames firstIndex:(int)firstIndex delay:(float)delay animateTag:(int)animateTag restoreOriginalFrame:(BOOL)restoreOriginalFrame;
+
+
 /** First, checks if the string can be found in the spriteFrameCache, if not it will try to load the string assuming its a file name. */
 +(id) spriteWithSpriteFrameNameOrFile:(NSString*)nameOrFile;
+
+/** Creates an autoreleased sprite from a CCRenderTexture */
++(id) spriteWithRenderTexture:(CCRenderTexture*)rtx;
 
 @end

@@ -34,4 +34,6 @@
 -(CGPoint) locationOfAnyTouchInPhase:(KKTouchPhase)touchPhase;
 -(BOOL) isAnyTouchOnNode:(CCNode*)node touchPhase:(KKTouchPhase)touchPhase;
 
+-(void) removeTouch:(KKTouch*)touch;
+
 @end

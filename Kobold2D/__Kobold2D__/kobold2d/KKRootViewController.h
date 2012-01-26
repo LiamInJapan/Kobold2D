@@ -31,11 +31,11 @@ typedef enum
 {
 @protected
 	KKAutorotationType autorotationType;
-	bool shouldAutorotateToLandscapeOrientations, shouldAutorotateToPortraitOrientations;
+	BOOL shouldAutorotateToLandscapeOrientations, shouldAutorotateToPortraitOrientations;
 }
 
 @property (nonatomic) KKAutorotationType autorotationType;
-@property (nonatomic) bool shouldAutorotateToLandscapeOrientations, shouldAutorotateToPortraitOrientations;
+@property (nonatomic) BOOL shouldAutorotateToLandscapeOrientations, shouldAutorotateToPortraitOrientations;
 
 @end
 

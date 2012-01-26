@@ -77,7 +77,6 @@ static KKConfig *instanceOfConfig;
 	[dict release];
 	dict = [[KKLua loadLuaTableFromFile:@"config.lua"] retain];
 	NSAssert(dict != nil, @"ERROR loading config.lua!");
-	//CCLOG(@"Loaded config.lua: %@", dict);
 	
 	[self selectRootPath];
 }
@@ -87,6 +86,18 @@ static KKConfig *instanceOfConfig;
 	[[KKConfig sharedConfig] loadConfigLua];
 }
 
+-(void) dumpConfigLua
+{
+	CCLOG(@"=============== CONFIG.LUA =============== CONFIG.LUA =============== CONFIG.LUA =============== CONFIG.LUA ===============");
+	CCLOG(@"%@", dict);
+	CCLOG(@"=============== CONFIG.LUA =============== CONFIG.LUA =============== CONFIG.LUA =============== CONFIG.LUA ===============");
+}
+
++(void) dumpConfigLua
+{
+	[[KKConfig sharedConfig] dumpConfigLua];
+}
+
 #pragma mark value for key
 
 -(NSDictionary*) dictionaryForKey:(NSString*)key
@@ -94,11 +105,14 @@ static KKConfig *instanceOfConfig;
 	NSDictionary* dictionary = nil;
 	id object = [selectedDict objectForKey:key];
 	
-	bool isDictionary = [object isKindOfClass:[NSDictionary class]];
-	NSAssert1(isDictionary, @"key %@ does not exist or is not a dictionary (table) object!", key);
+	BOOL isDictionary = [object isKindOfClass:[NSDictionary class]];
 	if (isDictionary)
 	{
 		dictionary = (NSDictionary*)object;
+	}
+	else
+	{
+		//CCLOG(@"key %@ does not exist or is not a dictionary (table) object! selectedDict: %@", key, selectedDict);
 	}
 	
 	return dictionary;
@@ -109,13 +123,16 @@ static KKConfig *instanceOfConfig;
 	NSString* string = nil;
 	id object = [selectedDict objectForKey:key];
 	
-	bool isString = [object isKindOfClass:[NSString class]];
-	NSAssert1(isString, @"key %@ does not exist or is not a string object!", key);
+	BOOL isString = [object isKindOfClass:[NSString class]];
 	if (isString)
 	{
 		string = (NSString*)object;
 	}
-	
+	else
+	{
+		//CCLOG(@"key %@ does not exist or is not a string object!", key);
+	}
+
 	return string;
 }
 
@@ -124,11 +141,14 @@ static KKConfig *instanceOfConfig;
 	NSNumber* number = nil;
 	id object = [selectedDict objectForKey:key];
 	
-	bool isNumber = [object isKindOfClass:[NSNumber class]];
-	NSAssert1(isNumber, @"key %@ does not exist or is not a number object!", key);
+	BOOL isNumber = [object isKindOfClass:[NSNumber class]];
 	if (isNumber)
 	{
 		number = (NSNumber*)object;
+	}
+	else
+	{
+		//CCLOG(@"key %@ does not exist or is not a number object!", key);
 	}
 	
 	return number;
@@ -176,8 +196,9 @@ static KKConfig *instanceOfConfig;
 	[[KKConfig sharedConfig] selectRootPath];
 }
 
--(void) selectKeyPath:(const NSString* const)keyPath
+-(BOOL) selectKeyPath:(const NSString* const)keyPath
 {
+	BOOL pathExists = YES;
 	[self selectRootPath];
 
 	NSArray* path = [keyPath componentsSeparatedByString:@"."];
@@ -188,15 +209,18 @@ static KKConfig *instanceOfConfig;
 		if (selectedDict == nil)
 		{
 			CCLOG(@"keyPath '%@': component '%@' not found or it's not a table!", keyPath, key);
+			pathExists = NO;
 			[self selectRootPath];
 			break;
 		}
 	}
+	
+	return pathExists;
 }
 
-+(void) selectKeyPath:(NSString*)keyPath
++(BOOL) selectKeyPath:(NSString*)keyPath
 {
-	[[KKConfig sharedConfig] selectKeyPath:keyPath];
+	return [[KKConfig sharedConfig] selectKeyPath:keyPath];
 }
 
 #pragma mark Inject KeyPath directly into Properties

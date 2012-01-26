@@ -94,6 +94,18 @@ const NSUInteger kTouchesPoolSize = 10;
 	[self updateTouches];
 }
 
+-(void) removeTouch:(KKTouch*)touch invalidate:(BOOL)invalidate
+{
+	if (touch)
+	{
+		if (invalidate)
+		{
+			[touch invalidate];
+		}
+		[touchesToBeRemoved addObject:touch];
+	}
+}
+
 -(void) removeTouches:(NSSet*)touchesSet
 {
 	for (UITouch* uiTouch in touchesSet) 
@@ -101,10 +113,7 @@ const NSUInteger kTouchesPoolSize = 10;
 		// must delay removal of the touch from list because player needs to be able to check for
 		// touches that ended or were cancelled in this frame
 		KKTouch* touch = [self getTouchByID:(NSUInteger)uiTouch];
-		if (touch)
-		{
-			[touchesToBeRemoved addObject:touch];
-		}
+		[self removeTouch:touch invalidate:NO];
 	}
 
 	[self updateTouches];
@@ -159,11 +168,14 @@ const NSUInteger kTouchesPoolSize = 10;
 		if (touch)
 		{
 			UITouch* uiTouch = (UITouch*)(touch.touchID);
-			[touch setTouchWithLocation:[director convertToGL:[uiTouch locationInView:glView]]
-					   previousLocation:[director convertToGL:[uiTouch previousLocationInView:glView]]
-							   tapCount:[uiTouch tapCount]
-							  timestamp:[uiTouch timestamp]
-								  phase:(KKTouchPhase)[uiTouch phase]];
+			if (uiTouch)
+			{
+				[touch setTouchWithLocation:[director convertToGL:[uiTouch locationInView:glView]]
+						   previousLocation:[director convertToGL:[uiTouch previousLocationInView:glView]]
+								   tapCount:[uiTouch tapCount]
+								  timestamp:[uiTouch timestamp]
+									  phase:(KKTouchPhase)[uiTouch phase]];
+			}
 		}
 	}
 #endif

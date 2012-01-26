@@ -13,7 +13,9 @@ do
     	cd $folder;
   	 	make all;
   	 	make install;
-   		mv *.docset ../../;
+   	mv *.docset ../../;
+   	rm -f Tokens.xml
+   	rm -f Nodes.xml	
      	cd ../../;
    	fi;
 done

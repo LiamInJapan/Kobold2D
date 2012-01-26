@@ -1,7 +1,7 @@
 /*
  * CC3PODResource.mm
  *
- * cocos3d 0.6.4
+ * cocos3d 0.6.5
  * Author: Bill Hollings
  * Copyright (c) 2010-2011 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
@@ -257,12 +257,13 @@ static const id placeHolder = [NSObject new];
 }
 
 /** If we are vertex skinning, return a skin mesh node, otherwise return a generic mesh node. */
--(CC3MeshNode*) buildMeshNodeAtIndex: (uint) meshIndex {
-	SPODMesh* psm = (SPODMesh*)[self meshPODStructAtIndex: meshIndex];
+-(CC3MeshNode*) buildMeshNodeAtIndex: (uint) meshNodeIndex {
+	SPODNode* psn = (SPODNode*)[self meshNodePODStructAtIndex: meshNodeIndex];
+	SPODMesh* psm = (SPODMesh*)[self meshPODStructAtIndex: psn->nIdx];
 	if (psm->sBoneBatches.nBatchCnt) {
-		return [CC3PODSkinMeshNode nodeAtIndex: meshIndex fromPODResource: self];
+		return [CC3PODSkinMeshNode nodeAtIndex: meshNodeIndex fromPODResource: self];
 	}
-	return [CC3PODMeshNode nodeAtIndex: meshIndex fromPODResource: self];
+	return [CC3PODMeshNode nodeAtIndex: meshNodeIndex fromPODResource: self];
 }
 
 -(PODStructPtr) meshNodePODStructAtIndex: (uint) meshIndex {

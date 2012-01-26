@@ -46,7 +46,6 @@ int KKMain(int argc, char* argv[], KKMainParameters* userParameters)
 	
 	[KKLua doString:kLuaInitScript];
 	[KKLua doString:kLuaInitScriptPlatformSpecific];
-	[KKLua doString:kLuaInitScriptForWax];
 	
 	// This loads the config.lua file
 	[KKConfig loadConfigLua];

@@ -54,14 +54,11 @@
     }
 }
 
--(void) dealloc
+-(void) cleanup
 {
     // remove the body from the world
     body->GetWorld()->DestroyBody(body);
-
-#ifndef KK_ARC_ENABLED
-	[super dealloc];
-#endif // KK_ARC_ENABLED
+	body = nil;
 }
 
 @end

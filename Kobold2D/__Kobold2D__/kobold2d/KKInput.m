@@ -343,6 +343,10 @@ static KKInput *instanceOfInput;
 #endif
 }
 
+-(void) removeTouch:(KKTouch*)touchToBeRemoved
+{
+	[touch removeTouch:touchToBeRemoved];
+}
 
 #pragma mark GestureInput Facade
 -(BOOL) gesturesAvailable
@@ -515,6 +519,47 @@ static KKInput *instanceOfInput;
 {
 	return [gesture gesturePinchVelocity];
 }
+
+
+// Gesture Recognizers
+#if KK_PLATFORM_IOS
+-(UISwipeGestureRecognizer*) swipeGestureRecognizerForDirection:(KKSwipeGestureDirection)direction
+{
+	return [gesture swipeGestureRecognizerForDirection:direction];
+}
+-(UITapGestureRecognizer*) tapGestureRecognizer
+{
+	return [gesture tapGestureRecognizer];
+}
+-(UITapGestureRecognizer*) doubleTapGestureRecognizer
+{
+	return [gesture doubleTapGestureRecognizer];
+}
+-(UILongPressGestureRecognizer*) longPressGestureRecognizer
+{
+	return [gesture longPressGestureRecognizer];
+}
+-(UIPanGestureRecognizer*) panGestureRecognizer
+{
+	return [gesture panGestureRecognizer];
+}
+-(UIRotationGestureRecognizer*) rotationGestureRecognizer
+{
+	return [gesture rotationGestureRecognizer];
+}
+-(UIPinchGestureRecognizer*) pinchGestureRecognizer
+{
+	return [gesture pinchGestureRecognizer];
+}
+#elif KK_PLATFORM_MAC
+-(id) swipeGestureRecognizerForDirection:(int)direction {return nil;}
+-(id) tapGestureRecognizer {return nil;}
+-(id) doubleTapGestureRecognizer {return nil;}
+-(id) longPressGestureRecognizer {return nil;}
+-(id) panGestureRecognizer {return nil;}
+-(id) rotationGestureRecognizer {return nil;}
+-(id) pinchGestureRecognizer {return nil;}
+#endif
 
 
 #pragma mark Singleton stuff

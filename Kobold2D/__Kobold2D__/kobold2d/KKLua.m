@@ -6,7 +6,140 @@
  */
 
 #import "KKLua.h"
-#import "wax_helpers.h"
+
+lua_State *wax_currentLuaState() {
+    static lua_State *L;    
+    if (!L) L = lua_open();
+    
+    return L;
+}
+
+void uncaughtExceptionHandler(NSException *e) {
+    NSLog(@"ERROR: Uncaught exception %@", [e description]);
+}
+
+int wax_panic(lua_State *L) {
+	printf("Lua panicked and quit: %s\n", luaL_checkstring(L, -1));
+	exit(EXIT_FAILURE);
+}
+
+lua_CFunction lua_atpanic (lua_State *L, lua_CFunction panicf);
+
+void wax_setup() {
+	NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler); 
+	
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager changeCurrentDirectoryPath:[[NSBundle mainBundle] bundlePath]];
+    
+    lua_State *L = wax_currentLuaState();
+	lua_atpanic(L, &wax_panic);
+    
+    luaL_openlibs(L); 
+}
+
+/*
+void wax_printStack(lua_State *L) {
+    int i;
+    int top = lua_gettop(L);
+    
+    for (i = 1; i <= top; i++) {        
+        printf("%d: ", i);
+        wax_printStackAt(L, i);
+        printf("\n");
+    }
+    
+    printf("\n");
+}
+
+void wax_printStackAt(lua_State *L, int i) {
+    int t = lua_type(L, i);
+    printf("(%s) ", lua_typename(L, t));
+    
+    switch (t) {
+        case LUA_TSTRING:
+            printf("'%s'", lua_tostring(L, i));
+            break;
+        case LUA_TBOOLEAN:
+            printf(lua_toboolean(L, i) ? "true" : "false");
+            break;
+        case LUA_TNUMBER:
+            printf("'%g'", lua_tonumber(L, i));
+            break;
+        default:
+            printf("%p", lua_topointer(L, i));
+            break;
+    }
+}
+
+void wax_printTable(lua_State *L, int t) {
+    // table is in the stack at index 't'
+    
+    if (t < 0) t = lua_gettop(L) + t + 1; // if t is negative, we need to normalize
+	if (t <= 0 || t > lua_gettop(L)) {
+		printf("%d is not within stack boundries.\n", t);
+		return;
+	}
+	else if (!lua_istable(L, t)) {
+		printf("Object at stack index %d is not a table.\n", t);
+		return;
+	}
+	
+	lua_pushnil(L);  // first key
+    while (lua_next(L, t) != 0) {
+        wax_printStackAt(L, -2);
+        printf(" : ");
+        wax_printStackAt(L, -1);
+        printf("\n");
+		
+        lua_pop(L, 1); // remove 'value'; keeps 'key' for next iteration
+    }
+}
+*/
+
+/*
+void wax_log(int flag, NSString *format, ...) {
+    if (flag & LOG_FLAGS) {
+        va_list args;
+        va_start(args, format);
+        NSString *output = [[[NSString alloc] initWithFormat:format arguments:args] autorelease];
+        printf("%s\n", [output UTF8String]);
+        va_end(args);
+    }
+}
+*/
+
+/*
+int wax_errorFunction(lua_State *L) {
+    lua_getfield(L, LUA_GLOBALSINDEX, "debug");
+    if (!lua_istable(L, -1)) {
+        lua_pop(L, 1);
+        return 1;
+    }
+    
+    lua_getfield(L, -1, "traceback");
+    if (!lua_isfunction(L, -1)) {
+        lua_pop(L, 2);
+        return 1;
+    }    
+    lua_remove(L, -2); // Remove debug
+    
+    lua_pushvalue(L, -2); // Grab the error string and place it on the stack
+    
+    lua_call(L, 1, 1);
+    lua_remove(L, -2); // Remove original error string
+    
+    return 1;
+}
+
+int wax_pcall(lua_State *L, int argumentCount, int returnCount) {
+    lua_pushcclosure(L, wax_errorFunction, 0);
+    int errorFuncStackIndex = lua_gettop(L) - (argumentCount + 1); // Insert error function before arguments
+    lua_insert(L, errorFuncStackIndex);
+    
+    return lua_pcall(L, argumentCount, returnCount, errorFuncStackIndex);
+}
+*/
+
 
 @interface KKLua (PrivateMethods)
 +(void) internalLoadSubTableWithKey:(NSString*)key luaState:(lua_State*)state dictionary:(NSMutableDictionary*)dict;
@@ -49,13 +182,12 @@ typedef enum
 {
 	NSAssert1(file != nil, @"%@: file is nil", NSStringFromSelector(_cmd));
 	
-#ifndef KK_PLATFORM_IOS
-	file = [NSString stringWithFormat:@"Contents/Resources/%@", file];
-#endif
+	file = [CCFileUtils fullPathFromRelativePath:file];
+	
 	const char* cfile = [file cStringUsingEncoding:NSUTF8StringEncoding];
 	NSAssert1(cfile != nil, @"%@: C file is nil, possible encoding failure", NSStringFromSelector(_cmd));
 	
-	bool success = (luaL_dofile(wax_currentLuaState(), cfile) == 0);
+	BOOL success = (luaL_dofile(wax_currentLuaState(), cfile) == 0);
 	if (success == NO)
 	{
 		[KKLua logLuaError];
@@ -68,9 +200,7 @@ typedef enum
 {
 	NSAssert1(file != nil, @"%@: file is nil", NSStringFromSelector(_cmd));
 
-#ifndef KK_PLATFORM_IOS
-	file = [NSString stringWithFormat:@"Contents/Resources/%@", file];
-#endif
+	file = [CCFileUtils fullPathFromRelativePath:file];
 
 	if (prefix == nil)
 	{
@@ -94,8 +224,7 @@ typedef enum
 	const char* cstring = [string cStringUsingEncoding:NSUTF8StringEncoding];
 	NSAssert1(cstring != nil, @"%@: C string is nil, possible encoding failure", NSStringFromSelector(_cmd));
 
-	//LOG_EXPR(cstring);
-	bool success = (luaL_dostring(wax_currentLuaState(), cstring) == 0);
+	BOOL success = (luaL_dostring(wax_currentLuaState(), cstring) == 0);
 	if (success == NO)
 	{
 		[KKLua logLuaError];
@@ -267,6 +396,7 @@ typedef enum
 	return dict;
 }
 
+/*
 +(Class) classFromLuaScriptWithName:(NSString*)scriptName superClass:(NSString*)superClass
 {
 	Class scriptClass = nil;
@@ -297,5 +427,6 @@ typedef enum
 
 	return scriptClass;
 }
+*/
 
 @end

@@ -11,16 +11,6 @@
 /** extends CCNode */
 @interface CCNode (KoboldExtensions)
 
-/** experimental: should allow placement of nodes in percentage of the screen size. Helpful for
- Apps that should work on both iPhone & iPad screens without too many #ifdef and other conditionals.
- (1.0f, 1.0f) would place the node on the upper right corner of the screen, 
- (0.5f, 0.5f) would place the node in the center of the screen, regardless of screen size.
- Relative positions are converted to screen coordinates with this simple formula:
- (X * screen width, Y * screen height) */
-@property (nonatomic) CGPoint relativePosition;
-
-
-
 /** Returns true if the point is contained in (is on) the node. Respects rotation and scaling of the node. */
 -(BOOL) containsPoint:(CGPoint)point;
 
@@ -38,5 +28,13 @@
  [[CCDirector sharedDirector] replaceScene:[MyGameLayer nodeWithScene]];
  */
 +(id) nodeWithScene;
+
+/** This transfers the node (self) from its current parent node to a different node (new parent). 
+ This can be used to transfer a node from one scene to a new scene, for example.
+ The node must already have a parent (ie it must have been added with addChild). */
+-(void) transferToNode:(CCNode*)targetNode;
+
+/** Returns the center position of the node's bounding box. */
+@property (nonatomic, readonly) CGPoint boundingBoxCenter;
 
 @end

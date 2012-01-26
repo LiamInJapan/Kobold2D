@@ -14,27 +14,6 @@ FIX_CATEGORY_BUG(CCNode)
 
 @implementation CCNode (KoboldExtensions)
 
--(CGPoint) relativePosition
-{
-	return CGPointToRelativePoint(position_);
-}
-
--(void) setRelativePosition:(CGPoint)relativePosition
-{
-	self.position = CGRelativePointToPoint(relativePosition);
-}
-
--(CGPoint) relativePositionInPixels
-{
-	return CGPointToRelativePointInPixels(positionInPixels_);
-}
-
--(void) setRelativePositionInPixels:(CGPoint)relativePositionInPixels
-{
-	self.position = CGRelativePointToPointInPixels(relativePositionInPixels);
-}
-
-
 -(BOOL) containsPoint:(CGPoint)point
 {
 	CGRect bbox = CGRectMake(0, 0, contentSize_.width, contentSize_.height);
@@ -63,6 +42,21 @@ FIX_CATEGORY_BUG(CCNode)
 	CCScene* scene = [CCScene node];
 	[scene addChild:[self node]];
 	return scene;
+}
+
+-(CGPoint) boundingBoxCenter
+{
+	CGRect bbox = [self boundingBox];
+	return CGPointMake(bbox.size.width * 0.5f + bbox.origin.x, bbox.size.height * 0.5f + bbox.origin.y);
+}
+
+-(void) transferToNode:(CCNode*)targetNode
+{
+	NSAssert(self.parent != nil, @"self hasn't been added as child. Use addChild in this case, transferToNode is only for reassigning child nodes to another node");
+	CCNode* selfNode = [self retain];
+	[self removeFromParentAndCleanup:NO];
+	[targetNode addChild:selfNode z:selfNode.zOrder tag:selfNode.tag];
+	[selfNode release];
 }
 
 @end

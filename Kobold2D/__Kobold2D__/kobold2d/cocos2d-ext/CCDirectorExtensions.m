@@ -106,6 +106,23 @@ static NSUInteger CCDirectorExtensionFrameCounter = 0;
 	return CCDirectorExtensionFrameCounter;
 }
 
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+-(BOOL) isRetinaDisplayEnabled
+{
+	return (CC_CONTENT_SCALE_FACTOR() == 2.0f);
+}
+
+-(float) contentScaleFactorInverse
+{
+	return (1.0f / CC_CONTENT_SCALE_FACTOR());
+}
+
+-(float) contentScaleFactorHalved
+{
+	return (CC_CONTENT_SCALE_FACTOR() * 0.5f);
+}
+#endif
+
 @end
 
 
@@ -154,27 +171,5 @@ static NSUInteger CCDirectorExtensionFrameCounter = 0;
 	// call original implementation - if this look wrong to you, read up on Method Swizzling: http://www.cocoadev.com/index.pl?MethodSwizzling)
 	[self popSceneReplacement];
 }
-@end
-
-
-
-#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
-@implementation CCDirectorIOS (KoboldExtensions)
-
--(bool) isRetinaDisplayEnabled
-{
-	return ([self contentScaleFactor] == 2.0f);
-}
-
--(float) contentScaleFactorInverse
-{
-	return (1.0f / [self contentScaleFactor]);
-}
-
--(float) contentScaleFactorHalved
-{
-	return ([self contentScaleFactor] * 0.5f);
-}
 
 @end
-#endif

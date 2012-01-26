@@ -217,6 +217,7 @@ typedef enum {
 @class KKInputMotion;
 @class KKInputTouch;
 @class KKInputGesture;
+@class KKTouch;
 
 /** Kobold2D User Input handler that gives you both a polling API (eg isKeyDown) and an event-driven API configurable via config.lua.
  KKInput supports all input methods: keyboard, mouse, touch, motion (accelerometer and gyroscope) and gestures.
@@ -363,6 +364,11 @@ typedef enum {
 /** Tests if a touch in the given touchPhase was on a node. The test is correct even if the node was rotated and/or scaled. */
 -(BOOL) isAnyTouchOnNode:(CCNode*)node touchPhase:(KKTouchPhase)touchPhase;
 
+/** The given touch will be invalidated, its touch phase is set to KKTouchPhaseLifted and all information in the KKTouch class is reset.
+ However the KKTouch remains in the CCArray* touches list for the remainder of the frame, it is removed after the current frame ends.
+ This allows calling the removeTouch method while iterating over the touches array. */
+-(void) removeTouch:(KKTouch*)touchToBeRemoved;
+
 #pragma mark GestureInput Facade
 
 /** Returns YES if gesture recognizers are available. Gesture Recognizers are available on devices running iOS 3.2 or newer. */
@@ -462,5 +468,30 @@ typedef enum {
 /** Returns the velocity of the pinch gesture in scale factor per frame. */
 @property (nonatomic, readonly) float gesturePinchVelocity;
 
+
+#if KK_PLATFORM_IOS
+/** Returns the UISwipeGestureRecognizer for the given direction if enabled, otherwise returns nil. */
+-(UISwipeGestureRecognizer*) swipeGestureRecognizerForDirection:(KKSwipeGestureDirection)direction;
+/** Returns the UITapGestureRecognizer if enabled, otherwise returns nil. */
+@property (nonatomic, readonly) UITapGestureRecognizer* tapGestureRecognizer;
+/** Returns the UITapGestureRecognizer for double-taps if enabled, otherwise returns nil. */
+@property (nonatomic, readonly) UITapGestureRecognizer* doubleTapGestureRecognizer;
+/** Returns the UILongPressGestureRecognizer if enabled, otherwise returns nil. */
+@property (nonatomic, readonly) UILongPressGestureRecognizer* longPressGestureRecognizer;
+/** Returns the UIPanGestureRecognizer if enabled, otherwise returns nil. */
+@property (nonatomic, readonly) UIPanGestureRecognizer* panGestureRecognizer;
+/** Returns the UIRotationGestureRecognizer if enabled, otherwise returns nil. */
+@property (nonatomic, readonly) UIRotationGestureRecognizer* rotationGestureRecognizer;
+/** Returns the UIPinchGestureRecognizer if enabled, otherwise returns nil. */
+@property (nonatomic, readonly) UIPinchGestureRecognizer* pinchGestureRecognizer;
+#elif KK_PLATFORM_MAC
+-(id) swipeGestureRecognizerForDirection:(int)direction;
+@property (nonatomic, readonly) id tapGestureRecognizer;
+@property (nonatomic, readonly) id doubleTapGestureRecognizer;
+@property (nonatomic, readonly) id longPressGestureRecognizer;
+@property (nonatomic, readonly) id panGestureRecognizer;
+@property (nonatomic, readonly) id rotationGestureRecognizer;
+@property (nonatomic, readonly) id pinchGestureRecognizer;
+#endif
 
 @end

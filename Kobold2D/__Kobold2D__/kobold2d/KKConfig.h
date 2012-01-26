@@ -19,11 +19,14 @@
 /** Called once by Kobold2D at system startup to run the config.lua script. Expects a table to be returned. */
 +(void) loadConfigLua;
 
-/** Select the part of the table given by the key respectively key path. The key path can be written
- just like you would access a nested Lua table: @"MyParams.Player.AnimationFrames".
+/** Dumps the entire config.lua table (actually, it's Objective-C representation as a NSDictionary) to the console, for debugging purposes. */
++(void) dumpConfigLua;
+
+/** Select the part of the table given by the key respectively key path. Returns YES if the path exists, otherwise return NO.
+ The key path can be written just like you would access a nested Lua table: @"MyParams.Player.AnimationFrames".
  Once a part of the table is "selected" you can then use the "ForKey" methods to read individual entries
  of that part of the table. */
-+(void) selectKeyPath:(const NSString* const)keyPath;
++(BOOL) selectKeyPath:(const NSString* const)keyPath;
 
 /** Selects the root of the table. */
 +(void) selectRootPath;

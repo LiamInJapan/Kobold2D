@@ -19,6 +19,32 @@
 
 @implementation KKInputGesture
 
+#if KK_PLATFORM_IOS
+-(UISwipeGestureRecognizer*) swipeGestureRecognizerForDirection:(KKSwipeGestureDirection)direction
+{
+	switch (direction)
+	{
+		case KKSwipeGestureDirectionRight:
+			return swipeGestureRecognizers[0];
+		case KKSwipeGestureDirectionLeft:
+			return swipeGestureRecognizers[1];
+		case KKSwipeGestureDirectionUp:
+			return swipeGestureRecognizers[2];
+		case KKSwipeGestureDirectionDown:
+			return swipeGestureRecognizers[3];
+			
+		default:
+			NSAssert1(nil, @"invalid KKSwipeGestureDirection/UISwipeGestureRecognizerDirection '%i'", direction);
+			break;
+	}
+	
+	return nil;
+}
+
+@synthesize tapGestureRecognizer, doubleTapGestureRecognizer, longPressGestureRecognizer;
+@synthesize panGestureRecognizer, rotationGestureRecognizer, pinchGestureRecognizer;
+#endif
+
 @synthesize gesturesAvailable;
 
 // tap & double tap
@@ -50,7 +76,7 @@
     if ((self = [super init]))
 	{
 		director = [CCDirector sharedDirector];
-
+		
 		[self determineGestureRecognizersAvailable];
 		[self scheduleOrUnscheduleUpdateAsNeeded];
     }
@@ -81,7 +107,7 @@
 		[self removeGestureRecognizer:pinchGestureRecognizer];
 #endif
 	}
-
+	
 	[super dealloc];
 }
 
@@ -105,13 +131,13 @@
 	
 	longPressGestureRecognizer.enabled = !longPressGestureRecognizer.enabled;
 	longPressGestureRecognizer.enabled = !longPressGestureRecognizer.enabled;
-
+	
 	panGestureRecognizer.enabled = !panGestureRecognizer.enabled;
 	panGestureRecognizer.enabled = !panGestureRecognizer.enabled;
-
+	
 	rotationGestureRecognizer.enabled = !rotationGestureRecognizer.enabled;
 	rotationGestureRecognizer.enabled = !rotationGestureRecognizer.enabled;
-
+	
 	pinchGestureRecognizer.enabled = !pinchGestureRecognizer.enabled;
 	pinchGestureRecognizer.enabled = !pinchGestureRecognizer.enabled;
 	
@@ -294,6 +320,29 @@
 	return direction;
 }
 
+-(CGPoint) convertRelativePointToGL:(CGPoint)relativePoint
+{
+	switch (director.deviceOrientation)
+	{
+		case CCDeviceOrientationPortrait:
+			relativePoint.y *= -1.0f;
+			break;
+		case CCDeviceOrientationPortraitUpsideDown:
+			relativePoint.x *= -1.0f;
+			break;
+		case CCDeviceOrientationLandscapeLeft:
+			relativePoint = CGPointMake(relativePoint.y, relativePoint.x);
+			break;
+		case CCDeviceOrientationLandscapeRight:
+			relativePoint = CGPointMake(-relativePoint.y, -relativePoint.x);
+			break;
+		default:
+			break;
+	}
+	
+	return relativePoint;
+}
+
 -(void) handleTapGesture:(UIGestureRecognizer*)recognizer
 {
 	if (recognizer.state == UIGestureRecognizerStateEnded)
@@ -353,9 +402,9 @@
 		gesturePanBegan = YES;
 		gesturePanLocation = [director convertToGL:[recognizer locationInView:glView]];
 		gesturePanTranslation = [panRecognizer translationInView:glView];
-		gesturePanTranslation.y *= -1.0f;
+		gesturePanTranslation = [self convertRelativePointToGL:gesturePanTranslation];
 		gesturePanVelocity = [panRecognizer velocityInView:glView];
-		gesturePanVelocity.y *= -1.0f;
+		gesturePanVelocity = [self convertRelativePointToGL:gesturePanVelocity];
 		gesturePanVelocity = ccpMult(gesturePanVelocity, director.animationInterval);
 	}
 }
@@ -411,12 +460,12 @@
 	if (gesturesAvailable)
 	{
 		gestureTapEnabled = enabled;
-
+		
 		if (enabled && tapGestureRecognizer == nil)
 		{
 			tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
 			[director.openGLView addGestureRecognizer:tapGestureRecognizer];
-
+			
 			if (doubleTapGestureRecognizer)
 			{
 				[tapGestureRecognizer requireGestureRecognizerToFail:doubleTapGestureRecognizer];
@@ -454,7 +503,7 @@
 			[self removeGestureRecognizer:doubleTapGestureRecognizer];
 			doubleTapGestureRecognizer = nil;
 		}
-
+		
 		[self scheduleOrUnscheduleUpdateAsNeeded];
 	}
 #endif
@@ -532,7 +581,7 @@
 			[self removeGestureRecognizer:panGestureRecognizer];
 			panGestureRecognizer = nil;
 		}
-
+		
 		[self scheduleOrUnscheduleUpdateAsNeeded];
 	}
 #endif
@@ -556,7 +605,7 @@
 			[self removeGestureRecognizer:rotationGestureRecognizer];
 			rotationGestureRecognizer = nil;
 		}
-
+		
 		[self scheduleOrUnscheduleUpdateAsNeeded];
 	}
 #endif
@@ -580,13 +629,13 @@
 			[self removeGestureRecognizer:pinchGestureRecognizer];
 			pinchGestureRecognizer = nil;
 		}
-
+		
 		[self scheduleOrUnscheduleUpdateAsNeeded];
 	}
 #endif
 }
 
-				 
+
 #pragma mark update
 
 -(void) update:(ccTime)delta

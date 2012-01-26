@@ -45,7 +45,7 @@
 
 -(BOOL) ccKeyDown:(NSEvent*)event
 {
-	CCLOG(@"key down: %@", event);
+	//CCLOG(@"key down: %@", event);
 	[keyStates addKeyDown:[event keyCode]];
 	return NO;
 }

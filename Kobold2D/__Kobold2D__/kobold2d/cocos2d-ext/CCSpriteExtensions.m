@@ -14,10 +14,10 @@ FIX_CATEGORY_BUG(CCSprite)
 
 @implementation CCSprite (KoboldExtensions)
 
--(void) privatePlayAnimWithFormat:(NSString*)format numFrames:(int)numFrames firstIndex:(int)firstIndex delay:(float)delay animateTag:(int)animateTag looped:(bool)looped remove:(bool)remove
+-(void) privatePlayAnimWithFormat:(NSString*)format numFrames:(int)numFrames firstIndex:(int)firstIndex delay:(float)delay animateTag:(int)animateTag looped:(BOOL)looped remove:(BOOL)remove restoreOriginalFrame:(BOOL)restoreOriginalFrame
 {
 	CCAnimation* anim = [CCAnimation animationWithName:format format:format numFrames:numFrames firstIndex:firstIndex delay:delay];
-	CCAnimate* animate = [CCAnimate actionWithAnimation:anim];
+	CCAnimate* animate = [CCAnimate actionWithAnimation:anim restoreOriginalFrame:restoreOriginalFrame];
 
 	id action = nil;
 	if (looped)
@@ -44,17 +44,33 @@ FIX_CATEGORY_BUG(CCSprite)
 
 -(void) playAnimWithFormat:(NSString*)format numFrames:(int)numFrames firstIndex:(int)firstIndex delay:(float)delay animateTag:(int)animateTag
 {
-	[self privatePlayAnimWithFormat:format numFrames:numFrames firstIndex:firstIndex delay:delay animateTag:animateTag looped:NO remove:NO];
+	[self privatePlayAnimWithFormat:format numFrames:numFrames firstIndex:firstIndex delay:delay animateTag:animateTag looped:NO remove:NO restoreOriginalFrame:NO];
 }
 
 -(void) playAnimLoopedWithFormat:(NSString*)format numFrames:(int)numFrames firstIndex:(int)firstIndex delay:(float)delay animateTag:(int)animateTag
 {
-	[self privatePlayAnimWithFormat:format numFrames:numFrames firstIndex:firstIndex delay:delay animateTag:animateTag looped:YES remove:NO];
+	[self privatePlayAnimWithFormat:format numFrames:numFrames firstIndex:firstIndex delay:delay animateTag:animateTag looped:YES remove:NO restoreOriginalFrame:NO];
 }
 
 -(void) playAnimAndRemoveWithFormat:(NSString*)format numFrames:(int)numFrames firstIndex:(int)firstIndex delay:(float)delay animateTag:(int)animateTag
 {
-	[self privatePlayAnimWithFormat:format numFrames:numFrames firstIndex:firstIndex delay:delay animateTag:animateTag looped:NO remove:YES];
+	[self privatePlayAnimWithFormat:format numFrames:numFrames firstIndex:firstIndex delay:delay animateTag:animateTag looped:NO remove:YES restoreOriginalFrame:NO];
+}
+
+
+-(void) playAnimWithFormat:(NSString*)format numFrames:(int)numFrames firstIndex:(int)firstIndex delay:(float)delay animateTag:(int)animateTag restoreOriginalFrame:(BOOL)restoreOriginalFrame
+{
+	[self privatePlayAnimWithFormat:format numFrames:numFrames firstIndex:firstIndex delay:delay animateTag:animateTag looped:NO remove:NO restoreOriginalFrame:restoreOriginalFrame];
+}
+
+-(void) playAnimLoopedWithFormat:(NSString*)format numFrames:(int)numFrames firstIndex:(int)firstIndex delay:(float)delay animateTag:(int)animateTag restoreOriginalFrame:(BOOL)restoreOriginalFrame
+{
+	[self privatePlayAnimWithFormat:format numFrames:numFrames firstIndex:firstIndex delay:delay animateTag:animateTag looped:YES remove:NO restoreOriginalFrame:restoreOriginalFrame];
+}
+
+-(void) playAnimAndRemoveWithFormat:(NSString*)format numFrames:(int)numFrames firstIndex:(int)firstIndex delay:(float)delay animateTag:(int)animateTag restoreOriginalFrame:(BOOL)restoreOriginalFrame
+{
+	[self privatePlayAnimWithFormat:format numFrames:numFrames firstIndex:firstIndex delay:delay animateTag:animateTag looped:NO remove:YES restoreOriginalFrame:restoreOriginalFrame];
 }
 
 +(id) spriteWithSpriteFrameNameOrFile:(NSString*)nameOrFile
@@ -66,6 +82,13 @@ FIX_CATEGORY_BUG(CCSprite)
 	}
 
 	return [CCSprite spriteWithFile:nameOrFile];
+}
+
++(id) spriteWithRenderTexture:(CCRenderTexture*)rtx
+{
+    CCSprite* sprite = [CCSprite spriteWithTexture:rtx.sprite.texture];
+    sprite.scaleY = -1;
+    return sprite;
 }
 
 @end

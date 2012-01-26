@@ -58,6 +58,11 @@
 	touchID = 0;
 	touchBeganFrame = INT_MAX;
 	phase = KKTouchPhaseLifted;
+	didPhaseChange = NO;
+	location = CGPointZero;
+	previousLocation = CGPointZero;
+	tapCount = 0;
+	timestamp = 0;
 }
 
 @end

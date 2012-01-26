@@ -1,7 +1,7 @@
 CHANGELOG
 ---------
 
-cocos3d 0.6.4
+cocos3d 0.6.5
 
 Copyright (c) 2010-2011 The Brenwill Workshop Ltd. All rights reserved.
 http://www.brenwill.com
@@ -9,9 +9,14 @@ http://www.brenwill.com
 +++++++++++++++++++++++++++++++++++
 
 
-cocos3d 0.6.4 - 2011/11/20
+cocos3d 0.6.5 - 2011/12/19
 -------------------------------------
 
+- Fixed issue where, with large, complex POD files, the POD loader sometimes incorrectly created skinned meshes and mesh nodes instead of regular meshes and mesh nodes.
+
+
+cocos3d 0.6.4 - 2011/11/20
+-------------------------------------
 
 - Added support for iOS 5.0 and Xcode 4.2:
     - Fixed casting warnings in glBufferDataLogged and glBufferSubDataLogged intercept logging functions CC3OpenGLES11Intercept.c file

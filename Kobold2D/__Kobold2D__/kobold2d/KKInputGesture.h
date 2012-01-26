@@ -79,6 +79,14 @@
 
 #if KK_PLATFORM_IOS
 -(void) resetInputStates;
+
+-(UISwipeGestureRecognizer*) swipeGestureRecognizerForDirection:(KKSwipeGestureDirection)direction;
+@property (nonatomic, readonly) UITapGestureRecognizer* tapGestureRecognizer;
+@property (nonatomic, readonly) UITapGestureRecognizer* doubleTapGestureRecognizer;
+@property (nonatomic, readonly) UILongPressGestureRecognizer* longPressGestureRecognizer;
+@property (nonatomic, readonly) UIPanGestureRecognizer* panGestureRecognizer;
+@property (nonatomic, readonly) UIRotationGestureRecognizer* rotationGestureRecognizer;
+@property (nonatomic, readonly) UIPinchGestureRecognizer* pinchGestureRecognizer;
 #endif
 
 @property (nonatomic, readonly) BOOL gesturesAvailable;

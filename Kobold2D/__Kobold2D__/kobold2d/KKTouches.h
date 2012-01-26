@@ -10,6 +10,8 @@
 #import "ccMoreMacros.h"
 #import "KKTouch.h"
 
+@class KKTouch;
+
 @interface KKTouches : NSObject
 {
 @private
@@ -26,6 +28,7 @@
 #if KK_PLATFORM_IOS
 // Internal use only
 -(void) addTouches:(NSSet*)touchesSet;
+-(void) removeTouch:(KKTouch*)touch invalidate:(BOOL)invalidate;
 -(void) removeTouches:(NSSet*)touchesSet;
 -(void) removeAllTouches;
 #endif

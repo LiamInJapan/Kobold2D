@@ -16,7 +16,7 @@
 
 -(BOOL) hitTestNodeChildren:(CCArray*)children point:(CGPoint)point
 {
-    bool hit = NO;
+    BOOL hit = NO;
 	
     if ([children count] > 0)
     {

@@ -429,7 +429,7 @@
 -(IBAction) toggleFullScreen:(id)sender
 {
 	CCDirectorMac* director = (CCDirectorMac*)[CCDirector sharedDirector];
-	bool toggleFullScreen = !([director isFullScreen]);
+	BOOL toggleFullScreen = !([director isFullScreen]);
 	[director setFullScreen:toggleFullScreen];
 }
 

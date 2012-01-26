@@ -30,4 +30,7 @@
  */
 +(CCRenderTexture*) screenshotWithStartNode:(CCNode*)startNode filename:(NSString*)filename;
 
+/** Same as above but only returns the CCRenderTexture, doesn't save to file. This is faster if you don't need the screenshot as an image file. */
++(CCRenderTexture*) screenshotWithStartNode:(CCNode*)startNode;
+
 @end

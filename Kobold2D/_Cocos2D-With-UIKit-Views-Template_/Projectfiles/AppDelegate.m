@@ -28,14 +28,16 @@
 #if KK_PLATFORM_IOS
 	// we want to be a dummy view the self.view to which we add the glView plus all other UIKit views
 	KKAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
-	
+
 	// add a dummy UIView to the view controller, which in turn will have the glView and later other UIKit views added to it
-	UIView* dummyView = [[UIView alloc] initWithFrame:[appDelegate.window bounds]];
+	CGRect bounds = [appDelegate.window bounds];
+	UIView* dummyView = [[UIView alloc] initWithFrame:bounds];
 #ifndef KK_ARC_ENABLED
 	[dummyView autorelease];
 #endif // KK_ARC_ENABLED
-
+	
 	[dummyView addSubview:[CCDirector sharedDirector].openGLView];
+
 	return dummyView;
 
 #elif KK_PLATFORM_MAC

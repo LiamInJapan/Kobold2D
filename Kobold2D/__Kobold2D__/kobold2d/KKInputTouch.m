@@ -98,7 +98,7 @@
 	KKTouch* touch;
 	CCARRAY_FOREACH(touches.touches, touch)
 	{
-		if (touch && (touchPhase == KKTouchPhaseAny || [touch phase] == touchPhase))
+		if (touch && touch->isInvalid == NO && (touchPhase == KKTouchPhaseAny || [touch phase] == touchPhase))
 		{
 			return touch.location;
 		}
@@ -114,7 +114,7 @@
 		KKTouch* touch;
 		CCARRAY_FOREACH(touches.touches, touch)
 		{
-			if (touch && (touchPhase == KKTouchPhaseAny || [touch phase] == touchPhase) && [node containsPoint:touch.location])
+			if (touch && touch->isInvalid == NO && (touchPhase == KKTouchPhaseAny || [touch phase] == touchPhase) && [node containsPoint:touch.location])
 			{
 				return YES;
 			}
@@ -127,6 +127,13 @@
 -(CCArray*) touches
 {
 	return [touches touches];
+}
+
+-(void) removeTouch:(KKTouch*)touch
+{
+#if KK_PLATFORM_IOS
+	[touches removeTouch:touch invalidate:YES];
+#endif
 }
 
 @end

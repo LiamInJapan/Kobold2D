@@ -19,7 +19,7 @@
 	if ((self = [super init]))
 	{
 		CCLOG(@"%@ init", NSStringFromClass([self class]));
-
+		
 		glClearColor(0.2f, 0.1f, 0.15f, 1.0f);
 
 		CCDirector* director = [CCDirector sharedDirector];
@@ -67,6 +67,9 @@
 		input.gesturePanEnabled = input.gesturesAvailable;
 		input.gestureRotationEnabled = input.gesturesAvailable;
 		input.gesturePinchEnabled = input.gesturesAvailable;
+		
+		LOG_EXPR([input swipeGestureRecognizerForDirection:KKSwipeGestureDirectionLeft]);
+		LOG_EXPR(input.doubleTapGestureRecognizer);
 	}
 
 	return self;
@@ -349,6 +352,7 @@
 	
 	if (input.gesturePanBegan) 
 	{
+		CCLOG(@"translation: %.0f, %.0f, velocity: %.1f, %.1f", input.gesturePanTranslation.x, input.gesturePanTranslation.y, input.gesturePanVelocity.x, input.gesturePanVelocity.y);
 		ship.position = input.gesturePanLocation;
 		
 		// center particle on position where pan started, then move it according to velocity in the direction the ship was dragged
@@ -477,6 +481,11 @@
 		[self moveParticleFXToTouch];
 		[self detectSpriteTouched];
 		[self gestureRecognition];
+		
+		if ([KKInput sharedInput].anyTouchEndedThisFrame)
+		{
+			CCLOG(@"anyTouchEndedThisFrame");
+		}
 	}
 	else
 	{
@@ -530,6 +539,11 @@
 			glLineWidth(1.0f);
 			glColor4f(1, 1, 1, 1);
 			ccDrawLine(touch.location, touch.previousLocation);
+			
+			if (CCRANDOM_0_1() > 0.98f)
+			{
+				//[input removeTouch:touch];
+			}
 		}
 		
 		// reset GL state

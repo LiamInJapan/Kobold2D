@@ -50,6 +50,17 @@ typedef enum
  An overflow occurs if the app remains running for over 828 days of continuous operation, assuming a steady 60 frames per second. */
 @property (nonatomic, readonly) NSUInteger frameCount;
 
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+/** Tells you whether Retina Display is currently enabled. It does not tell you if the device you're running has a Retina display. 
+ it could be a Retina device but Retina display may simply not be enabled. */
+-(BOOL) isRetinaDisplayEnabled;
+
+/** Gives you the inverse of the scale factor: 1.0f / contentScaleFactor */
+-(float) contentScaleFactorInverse;
+/** Gives you the scale factor halved: contentScaleFactor * 0.5f */
+-(float) contentScaleFactorHalved;
+#endif
+
 @end
 
 @interface CCDirector (SwizzledMethods)
@@ -60,18 +71,3 @@ typedef enum
 -(void) pushSceneReplacement:(CCScene*)scene;
 -(void) popSceneReplacement;
 @end
-
-#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
-@interface CCDirectorIOS (KoboldExtensions)
-
-/** Tells you whether Retina Display is currently enabled. It does not tell you if the device you're running has a Retina display. 
- it could be a Retina device but Retina display may simply not be enabled. */
--(bool) isRetinaDisplayEnabled;
-
-/** Gives you the inverse of the scale factor: 1.0f / contentScaleFactor */
--(float) contentScaleFactorInverse;
-/** Gives you the scale factor halved: contentScaleFactor * 0.5f */
--(float) contentScaleFactorHalved;
-
-@end
-#endif

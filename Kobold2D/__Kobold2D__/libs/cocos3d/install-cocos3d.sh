@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# cocos3d 0.6.4
+# cocos3d 0.6.5
 
 echo 'cocos3d installer'
 

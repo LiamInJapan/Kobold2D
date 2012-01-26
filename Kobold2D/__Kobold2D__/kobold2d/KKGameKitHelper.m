@@ -82,12 +82,12 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 	{
 		// Test for Game Center availability
 		Class gameKitLocalPlayerClass = NSClassFromString(@"GKLocalPlayer");
-		bool isLocalPlayerAvailable = (gameKitLocalPlayerClass != nil);
+		BOOL isLocalPlayerAvailable = (gameKitLocalPlayerClass != nil);
 		
 		// Test if device is running iOS 4.1 or higher
 		NSString* reqSysVer = @"4.1";
 		NSString* currSysVer = [[UIDevice currentDevice] systemVersion];
-		bool isOSVer41 = ([currSysVer compare:reqSysVer options:NSNumericSearch] != NSOrderedAscending);
+		BOOL isOSVer41 = ([currSysVer compare:reqSysVer options:NSNumericSearch] != NSOrderedAscending);
 		
 		isGameCenterAvailable = (isLocalPlayerAvailable && isOSVer41);
 		NSLog(@"GameCenter available = %@", isGameCenterAvailable ? @"YES" : @"NO");
@@ -228,7 +228,7 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 	{
 		[self setLastError:error];
 		
-		bool success = (error == nil);
+		BOOL success = (error == nil);
 		if ([delegate respondsToSelector:@selector(onScoresSubmitted:)])
 		{
 			[delegate onScoresSubmitted:success];
@@ -345,7 +345,7 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 		{
 			[self setLastError:error];
 			
-			bool success = (error == nil);
+			BOOL success = (error == nil);
 			if (success == NO)
 			{
 				// Keep achievement to try to submit it later
@@ -371,7 +371,7 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 	[GKAchievement resetAchievementsWithCompletionHandler:^(NSError* error)
 	{
 		[self setLastError:error];
-		bool success = (error == nil);
+		BOOL success = (error == nil);
 		if ([delegate respondsToSelector:@selector(onResetAchievements:)])
 		{
 			[delegate onResetAchievements:success];
@@ -391,7 +391,7 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 	{
 		[achievement reportAchievementWithCompletionHandler:^(NSError* error)
 		{
-			bool success = (error == nil);
+			BOOL success = (error == nil);
 			if (success == YES)
 			{
 				[self uncacheAchievement:achievement];
@@ -518,7 +518,7 @@ static KKGameKitHelper *instanceOfGameKitHelper;
 	{
 		[self setLastError:error];
 		
-		bool success = (error == nil);
+		BOOL success = (error == nil);
 		if ([delegate respondsToSelector:@selector(onPlayersAddedToMatch:)])
 		{
 			[delegate onPlayersAddedToMatch:success];

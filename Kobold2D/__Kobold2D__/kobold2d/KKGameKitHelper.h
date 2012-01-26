@@ -22,7 +22,7 @@
 -(void) onPlayerInfoReceived:(NSArray*)players;
 
 /** Called when scores where submitted. This can fail, so check for success. */
--(void) onScoresSubmitted:(bool)success;
+-(void) onScoresSubmitted:(BOOL)success;
 /** Called when scores were received from Game Center. */
 -(void) onScoresReceived:(NSArray*)scores;
 
@@ -31,12 +31,12 @@
 /** Called when achievement list was received from Game Center. */
 -(void) onAchievementsLoaded:(NSDictionary*)achievements;
 /** Called to indicate whether the reset achievements command was successful. */
--(void) onResetAchievements:(bool)success;
+-(void) onResetAchievements:(BOOL)success;
 
 /** Called when a match was found. */
 -(void) onMatchFound:(GKMatch*)match;
 /** Called to indicate whether adding players to a match was successful. */
--(void) onPlayersAddedToMatch:(bool)success;
+-(void) onPlayersAddedToMatch:(BOOL)success;
 /** Called when matchmaking activity was received from Game Center. */
 -(void) onReceivedMatchmakingActivity:(NSInteger)activity;
 
@@ -96,7 +96,7 @@
 /** Indicates whether the current match has already started. */
 @property (nonatomic, readonly) BOOL matchStarted;
 
-/** returns the singleton object, like this: [GameKitHelper sharedGameKitHelper] */
+/** returns the singleton object, like this: [KKGameKitHelper sharedGameKitHelper] */
 +(KKGameKitHelper*) sharedGameKitHelper;
 
 // Player authentication, info
@@ -137,6 +137,8 @@
 /** Saves all cached achievements to persist them between sessions. By default every time an achievement is cached the cached
  achievements are saved to disk, so they also persist even when the App crashes. */
 -(void) saveCachedAchievements;
+/** Starts obtaining the local player's achievements from Game Center. */
+-(void) loadAchievements;
 
 // Matchmaking
 /** Disconnect from the current match */

@@ -1,7 +1,7 @@
 /*
  * CC3VertexSkinning.m
  *
- * cocos3d 0.6.4
+ * cocos3d 0.6.5
  * Author: Chris Myers, Bill Hollings
  * Copyright (c) 2011 Chris Myers. All rights reserved.
  * Copyright (c) 2010-2011 The Brenwill Workshop Ltd. All rights reserved.

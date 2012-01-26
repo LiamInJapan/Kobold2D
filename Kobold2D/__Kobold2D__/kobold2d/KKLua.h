@@ -9,6 +9,21 @@
 #import "cocos2d-extensions.h"
 #import "luawax.h"
 
+
+void wax_setup();
+
+lua_State *wax_currentLuaState();
+
+// Debug Helpers
+//void wax_printStack(lua_State *L);
+//void wax_printStackAt(lua_State *L, int i);
+//void wax_printTable(lua_State *L, int t);
+//void wax_log(int flag, NSString *format, ...);
+
+//int wax_errorFunction(lua_State *L);
+//int wax_pcall(lua_State *L, int argumentCount, int returnCount);
+
+
 /** Static class containing various Lua related helper methods. */
 @interface KKLua : NSObject 
 {
@@ -36,9 +51,11 @@
  the Lua table using regular Objective-C syntax. The returned NSMutableDictionary is set to autorelease. */
 +(NSDictionary*) loadLuaTableFromFile:(NSString*)file;
 
-/** Returns the Class with the same name of a Lua script. First, it checks if the class already exists, and if so it returns the existing class.
+/*
+ 
+ Returns the Class with the same name of a Lua script. First, it checks if the class already exists, and if so it returns the existing class.
  Otherwise it will doFile the lua script scriptName.lua and create a waxClass with the given superClass to create this class. On the next call the class
  will already exist and the script isn't called a second time. */
-+(Class) classFromLuaScriptWithName:(NSString*)scriptName superClass:(NSString*)superClass;
+//+(Class) classFromLuaScriptWithName:(NSString*)scriptName superClass:(NSString*)superClass;
 
 @end
