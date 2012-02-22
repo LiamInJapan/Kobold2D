@@ -12,6 +12,7 @@
 
 @interface ProjectsDataSource : NSViewController <NSTableViewDelegate, NSTableViewDataSource, NSComboBoxDelegate, NSComboBoxDataSource>
 {
+	NSMutableString* logOutput;
 	NSMutableArray* versions;
 	NSComboBox *previousVersions;
 	NSTableView *previousVersionProjects;
@@ -40,5 +41,8 @@
 @property (assign) IBOutlet NSProgressIndicator *progressIndicator;
 - (IBAction)upgradeClicked:(id)sender;
 - (IBAction)helpClicked:(id)sender;
+
++(ProjectsDataSource*) sharedDataSource;
+-(void) addLogLine:(NSString*)line;
 
 @end

@@ -66,10 +66,9 @@
 		CCLabelTTF* platformLabel = nil;
 		if (director.currentPlatformIsIOS) 
 		{
-			// use kobold.ttf truetype font, see kobold.txt for licensing info
 			float fontSize = (director.currentDeviceIsIPad) ? 48 : 28;
 			platformLabel = [CCLabelTTF labelWithString:platform 
-											   fontName:@"koboldc.ttf" 
+											   fontName:@"Ubuntu-C.ttf" 
 											   fontSize:fontSize];
 		}
 		else if (director.currentPlatformIsMac)

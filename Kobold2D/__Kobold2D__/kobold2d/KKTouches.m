@@ -94,6 +94,15 @@ const NSUInteger kTouchesPoolSize = 10;
 	[self updateTouches];
 }
 
+-(void) updateMovedTouches:(NSSet*)touchesSet
+{
+	for (UITouch* uiTouch in touchesSet)
+	{
+		KKTouch* touch = [self getTouchByID:(NSUInteger)uiTouch];
+		[touch setTouchPhase:KKTouchPhaseMoved];
+	}
+}
+
 -(void) removeTouch:(KKTouch*)touch invalidate:(BOOL)invalidate
 {
 	if (touch)

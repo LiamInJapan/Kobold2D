@@ -12,6 +12,7 @@
 @interface MainWindowController : NSWindowController <NSTextFieldDelegate, NSTableViewDataSource, NSTableViewDelegate, NSComboBoxDataSource>
 {
 @private
+	NSMutableString* logOutput;
 	NSMutableArray* templates;
 	NSMutableArray* descriptions;
 	NSMutableArray* workspaces;

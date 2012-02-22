@@ -67,9 +67,6 @@
 		input.gesturePanEnabled = input.gesturesAvailable;
 		input.gestureRotationEnabled = input.gesturesAvailable;
 		input.gesturePinchEnabled = input.gesturesAvailable;
-		
-		LOG_EXPR([input swipeGestureRecognizerForDirection:KKSwipeGestureDirectionLeft]);
-		LOG_EXPR(input.doubleTapGestureRecognizer);
 	}
 
 	return self;
@@ -473,6 +470,17 @@
 
 -(void) update:(ccTime)delta
 {
+	KKInput* input = [KKInput sharedInput];
+	if ([input isAnyTouchOnNode:self touchPhase:KKTouchPhaseAny])
+	{
+		CCLOG(@"Touch: beg=%d mov=%d sta=%d end=%d can=%d",
+			  [input isAnyTouchOnNode:self touchPhase:KKTouchPhaseBegan], 
+			  [input isAnyTouchOnNode:self touchPhase:KKTouchPhaseMoved], 
+			  [input isAnyTouchOnNode:self touchPhase:KKTouchPhaseStationary],
+			  [input isAnyTouchOnNode:self touchPhase:KKTouchPhaseEnded],
+			  [input isAnyTouchOnNode:self touchPhase:KKTouchPhaseCancelled]);
+	}
+	
 	CCDirector* director = [CCDirector sharedDirector];
 	
 	if (director.currentPlatformIsIOS)

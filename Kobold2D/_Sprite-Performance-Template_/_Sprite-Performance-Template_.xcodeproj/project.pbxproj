@@ -32,15 +32,6 @@
 		DC6E929C1413C8CB00172F3A /* game-art.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC6E92951413C8CB00172F3A /* game-art.plist */; };
 		DC6E929D1413C8CB00172F3A /* game-art.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = DC6E92961413C8CB00172F3A /* game-art.pvr.ccz */; };
 		DC6E929E1413C8CB00172F3A /* game-art.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = DC6E92961413C8CB00172F3A /* game-art.pvr.ccz */; };
-		DC746EAD140EE4C200B0BC06 /* kobold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC746EAB140EE4C200B0BC06 /* kobold.ttf */; };
-		DC746EB1140EE72400B0BC06 /* koboldc.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC746EB0140EE72400B0BC06 /* koboldc.ttf */; };
-		DC746EB9140EE73300B0BC06 /* kobold3di.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC746EB2140EE73300B0BC06 /* kobold3di.ttf */; };
-		DC746EBA140EE73300B0BC06 /* kobold3d.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC746EB3140EE73300B0BC06 /* kobold3d.ttf */; };
-		DC746EBB140EE73300B0BC06 /* koboldleft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC746EB4140EE73300B0BC06 /* koboldleft.ttf */; };
-		DC746EBC140EE73300B0BC06 /* koboldbi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC746EB5140EE73300B0BC06 /* koboldbi.ttf */; };
-		DC746EBD140EE73300B0BC06 /* koboldb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC746EB6140EE73300B0BC06 /* koboldb.ttf */; };
-		DC746EBE140EE73300B0BC06 /* koboldci.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC746EB7140EE73300B0BC06 /* koboldci.ttf */; };
-		DC746EBF140EE73300B0BC06 /* koboldi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC746EB8140EE73300B0BC06 /* koboldi.ttf */; };
 		DC979E3E13B35F8800656CB9 /* libcocos2d-extensions-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC979E3D13B35F8800656CB9 /* libcocos2d-extensions-mac.a */; };
 		DC979E5A13B3607E00656CB9 /* libchipmunk-spacemanager-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC979E5913B3607E00656CB9 /* libchipmunk-spacemanager-mac.a */; };
 		DCA2FAFB1414182B00EA9CC9 /* monster-b-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA2FAF91414182B00EA9CC9 /* monster-b-hd.png */; };
@@ -161,16 +152,6 @@
 		DC6E92941413C8CB00172F3A /* game-art-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "game-art-hd.pvr.ccz"; sourceTree = "<group>"; };
 		DC6E92951413C8CB00172F3A /* game-art.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "game-art.plist"; sourceTree = "<group>"; };
 		DC6E92961413C8CB00172F3A /* game-art.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "game-art.pvr.ccz"; sourceTree = "<group>"; };
-		DC746EAA140EE4C200B0BC06 /* kobold.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kobold.txt; sourceTree = "<group>"; };
-		DC746EAB140EE4C200B0BC06 /* kobold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kobold.ttf; sourceTree = "<group>"; };
-		DC746EB0140EE72400B0BC06 /* koboldc.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = koboldc.ttf; sourceTree = "<group>"; };
-		DC746EB2140EE73300B0BC06 /* kobold3di.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kobold3di.ttf; sourceTree = "<group>"; };
-		DC746EB3140EE73300B0BC06 /* kobold3d.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kobold3d.ttf; sourceTree = "<group>"; };
-		DC746EB4140EE73300B0BC06 /* koboldleft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = koboldleft.ttf; sourceTree = "<group>"; };
-		DC746EB5140EE73300B0BC06 /* koboldbi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = koboldbi.ttf; sourceTree = "<group>"; };
-		DC746EB6140EE73300B0BC06 /* koboldb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = koboldb.ttf; sourceTree = "<group>"; };
-		DC746EB7140EE73300B0BC06 /* koboldci.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = koboldci.ttf; sourceTree = "<group>"; };
-		DC746EB8140EE73300B0BC06 /* koboldi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = koboldi.ttf; sourceTree = "<group>"; };
 		DC979E3D13B35F8800656CB9 /* libcocos2d-extensions-mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libcocos2d-extensions-mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC979E5913B3607E00656CB9 /* libchipmunk-spacemanager-mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libchipmunk-spacemanager-mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9C33E713B5024400931BF2 /* BuildSettings-Debug-Mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-Debug-Mac.xcconfig"; sourceTree = "<group>"; };
@@ -373,16 +354,6 @@
 		DCC1A0F813A94ED5005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DC746EAA140EE4C200B0BC06 /* kobold.txt */,
-				DC746EB2140EE73300B0BC06 /* kobold3di.ttf */,
-				DC746EB3140EE73300B0BC06 /* kobold3d.ttf */,
-				DC746EB4140EE73300B0BC06 /* koboldleft.ttf */,
-				DC746EB5140EE73300B0BC06 /* koboldbi.ttf */,
-				DC746EB6140EE73300B0BC06 /* koboldb.ttf */,
-				DC746EB7140EE73300B0BC06 /* koboldci.ttf */,
-				DC746EB8140EE73300B0BC06 /* koboldi.ttf */,
-				DC746EB0140EE72400B0BC06 /* koboldc.ttf */,
-				DC746EAB140EE4C200B0BC06 /* kobold.ttf */,
 				DCC1A0F913A94ED5005BD75D /* Default.png */,
 				DCC1A0FB13A94ED5005BD75D /* fps_images.png */,
 				DCC1A0FD13A94ED5005BD75D /* Icon-72.png */,
@@ -552,15 +523,6 @@
 				DCC1A3AF13A94F1A005BD75D /* config.lua in Resources */,
 				DC485B4813AA194F00F2BC70 /* ship.png in Resources */,
 				DC485B4B13AA1C0E00F2BC70 /* ship-hd.png in Resources */,
-				DC746EAD140EE4C200B0BC06 /* kobold.ttf in Resources */,
-				DC746EB1140EE72400B0BC06 /* koboldc.ttf in Resources */,
-				DC746EB9140EE73300B0BC06 /* kobold3di.ttf in Resources */,
-				DC746EBA140EE73300B0BC06 /* kobold3d.ttf in Resources */,
-				DC746EBB140EE73300B0BC06 /* koboldleft.ttf in Resources */,
-				DC746EBC140EE73300B0BC06 /* koboldbi.ttf in Resources */,
-				DC746EBD140EE73300B0BC06 /* koboldb.ttf in Resources */,
-				DC746EBE140EE73300B0BC06 /* koboldci.ttf in Resources */,
-				DC746EBF140EE73300B0BC06 /* koboldi.ttf in Resources */,
 				DC6E92971413C8CB00172F3A /* game-art-hd.plist in Resources */,
 				DC6E92991413C8CB00172F3A /* game-art-hd.pvr.ccz in Resources */,
 				DC6E929B1413C8CB00172F3A /* game-art.plist in Resources */,

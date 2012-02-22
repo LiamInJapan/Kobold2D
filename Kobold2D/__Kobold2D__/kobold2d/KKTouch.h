@@ -55,4 +55,6 @@
 -(void) invalidate;
 -(void) setValidWithID:(NSUInteger)touchID;
 
+-(void) setTouchPhase:(KKTouchPhase)phase_;
+
 @end

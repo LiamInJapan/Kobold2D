@@ -5,6 +5,20 @@
 // Released under MIT License in Germany (LICENSE-Kobold2D.txt).
 //
 
+
+// If you have Xcode -> Preferences -> Locations -> Advanced set to
+// "Locations Specified by Targets" (Xcode 4.3: "Legacy) and you are required to use this setting,
+// then you must uncomment the following line (SYMROOT = ..) in order to build Kobold2D successfully!
+
+// The better solution is to reset this setting back to the Xcode recommended setting "Derived Data"
+// (Xcode 4.3: "Unique") if you can.
+// Please read the following page for more information and what negative side effects are associated
+// with the "Locations Specified by Targets" / "Legacy" setting: http://www.kobold2d.com/x/6QAi
+
+//SYMROOT = ~/Kobold2D/build
+
+
+
 CODE_SIGN_IDENTITY = 
 CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Developer
 

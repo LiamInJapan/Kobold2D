@@ -7,6 +7,7 @@
 //
 
 #import "XcodeProject.h"
+#import "ProjectsDataSource.h"
 
 @implementation XcodeProject
 
@@ -23,6 +24,7 @@
 		self.name = [aProjectPath lastPathComponent];
 		
 		self.pathRelativeToWorkspacePath = [path stringByReplacingOccurrencesOfString:workspacePath withString:@""];
+		[[ProjectsDataSource sharedDataSource] addLogLine:[NSString stringWithFormat:@"Found possibly upgradeable Xcode workspace: %@", [self description]]];
     }
     
     return self;

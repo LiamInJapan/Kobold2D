@@ -4748,6 +4748,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCDD509713A9175B00EC4F3A /* Build configuration list for PBXNativeTarget "kobold2d-ios" */;
 			buildPhases = (
+				DC9F818014ED9AF50004AF4C /* ShellScript */,
 				DCDD508E13A9175B00EC4F3A /* Sources */,
 				DCDD508F13A9175B00EC4F3A /* Frameworks */,
 				DCDD509013A9175B00EC4F3A /* Headers */,
@@ -4765,6 +4766,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCDD50A313A9176400EC4F3A /* Build configuration list for PBXNativeTarget "kobold2d-mac" */;
 			buildPhases = (
+				DC9F818114ED9BE50004AF4C /* ShellScript */,
 				DCDD509A13A9176400EC4F3A /* Sources */,
 				DCDD509B13A9176400EC4F3A /* Frameworks */,
 				DCDD509C13A9176400EC4F3A /* Headers */,
@@ -4940,6 +4942,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DC9F818014ED9AF50004AF4C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/depot-kobold2d/Kobold2D-Master/Kobold2D/__Kobold2D__/buildsettings/warnLocationsSpecifiedByTarget.sh";
+			showEnvVarsInLog = 0;
+		};
+		DC9F818114ED9BE50004AF4C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/depot-kobold2d/Kobold2D-Master/Kobold2D/__Kobold2D__/buildsettings/warnLocationsSpecifiedByTarget.sh";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DCA6154513A930F400D781D5 /* Sources */ = {

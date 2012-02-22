@@ -28,6 +28,7 @@
 #if KK_PLATFORM_IOS
 // Internal use only
 -(void) addTouches:(NSSet*)touchesSet;
+-(void) updateMovedTouches:(NSSet*)touchesSet;
 -(void) removeTouch:(KKTouch*)touch invalidate:(BOOL)invalidate;
 -(void) removeTouches:(NSSet*)touchesSet;
 -(void) removeAllTouches;

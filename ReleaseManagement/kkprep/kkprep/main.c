@@ -211,18 +211,24 @@ int main (int argc, const char * argv[])
 		}
 		NSString* maker = @"/Developer/Applications/Utilities/PackageMaker.app/Contents/MacOS/PackageMaker";
 		
+		assert([fileManager fileExistsAtPath:resDir] && "resDir path does not exist!");
+		
 		NSString* rootArg = [NSString stringWithFormat:@"--root %@", packageDir];
 		NSString* outArg = [NSString stringWithFormat:@"--out %@/%@", startDir, pkgFile];
 		NSString* versionArg = [NSString stringWithFormat:@"--version %@", koboldVersion];
 		NSString* titleArg = [NSString stringWithFormat:@"--title %@", targetDir];
 		NSString* resArg = [NSString stringWithFormat:@"--resources %@", resDir];
+		NSString* idArg = [NSString stringWithFormat:@"--id com.kobold2d.%@", koboldVersion];
 		NSString* filterArg = @"--filter '/CVS$' --filter '/.git*' --filter '/.DS_Store$' --filter '/.svn*' --filter '/xcuserdata$' --filter '/.idea$'";
-		NSString* generalArgs = @"--id com.kobold2d --domain user --no-relocate --target 10.6 --verbose --root-volume-only";
-		if (isTestMode) {
+		NSString* generalArgs = @"--domain user --no-relocate --target 10.6 --root-volume-only";
+		if (isTestMode) 
+		{
 			generalArgs = [NSString stringWithFormat:@"%@ --no-recommend", generalArgs];
 		}
 		
-		NSString* script = [NSString stringWithFormat:@"#!/bin/bash\n\n%@ %@ %@ %@ %@ %@ %@ %@", maker, rootArg, outArg, versionArg, titleArg, generalArgs, filterArg, resArg];
+		NSString* script = [NSString stringWithFormat:@"#!/bin/bash\n%@ %@ %@ %@ %@ %@ %@ %@ %@", 
+							maker, rootArg, outArg, versionArg, titleArg, idArg, generalArgs, filterArg, resArg];
+		NSLog(@"PackageMaker command line:\n%@", script);
 		
 		// have to create a bash script, otherwise the PackageMaker GUI would open
 		NSString* scriptFile = @"make-package.sh";

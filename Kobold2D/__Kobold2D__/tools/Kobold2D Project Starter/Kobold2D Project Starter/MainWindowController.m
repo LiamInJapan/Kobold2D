@@ -26,6 +26,11 @@
 @synthesize templatesList;
 @synthesize createProjectName;
 
+-(void) addLogLine:(NSString*)line
+{
+	[logOutput appendString:line];
+}
+
 -(NSInteger) numberOfRowsInTableView:(NSTableView*)aTableView
 {
 	return [templates count];
@@ -122,14 +127,18 @@
 
 -(BOOL) kobold2DExistsAtPath:(NSString*)path
 {
-	NSString* workspace = [NSString stringWithFormat:@"%@%@", path, kKobold2DWorkspace];
-	return [[NSFileManager defaultManager] fileExistsAtPath:workspace];
+	NSString* k2libsproject = [NSString stringWithFormat:@"%@%@", path, kKobold2DLibrariesProject];
+	BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:k2libsproject];
+	[self addLogLine:[NSString stringWithFormat:@"Does Kobold2D-Libraries.xcodeproj exist at path '%@'? Result: %@", k2libsproject, exists ? @"YES" : @"NO"]];
+	return exists;
 }
 
 -(void) tryFindPathToKobold2D
 {
 	NSString* workingDir = [[NSBundle mainBundle] bundlePath];
+	[self addLogLine:[NSString stringWithFormat:@"Working Dir: %@", workingDir]];
 	workingDir = [workingDir substringToIndex:[workingDir length] - [[workingDir lastPathComponent] length]];
+	[self addLogLine:[NSString stringWithFormat:@"Kobold2D Base Dir: %@", workingDir]];
 	
 	// only for debugging
 	NSRange buildoutput = [workingDir rangeOfString:@"_buildoutput"];
@@ -146,6 +155,7 @@
 	{
 		workingDir = [self addTrailingSlash:workingDir];
 		NSLog(@"Trying path: %@", workingDir);
+		[self addLogLine:[NSString stringWithFormat:@"Trying to locate Kobold2D at: %@", workingDir]];
 		
 		if ([self kobold2DExistsAtPath:workingDir])
 		{
@@ -169,6 +179,7 @@
 	// if nothing found, assume development mode and try again
 	if (debugging == NO && [templates count] == 0)
 	{
+		[self addLogLine:@"... did not find templates, switching to DEVELOPMENT MODE!"];
 		debugging = YES;
 		[createProjectName setBackgroundColor:[NSColor cyanColor]];
 		[self tryFindPathToKobold2D];
@@ -221,6 +232,7 @@
 		path = [NSString stringWithFormat:@"%@%@", path, kTemplatesSubDir];
 	}
 	NSLog(@"Looking for project templates in: %@", path);
+	[self addLogLine:[NSString stringWithFormat:@"Reading template projects in path: %@", path]];
 
 	NSFileManager* fileManager = [[NSFileManager alloc] init];
 	NSArray* contents = [fileManager contentsOfDirectoryAtPath:path error:nil];
@@ -228,6 +240,8 @@
 	for (NSString* item in contents)
 	{
 		NSLog(@"Trying: %@", item);
+		[self addLogLine:[NSString stringWithFormat:@"Testing if '%@' is a template project.", item]];
+		
 		if ([item hasPrefix:kTemplateFolderPrefix] && [item hasSuffix:kTemplateFolderSuffix])
 		{
 			BOOL isDirectory = NO;
@@ -237,6 +251,7 @@
 			if (exists && isDirectory)
 			{
 				NSLog(@"Found Template: %@", item);
+				[self addLogLine:[NSString stringWithFormat:@"Found template project: %@", item]];
 				[self addTemplate:item];
 			}
 		}
@@ -254,6 +269,7 @@
 	[workspaceList reloadData];
 
 	NSLog(@"Looking for workspaces in: %@", path);
+	[self addLogLine:[NSString stringWithFormat:@"Looking for .xcworkspace files in: %@", path]];
 	
 	NSFileManager* fileManager = [[NSFileManager alloc] init];
 	NSArray* contents = [fileManager contentsOfDirectoryAtPath:path error:nil];
@@ -262,6 +278,8 @@
 	{
 		if ([item hasSuffix:@".xcworkspace"])
 		{
+			[self addLogLine:[NSString stringWithFormat:@"Found a .xcworkspace file at: %@", item]];
+			
 			BOOL isDirectory = NO;
 			NSString* templatePath = [NSString stringWithFormat:@"%@%@", path, item];
 			BOOL exists = [fileManager fileExistsAtPath:templatePath isDirectory:&isDirectory];
@@ -269,6 +287,7 @@
 			if (exists && isDirectory)
 			{
 				NSLog(@"Found Workspace: %@", item);
+				[self addLogLine:[NSString stringWithFormat:@"Confirmed that .xcworkspace is an Xcode workspace: %@", item]];
 				[workspaces addObject:item];
 			}
 		}

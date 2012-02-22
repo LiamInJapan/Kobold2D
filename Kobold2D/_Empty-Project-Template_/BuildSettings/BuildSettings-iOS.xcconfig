@@ -14,9 +14,9 @@
 // To enable Cocos3D uncomment $(FORCE_LOAD_COCOS3D) at the end of the following line:
 OTHER_LDFLAGS = $(inherited) $(KKFRAMEWORKS_IOS) //$(FORCE_LOAD_COCOS3D)
 
-// Comment this line if you don't want or need iSimulate. Doing so will also remove the "incoming network connection"
-// warning dialog in Simulator builds.
-OTHER_LDFLAGS[sdk=iphonesimulator*][arch=*] = $(OTHER_LDFLAGS) $(FORCE_LOAD_ISIMULATE)
+// Uncomment this line if you want to use iSimulate. Doing so will have a "incoming network connection"
+// warning dialog pop up whenever you run Simulator builds due to iSimulate making a connection. This is normal.
+//OTHER_LDFLAGS[sdk=iphonesimulator*][arch=*] = $(OTHER_LDFLAGS) $(FORCE_LOAD_ISIMULATE)
 
 INFOPLIST_FILE = Projectfiles-iOS/Resources/Info.plist
 GCC_PREFIX_HEADER = Projectfiles/Prefix-iOS.pch

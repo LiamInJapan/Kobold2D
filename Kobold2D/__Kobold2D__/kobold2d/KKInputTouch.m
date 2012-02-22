@@ -50,6 +50,11 @@
 	[touches addTouches:touchesSet];
 }
 
+-(void) ccTouchesMoved:(NSSet*)touchesSet withEvent:(UIEvent*)event
+{
+	[touches updateMovedTouches:touchesSet];
+}
+
 -(void) ccTouchesEnded:(NSSet*)touchesSet withEvent:(UIEvent*)event
 {
 	//CCLOG(@"touch ended...");

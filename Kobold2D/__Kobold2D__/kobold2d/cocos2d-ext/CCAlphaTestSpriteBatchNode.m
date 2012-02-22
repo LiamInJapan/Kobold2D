@@ -13,6 +13,7 @@
 
 @implementation CCAlphaTestSpriteBatchNode
 
+
 -(void) draw
 {
 	glEnable(GL_ALPHA_TEST);
@@ -22,5 +23,6 @@
 	
 	glDisable(GL_ALPHA_TEST);
 }
+
 
 @end

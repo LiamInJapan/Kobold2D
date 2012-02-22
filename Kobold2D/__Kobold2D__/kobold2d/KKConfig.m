@@ -304,6 +304,7 @@ static KKConfig *instanceOfConfig;
 {
 	NSAssert(target != nil, @"target is nil!");
 	
+	NSDictionary* previousKeyPath = selectedDict;
 	[self selectKeyPath:keyPath];
 	
 	for (NSString* key in selectedDict)
@@ -339,6 +340,8 @@ static KKConfig *instanceOfConfig;
 			CCLOG(@"===> WARNING: property setter '%@' not defined in target: %@ <===", selectorName, target);
 		}
 	}
+	
+	selectedDict = previousKeyPath;
 }
 
 +(void) injectPropertiesFromKeyPath:(NSString*)keyPath target:(id)target

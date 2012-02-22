@@ -8,6 +8,7 @@
 
 #import "KoboldVersion.h"
 #import "XcodeProject.h"
+#import "ProjectsDataSource.h"
 
 @interface KoboldVersion (PrivateMethods)
 -(void) initProjects;
@@ -26,6 +27,8 @@
 		self.destinationPath = aDestinationPath;
 		self.name = [aPath lastPathComponent];
 		self.versionString = [name stringByReplacingOccurrencesOfString:@"Kobold2D-" withString:@""];
+		[[ProjectsDataSource sharedDataSource] addLogLine:[NSString stringWithFormat:@"Initialized Kobold2D version at '%@' with destination '%@', name '%@', versionString '%@'", 
+						  path, destinationPath, name, versionString]];
 		
 		[self initProjects];
 	}
@@ -64,10 +67,16 @@
 			// skip existing projects
 			NSString* destinationProjectPath = [NSString stringWithFormat:@"%@%@", destinationPath, project.pathRelativeToWorkspacePath];
 			NSLog(@"destination project path: %@", destinationProjectPath);
+			[[ProjectsDataSource sharedDataSource] addLogLine:[NSString stringWithFormat:@"Project destination path after upgrade will be: %@", destinationProjectPath]];
+			
 			if ([[NSFileManager defaultManager] fileExistsAtPath:destinationProjectPath] == NO)
 			{
 				[projects addObject:project];
 				NSLog(@"Added Project: %@", project.name);
+			}
+			else
+			{
+				[[ProjectsDataSource sharedDataSource] addLogLine:[NSString stringWithFormat:@"IGNORING project '%@' because destination path '%@' already exists!", project.name, destinationProjectPath]];
 			}
 		}
 	}
@@ -85,11 +94,13 @@
 		if (success == NO)
 		{
 			NSLog(@"Parsing '%@' failed!", pathToFile);
+			[[ProjectsDataSource sharedDataSource] addLogLine:[NSString stringWithFormat:@"Parsing failed, malformed XML: %@", pathToFile]];
 		}
 	}
 	else
 	{
 		NSLog(@"The workspace file '%@' does not exist!", pathToFile);
+		[[ProjectsDataSource sharedDataSource] addLogLine:[NSString stringWithFormat:@"Parsing failed, file does not exist: %@", pathToFile]];
 	}
 }
 
@@ -100,12 +111,15 @@
 	
 	NSFileManager* fileManager = [[NSFileManager alloc] init];
 	NSArray* contents = [fileManager contentsOfDirectoryAtPath:path error:nil];
-	
+
+	[[ProjectsDataSource sharedDataSource] addLogLine:[NSString stringWithFormat:@"Trying to locate upgradeable projects in %@", path]];
+
 	for (NSString* item in contents)
 	{
 		if ([item hasSuffix:@".xcworkspace"])
 		{
 			NSLog(@"Reading workspace: %@", item);
+			[[ProjectsDataSource sharedDataSource] addLogLine:[NSString stringWithFormat:@"Found a workspace named %@, begin parsing contents ...", item]];
 			currentWorkspacePath = [NSString stringWithFormat:@"%@/%@", path, item];
 			
 			NSString* workspaceContentsFile = [NSString stringWithFormat:@"%@/contents.xcworkspacedata", currentWorkspacePath];

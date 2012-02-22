@@ -1,9 +1,9 @@
 #!/bin/sh
 
-IOS=4
-
+# buildtool = Xcode 4.2, preview = Xcode 4.1
 BUILDTOOL=/Developer5/usr/bin/xcodebuild
 PREVIEWBUILDTOOL=/Developer/usr/bin/xcodebuild
+BUILDTOOLXCODE43=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
 KKROOT=/depot-kobold2d/Kobold2D-Master/Kobold2D/
 KKWORKSPACEFILE=Kobold2D.xcworkspace
 KKWORKSPACE=${KKROOT}${KKWORKSPACEFILE}
@@ -16,6 +16,7 @@ DERIVED=___DerivedData
 DERIVED=${KKROOT}${DERIVED}
 DERIVEDIOS4=${DERIVED}IOS4
 DERIVEDIOS5=${DERIVED}IOS5
+DERIVEDIOS51=${DERIVED}IOS51
 BUILDDIR=${KKROOT}__${JOB_NAME_LOWERCASE}
 
 function failed()
@@ -24,6 +25,9 @@ function failed()
     
 	if [ "$IOS" -eq 4 ]; then
 		mv ${DERIVED} ${DERIVEDIOS4}
+	fi
+	if [ "$IOS" -eq 51 ]; then
+		mv ${DERIVED} ${DERIVEDIOS51}
 	fi
 	if [ "$IOS" -eq 5 ]; then
 		mv ${DERIVED} ${DERIVEDIOS5}
@@ -45,6 +49,31 @@ if [ -d ${DERIVED} ]; then
 	rm -rfd ${DERIVED}
 fi
 
+
+IOS=51
+if [ -d ${DERIVEDIOS51} ]; then
+	mv ${DERIVEDIOS51} ${DERIVED}
+fi
+
+case $JOB_NAME_LOWERCASE in
+     *-ios) 
+    	 echo "============ RUNNING IOS BUILDS ============"
+		$BUILDTOOLXCODE43 $COMMON_ARGS -sdk iphoneos -configuration Release || failed IPHONEOS-RELEASE_XCODE43
+		$BUILDTOOLXCODE43 $COMMON_ARGS -sdk iphoneos -configuration Debug || failed IPHONEOS-DEBUG_XCODE43
+		$BUILDTOOLXCODE43 $COMMON_ARGS VALID_ARCHS=i386 ARCHS=i386 GCC_VERSION=com.apple.compilers.llvm.clang.1_0.compiler -sdk iphonesimulator -configuration Debug || failed IPHONESIMULATOR-DEBUG_XCODE43
+     ;;
+     *-mac) 
+ 	    echo "============ RUNNING MAC OS BUILDS ============"
+		$BUILDTOOLXCODE43 $COMMON_ARGS -sdk macosx -configuration Release || failed MACOSX-RELEASE_XCODE43
+		$BUILDTOOLXCODE43 $COMMON_ARGS -sdk macosx -configuration Debug || failed MACOSX-DEBUG_XCODE43
+     ;;
+esac
+
+# keep the build folder for the next run
+mv ${DERIVED} ${DERIVEDIOS51}
+
+
+IOS=4
 if [ -d ${DERIVEDIOS4} ]; then
 	mv ${DERIVEDIOS4} ${DERIVED}
 fi

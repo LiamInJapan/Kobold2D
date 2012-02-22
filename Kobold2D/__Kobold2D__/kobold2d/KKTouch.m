@@ -65,4 +65,9 @@
 	timestamp = 0;
 }
 
+-(void) setTouchPhase:(KKTouchPhase)phase_
+{
+	phase = phase_;
+}
+
 @end

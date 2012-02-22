@@ -26,6 +26,18 @@
 @synthesize upgradeButton;
 @synthesize progressIndicator;
 
+static ProjectsDataSource* instance = nil;
+
++(ProjectsDataSource*) sharedDataSource
+{
+	NSAssert(instance, @"ProjectsDataSource instance is nil");
+	return instance;
+}
+
+-(void) addLogLine:(NSString*)line
+{
+	[logOutput appendFormat:@"%@\n", line];
+}
 
 -(NSInteger) numberOfRowsInTableView:(NSTableView*)aTableView
 {
@@ -117,7 +129,9 @@
     self = [super init];
     if (self) 
 	{
+		instance = self;
 		versions = [[NSMutableArray alloc] initWithCapacity:10];
+		logOutput = [[NSMutableString alloc] initWithCapacity:1000];
     }
     
     return self;
@@ -127,6 +141,8 @@
 {
 	[versions release];
 	[currentVersion release];
+	[logOutput release];
+	instance = nil;
 	[super dealloc];
 }
 
@@ -134,6 +150,13 @@
 {
 	[self findKoboldInstallDir];
 	[self loadKoboldVersions];
+
+	NSString* workdir = [[NSBundle mainBundle] bundlePath];
+	workdir = [workdir substringToIndex:[workdir length] - [[workdir lastPathComponent] length] - 1];
+	NSString* logFile = [NSString stringWithFormat:@"%@/Kobold2D Project Upgrader Log.txt", workdir];
+	[logOutput writeToFile:logFile atomically:YES encoding:NSUTF8StringEncoding error:nil];
+	[logOutput release];
+	logOutput = nil;
 
 	[currentVersionLabel setStringValue:currentVersion.name];
 
@@ -160,8 +183,11 @@
 {
 	NSString* workingDir = [[NSBundle mainBundle] bundlePath];
 	NSLog(@"working dir: %@", workingDir);
+	[self addLogLine:[NSString stringWithFormat:@"Current Working Dir: %@", workingDir]];
+
 	workingDir = [workingDir substringToIndex:[workingDir length] - [[workingDir lastPathComponent] length] - 1];
 	NSLog(@"working dir: %@", workingDir);
+	[self addLogLine:[NSString stringWithFormat:@"Going up one directory (base dir): %@", workingDir]];
 	
 	// only for debugging
 	NSRange buildoutput = [[[NSBundle mainBundle] bundlePath] rangeOfString:@"_buildoutput"];
@@ -169,13 +195,17 @@
 	{
 		debugging = YES;
 		workingDir = [[NSFileManager defaultManager] currentDirectoryPath];
+		[self addLogLine:@"SWITCHING TO DEVELOPMENT MODE"];
 	}
 
+	
+	[self addLogLine:@"Creating CURRENT Kobold2D version (destination path is nil on purpose)"];
 	[currentVersion release];
 	currentVersion = [[KoboldVersion alloc] initWithPath:workingDir destinationPath:nil];
 	
 	workingDir = [workingDir substringToIndex:[workingDir length] - [currentVersion.name length] - 1];
 	NSLog(@"working dir: %@", workingDir);
+	[self addLogLine:[NSString stringWithFormat:@"Possible Kobold2D Base Dir: %@", workingDir]];
 
 	koboldInstallDir = workingDir;
 	NSLog(@"Kobold2D Install dir: %@", koboldInstallDir);
@@ -196,25 +226,41 @@
 -(void) loadKoboldVersions
 {
 	NSLog(@"Looking for Kobold2D folders in: %@", koboldInstallDir);
+	[self addLogLine:[NSString stringWithFormat:@"Looking for Kobold2D versions in: %@", koboldInstallDir]];
 	
 	NSFileManager* fileManager = [[NSFileManager alloc] init];
 	NSArray* contents = [fileManager contentsOfDirectoryAtPath:koboldInstallDir error:nil];
 	
 	for (NSString* item in contents)
 	{
+		[self addLogLine:[NSString stringWithFormat:@"Considering: %@", item]];
 		BOOL isDirectory = NO;
 		NSString* checkDir = [NSString stringWithFormat:@"%@/%@", koboldInstallDir, item];
 		BOOL exists = [fileManager fileExistsAtPath:checkDir isDirectory:&isDirectory];
 		
 		if (exists && isDirectory)
 		{
-			//NSLog(@"Checking: %@", item);
+			[self addLogLine:[NSString stringWithFormat:@"%@ exists and is a directory, checking if it contains __Kobold2D__ folder...", item]];
+			
 			NSString* koboldDir = [NSString stringWithFormat:@"%@/__Kobold2D__", checkDir];
 			exists = [fileManager fileExistsAtPath:koboldDir isDirectory:&isDirectory];
-			if (exists && isDirectory && [checkDir isEqualToString:currentVersion.path] == NO)
+			
+			if (exists && isDirectory)
 			{
-				// this is a Kobold2D version folder
-				[self loadKoboldDir:checkDir];
+				if ([checkDir isEqualToString:currentVersion.path] == NO)
+				{
+					[self addLogLine:[NSString stringWithFormat:@"CONFIRMED: %@ is a Kobold2D folder", item]];
+					// this is a Kobold2D version folder
+					[self loadKoboldDir:checkDir];
+				}
+				else
+				{
+					[self addLogLine:[NSString stringWithFormat:@"IGNORED: %@ is a Kobold2D folder BUT it is the current version", item]];
+				}
+			}
+			else
+			{
+				[self addLogLine:[NSString stringWithFormat:@"IGNORED: %@ does not contain the __Kobold2D__ subfolder", item]];
 			}
 		}
 	}
