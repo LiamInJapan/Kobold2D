@@ -291,15 +291,24 @@ int main (int argc, const char * argv[])
 		
 		postflightScript = [postflightScript stringByReplacingOccurrencesOfString:@"___KOBOLD2D-VERSION___" withString:targetDir];
 		[postflightScript writeToFile:postflightScriptFile atomically:YES encoding:NSASCIIStringEncoding error:&error];
-		
+
+		if ([distro writeToFile:distroFile atomically:YES encoding:NSASCIIStringEncoding error:&error] == NO)
+			showAlertWithError(error);
+
 		// substring replace the Distribution file
 		searchStr = @"</choices-outline>";
 		NSString* replaceStr = [NSString stringWithFormat:@"<line choice=\"choice5\"/>\n%@", searchStr];
 		distro = [distro stringByReplacingOccurrencesOfString:searchStr withString:replaceStr];
-		
-		searchStr = @"<pkg-ref id=\"com.kobold2d\" installKBytes=";
+
+		if ([distro writeToFile:distroFile atomically:YES encoding:NSASCIIStringEncoding error:&error] == NO)
+			showAlertWithError(error);
+
+		searchStr = [NSString stringWithFormat:@"<pkg-ref id=\"com.kobold2d.%@\" installKBytes=", koboldVersion];
 		replaceStr = [NSString stringWithFormat:@"<choice id=\"choice5\" title=\"Kobold2D Postflight\" start_visible=\"false\">\n<pkg-ref id=\"com.kobold2d.kobold2d.postflight.pkg\"/>\n</choice>\n%@", searchStr];
 		distro = [distro stringByReplacingOccurrencesOfString:searchStr withString:replaceStr];
+
+		if ([distro writeToFile:distroFile atomically:YES encoding:NSASCIIStringEncoding error:&error] == NO)
+			showAlertWithError(error);
 
 		searchStr = @"</installer-script>";
 		replaceStr = [NSString stringWithFormat:@"<pkg-ref id=\"com.kobold2d.kobold2d.postflight.pkg\" installKBytes=\"0\" version=\"1.0\" auth=\"Root\">#kobold2dPostflight.pkg</pkg-ref>\n%@", searchStr];

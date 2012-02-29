@@ -4955,7 +4955,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/depot-kobold2d/Kobold2D-Master/Kobold2D/__Kobold2D__/buildsettings/warnLocationsSpecifiedByTarget.sh";
+			shellScript = "\"$SRCROOT/buildsettings/warnLocationsSpecifiedByTarget.sh\"";
 			showEnvVarsInLog = 0;
 		};
 		DC9F818114ED9BE50004AF4C /* ShellScript */ = {
@@ -4969,7 +4969,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/depot-kobold2d/Kobold2D-Master/Kobold2D/__Kobold2D__/buildsettings/warnLocationsSpecifiedByTarget.sh";
+			shellScript = "\"$SRCROOT/buildsettings/warnLocationsSpecifiedByTarget.sh\"";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
