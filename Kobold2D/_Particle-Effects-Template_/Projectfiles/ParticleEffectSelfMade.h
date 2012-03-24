@@ -10,7 +10,7 @@
 
 // Depending on the targeted device the ParticleEffectSelfMade class will either derive
 // from CCPointParticleSystem or CCQuadParticleSystem (preferred for iOS 3rd and 4th Generation)
-@interface ParticleEffectSelfMade : ARCH_OPTIMAL_PARTICLE_SYSTEM 
+@interface ParticleEffectSelfMade : CCParticleSystemQuad 
 {
 
 }

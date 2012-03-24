@@ -12,7 +12,7 @@
 
 static int sceneIdx=-1;
 static NSString *transitions[] = {	
-
+	
 	@"Sprite1",
 	@"SpriteBatchNode1",
 	@"SpriteFrameTest",
@@ -38,6 +38,9 @@ static NSString *transitions[] = {
 	@"SpriteBatchNodeReorderIssue744",
 	@"SpriteBatchNodeReorderIssue766",
 	@"SpriteBatchNodeReorderIssue767",
+	@"SpriteBatchNodeReorderSameIndex",
+	@"SpriteBatchNodeReorderOneChild",
+	@"NodeSort",
 	@"SpriteZVertex",
 	@"SpriteBatchNodeZVertex",
 	@"Sprite6",
@@ -58,9 +61,13 @@ static NSString *transitions[] = {
 	@"SpriteBatchNodeChildrenScale",
 	@"SpriteChildrenChildren",
 	@"SpriteBatchNodeChildrenChildren",
+	@"SpriteSkewNegativeScaleChildren",
+	@"SpriteBatchNodeSkewNegativeScaleChildren",
 	@"SpriteNilTexture",
 	@"SpriteSubclass",
+	@"SpriteBatchBug1217",
 	@"AnimationCache",
+	@"AnimationCacheFile",
 };
 
 enum {
@@ -679,7 +686,7 @@ Class restartAction()
 		}
 		
 		//usually children get sorted before -transform but call sort now to verify order
-//		[asmtest sortAllChildren];
+		[asmtest sortAllChildren];
 		
 		NSInteger prev = -1;
 		for(id child in asmtest.children)
@@ -745,6 +752,238 @@ Class restartAction()
 }
 @end
 
+@implementation NodeSort
+
+- (void) reorderSprite:(ccTime)dt
+{
+	[self unschedule:_cmd];
+	//z-4
+	[node reorderChild:[[node children] objectAtIndex:0] z:32];
+	//[node reorderChild:[[node children] objectAtIndex:2] z:-4];
+	//[node reorderChild:[[node children] objectAtIndex:1] z:-6];
+	
+	[node sortAllChildren];
+	
+	CCSprite *child;
+	CCARRAY_FOREACH(node.children,child) NSLog(@"tag %i z %i",(int)child.tag,(int)child.zOrder);
+	
+}
+
+// on "init" you need to initialize your instance
+-(id) init
+{
+	// always call "super" init
+	// Apple recommends to re-assign "self" with the "super" return value
+	if( (self=[super init] )) {
+		
+		node = [CCNode node];
+		[self addChild:node z:0 tag:0];
+		
+		sprite1 = [CCSprite spriteWithFile:@"piece.png" rect:CGRectMake(128,0,64,64)];
+		sprite1.position = CGPointMake(100,160);
+		[node addChild:sprite1 z:-6 tag:1];
+		
+		sprite2= [CCSprite spriteWithFile:@"piece.png" rect:CGRectMake(128,0,64,64)];
+		sprite2.position = CGPointMake(164,160);
+		[node addChild:sprite2 z:-6 tag:2];
+		
+		sprite3 = [CCSprite spriteWithFile:@"piece.png" rect:CGRectMake(128,0,64,64)];
+		sprite3.position = CGPointMake(228,160);
+		[node addChild:sprite3 z:-4 tag:3];
+		
+		sprite4 = [CCSprite spriteWithFile:@"piece.png" rect:CGRectMake(128,0,64,64)];
+		sprite4.position = CGPointMake(292,160);
+		[node addChild:sprite4 z:-3 tag:4];
+		
+		sprite5 = [CCSprite spriteWithFile:@"piece.png" rect:CGRectMake(128,0,64,64)];
+		sprite5.position = CGPointMake(356,160);
+		[node addChild:sprite5 z:-3 tag:5];
+		
+		[self schedule:@selector(reorderSprite:) interval:1];
+	}
+	return self;
+}
+
+-(NSString *) title
+{
+	return @"node sort same index";
+}
+
+-(NSString *) subtitle
+{
+	return @"tag order in console should be 2,3,4,5,1";
+}
+
+@end
+
+
+@implementation SpriteBatchNodeReorderSameIndex
+
+- (void) reorderSprite:(ccTime)dt
+{
+	[self unschedule:_cmd];
+	
+	[batchNode reorderChild:sprite4 z:4];
+	[batchNode reorderChild:sprite5 z:4];
+	[batchNode reorderChild:sprite1 z:4];
+	
+	[batchNode sortAllChildren];
+	CCSprite* child;
+	CCARRAY_FOREACH(batchNode.descendants,child) NSLog(@"tag %i",(int)child.tag);
+	
+}
+
+// on "init" you need to initialize your instance
+-(id) init
+{
+	// always call "super" init
+	// Apple recommends to re-assign "self" with the "super" return value
+	if( (self=[super init] )) {
+		
+		batchNode = [CCSpriteBatchNode batchNodeWithFile:@"piece.png" capacity:15];
+		[self addChild:batchNode z:1 tag:0];
+				
+		sprite1 = [CCSprite spriteWithBatchNode:batchNode rect:CGRectMake(128,0,64,64)];
+		sprite1.position = CGPointMake(100,160);
+		[batchNode addChild:sprite1 z:3 tag:1];
+		
+		sprite2= [CCSprite spriteWithBatchNode:batchNode rect:CGRectMake(128,0,64,64)];
+		sprite2.position = CGPointMake(164,160);
+		[batchNode addChild:sprite2 z:4 tag:2];
+		
+		sprite3 = [CCSprite spriteWithBatchNode:batchNode rect:CGRectMake(128,0,64,64)];
+		sprite3.position = CGPointMake(228,160);
+		[batchNode addChild:sprite3 z:4 tag:3];
+		
+		sprite4 = [CCSprite spriteWithBatchNode:batchNode rect:CGRectMake(128,0,64,64)];
+		sprite4.position = CGPointMake(292,160);
+		[batchNode addChild:sprite4 z:5 tag:4];
+		
+		sprite5 = [CCSprite spriteWithBatchNode:batchNode rect:CGRectMake(128,0,64,64)];
+		sprite5.position = CGPointMake(356,160);
+		[batchNode addChild:sprite5 z:6 tag:5];
+		
+		
+		[self schedule:@selector(reorderSprite:) interval:2];
+	}
+	return self;
+}
+
+-(NSString *) title
+{
+	return @"SpriteBatchNodeReorder same index";
+}
+
+-(NSString *) subtitle
+{
+	return @"tag order in console should be 2,3,4,5,1";
+}
+
+@end
+
+#pragma mark -
+#pragma mark SpriteBatchNodeReorderOneChild
+
+@implementation SpriteBatchNodeReorderOneChild
+
+-(id) init
+{
+	if( (self=[super init]) ) {
+		
+		CGSize s = [[CCDirector sharedDirector] winSize];		
+		
+		[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"animations/ghosts.plist"];
+		
+		CCSpriteBatchNode *aParent;
+		CCSprite *l1, *l2a, *l2b, *l3a1, *l3a2, *l3b1, *l3b2;
+		
+		//
+		// SpriteBatchNode: 3 levels of children
+		//
+		
+		aParent = [CCSpriteBatchNode batchNodeWithFile:@"animations/ghosts.png"];
+		
+		batchNode_ = aParent;
+		//[[aParent texture] generateMipmap];
+		[self addChild:aParent];
+		
+		// parent
+		l1 = [CCSprite spriteWithSpriteFrameName:@"father.gif"];
+		l1.position = ccp( s.width/2, s.height/2);
+		
+		[aParent addChild:l1];
+		CGSize l1Size = [l1 contentSize];
+		
+		// child left
+		l2a = [CCSprite spriteWithSpriteFrameName:@"sister1.gif"];
+		l2a.position = ccp( -10 + l1Size.width/2, 0 + l1Size.height/2);
+		
+		[l1 addChild:l2a z:1];
+		CGSize l2aSize = [l2a contentSize];		
+		
+		
+		// child right
+		l2b = [CCSprite spriteWithSpriteFrameName:@"sister2.gif"];
+		l2b.position = ccp( +50 + l1Size.width/2, 0 + l1Size.height/2);
+		
+		[l1 addChild:l2b z:2];
+		CGSize l2bSize = [l2a contentSize];		
+		
+		
+		// child left bottom
+		l3a1 = [CCSprite spriteWithSpriteFrameName:@"child1.gif"];
+		l3a1.scale = 0.45f;
+		l3a1.position = ccp(0+l2aSize.width/2,-50+l2aSize.height/2);
+		[l2a addChild:l3a1 z:1];
+		
+		// child left top
+		l3a2 = [CCSprite spriteWithSpriteFrameName:@"child1.gif"];
+		l3a2.scale = 0.45f;
+		l3a2.position = ccp(0+l2aSize.width/2,+50+l2aSize.height/2);
+		[l2a addChild:l3a2 z:2];
+		
+		reorderSprite_ = l2a;
+		
+		// child right bottom
+		l3b1 = [CCSprite spriteWithSpriteFrameName:@"child1.gif"];
+		l3b1.scale = 0.45f;
+		l3b1.flipY = YES;
+		l3b1.position = ccp(0+l2bSize.width/2,-50+l2bSize.height/2);
+		[l2b addChild:l3b1];
+		
+		// child right top
+		l3b2 = [CCSprite spriteWithSpriteFrameName:@"child1.gif"];
+		l3b2.scale = 0.45f;
+		l3b2.flipY = YES;
+		l3b2.position = ccp(0+l2bSize.width/2,+50+l2bSize.height/2);
+		[l2b addChild:l3b2];
+		
+		[self schedule:@selector(reorderSprite:) interval:2];
+		
+	}	
+	return self;
+}
+
+
+- (void) reorderSprite:(ccTime)dt
+{
+	[self unschedule:_cmd];
+	
+	[reorderSprite_.parent reorderChild:reorderSprite_ z:-1];
+	
+	[batchNode_ sortAllChildren];
+	//CCSprite* child;
+	//CCARRAY_FOREACH(batchNode.descendants,child) NSLog(@"tag %i",child.tag);
+	
+}
+
+
+-(NSString *) title
+{
+	return @"SpriteBatchNode reorder 1 child";
+}
+@end
+
 @implementation SpriteBatchNodeReorderIssue766
 -(CCSprite *)makeSpriteZ:(int)aZ
 {
@@ -795,7 +1034,7 @@ Class restartAction()
 
 -(NSString *) title
 {
-	return @"SpriteBatchNode: reorder issue #766";
+	return @"SpriteBatchNodeReorder";
 }
 
 -(NSString *) subtitle
@@ -804,6 +1043,7 @@ Class restartAction()
 }
 
 @end
+
 
 
 @implementation SpriteBatchNodeReorderIssue767
@@ -3671,7 +3911,12 @@ Class restartAction()
 
 -(NSString *) title
 {
-	return @"Sprite multiple levels of children";
+	return @"Sprite";
+}
+
+-(NSString *) subtitle
+{
+	return @"Multiple levels of children: Grandparent, parent and child";
 }
 @end
 
@@ -3759,7 +4004,148 @@ Class restartAction()
 
 -(NSString *) title
 {
-	return @"SpriteBatchNode multiple levels of children";
+	return @"SpriteBatchNode";
+}
+
+-(NSString *) subtitle
+{
+	return @"Multiple levels of children: Grandparent, parent and child";
+}
+@end
+
+#pragma mark -
+#pragma mark Example SpriteBatchNodeSkewNegativeScaleChildren
+
+@implementation SpriteBatchNodeSkewNegativeScaleChildren
+
+-(id) init
+{
+	if( (self=[super init]) ) {
+		
+		CGSize s = [[CCDirector sharedDirector] winSize];		
+		
+		CCSpriteFrameCache *cache = [CCSpriteFrameCache sharedSpriteFrameCache];
+		[cache addSpriteFramesWithFile:@"animations/grossini.plist"];
+		[cache addSpriteFramesWithFile:@"animations/grossini_gray.plist" textureFile:@"animations/grossini_gray.png"];
+		
+		CCSpriteBatchNode *spritebatch = [CCSpriteBatchNode batchNodeWithFile:@"animations/grossini.pvr.gz"];
+		[self addChild:spritebatch];
+		
+		for(int i=0;i<2;i++) {
+			CCSprite *sprite = [CCSprite spriteWithSpriteFrameName:@"grossini_dance_01.png"];
+			sprite.position = ccp( s.width/4*(i+1), s.height/2);
+			
+			// Skew
+			id skewX = [CCSkewBy actionWithDuration:2 skewX:45 skewY:0];
+			id skewX_back = [skewX reverse];
+			id skewY = [CCSkewBy actionWithDuration:2 skewX:0 skewY:45];
+			id skewY_back = [skewY reverse];
+			
+			if(i == 1)
+			{
+				[sprite setScale:-1.0f];
+			}
+			
+			id seq_skew = [CCSequence actions:skewX, skewX_back, skewY, skewY_back, nil];
+			[sprite runAction:[CCRepeatForever actionWithAction:seq_skew]];
+			
+			CCSprite *child1 = [CCSprite spriteWithSpriteFrameName:@"grossini_dance_01.png"];
+			[child1 setPosition: ccp(sprite.contentSize.width / 2.0f, sprite.contentSize.height / 2.0f)];
+			
+			[child1 setScale:0.8];
+
+			[sprite addChild: child1];
+			
+			[spritebatch addChild:sprite z:i];
+		}
+	}
+	return self;
+}
+
+- (void) dealloc
+{
+	CCSpriteFrameCache *cache = [CCSpriteFrameCache sharedSpriteFrameCache];
+	[cache removeSpriteFramesFromFile:@"animations/grossini.plist"];
+	[cache removeSpriteFramesFromFile:@"animations/grossini_gray.plist"];
+	[super dealloc];
+}
+
+-(NSString *) title
+{
+	return @"SpriteBatchNode + children + skew";
+}
+
+-(NSString *) subtitle
+{
+	return @"SpriteBatchNode skew + negative scale with children";
+}
+@end
+
+#pragma mark -
+#pragma mark Example SpriteSkewNegativeScaleChildren
+
+@implementation SpriteSkewNegativeScaleChildren
+
+-(id) init
+{
+	if( (self=[super init]) ) {
+		
+		CGSize s = [[CCDirector sharedDirector] winSize];		
+		
+		CCSpriteFrameCache *cache = [CCSpriteFrameCache sharedSpriteFrameCache];
+		[cache addSpriteFramesWithFile:@"animations/grossini.plist"];
+		[cache addSpriteFramesWithFile:@"animations/grossini_gray.plist" textureFile:@"animations/grossini_gray.png"];
+		
+		CCNode *parent = [CCNode node];
+		[self addChild:parent];
+		
+		for(int i=0;i<2;i++) {
+			CCSprite *sprite = [CCSprite spriteWithSpriteFrameName:@"grossini_dance_01.png"];
+			sprite.position = ccp( s.width/4*(i+1), s.height/2);
+			
+			// Skew
+			id skewX = [CCSkewBy actionWithDuration:2 skewX:45 skewY:0];
+			id skewX_back = [skewX reverse];
+			id skewY = [CCSkewBy actionWithDuration:2 skewX:0 skewY:45];
+			id skewY_back = [skewY reverse];
+			
+			if(i == 1)
+			{
+				[sprite setScale:-1.0f];
+			}
+			
+			id seq_skew = [CCSequence actions:skewX, skewX_back, skewY, skewY_back, nil];
+			[sprite runAction:[CCRepeatForever actionWithAction:seq_skew]];
+			
+			CCSprite *child1 = [CCSprite spriteWithSpriteFrameName:@"grossini_dance_01.png"];
+			[child1 setPosition: ccp(sprite.contentSize.width / 2.0f, sprite.contentSize.height / 2.0f)];
+			
+			[sprite addChild: child1];
+			
+			[child1 setScale:0.8f];
+			
+			[parent addChild:sprite z:i];
+		}
+	}
+	return self;
+}
+
+- (void) dealloc
+{
+	CCSpriteFrameCache *cache = [CCSpriteFrameCache sharedSpriteFrameCache];
+	[cache removeSpriteFramesFromFile:@"animations/grossini.plist"];
+	[cache removeSpriteFramesFromFile:@"animations/grossini_gray.plist"];
+	[super dealloc];
+}
+
+-(NSString *) title
+{
+	return @"Sprite + children + skew";
+}
+
+-(NSString *) subtitle
+{
+	return @"Sprite skew + negative scale with children";
 }
 @end
 
@@ -3992,6 +4378,115 @@ Class restartAction()
 
 @end
 
+#pragma mark -
+#pragma mark AnimationCacheFile
+
+@implementation AnimationCacheFile
+
+
+-(id) init
+{
+	if( (self=[super init]) ) {
+		
+		[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"animations/grossini.plist"];
+		[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"animations/grossini_gray.plist"];
+		[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"animations/grossini_blue.plist"];		
+
+
+		// Purge previously loaded animation
+		[CCAnimationCache purgeSharedAnimationCache];
+		
+		CCAnimationCache *animCache = [CCAnimationCache sharedAnimationCache];
+
+		// Add an animation to the Cache
+		[animCache addAnimationsWithFile:@"animations/animations.plist"];
+		
+		
+		CCAnimation *normal = [animCache animationByName:@"dance_1"];
+		CCAnimation *dance_grey = [animCache animationByName:@"dance_2"];
+		CCAnimation *dance_blue = [animCache animationByName:@"dance_3"];
+		
+		CCAnimate *animN = [CCAnimate actionWithAnimation:normal];
+		CCAnimate *animG = [CCAnimate actionWithAnimation:dance_grey];
+		CCAnimate *animB = [CCAnimate actionWithAnimation:dance_blue];
+		
+		CCSequence *seq = [CCSequence actions:animN, animG, animB, nil];
+		
+		// create an sprite without texture
+		CCSprite *grossini = [CCSprite node];
+		
+		CGSize winSize = [[CCDirector sharedDirector] winSize];
+		
+		grossini.position = ccp(winSize.width/2, winSize.height/2);
+		
+		[self addChild:grossini];
+		
+		
+		// run the animation
+		[grossini runAction:seq];
+		
+	}
+	
+	return self;
+	
+}
+
+-(NSString *) title
+{
+	return @"AnimationCache - Load file";
+}
+
+-(NSString*) subtitle
+{
+	return @"Sprite should be animated";
+}
+
+@end
+
+#pragma mark - SpriteBatchBug1217
+
+@implementation SpriteBatchBug1217
+-(id) init
+{
+	if( (self=[super init]) ) {
+		
+		CCSpriteBatchNode *bn = [CCSpriteBatchNode batchNodeWithFile:@"grossini_dance_atlas.png" capacity:15];
+		
+		CCSprite * s1 = [CCSprite spriteWithTexture:bn.texture rect:CGRectMake(0, 0, 57, 57)];
+		CCSprite * s2 = [CCSprite spriteWithTexture:bn.texture rect:CGRectMake(0, 0, 57, 57)];
+		CCSprite * s3 = [CCSprite spriteWithTexture:bn.texture rect:CGRectMake(0, 0, 57, 57)];
+		
+		s1.color = ccc3(255, 0, 0);
+		s2.color = ccc3(0, 255, 0);
+		s3.color = ccc3(0, 0, 255);
+		
+		s1.position = ccp(20,200);
+		s2.position = ccp(100,0);
+		s3.position = ccp(100,0);
+		
+		bn.position = ccp(0,0);
+		
+		//!!!!!
+		[s1 addChild:s2];
+		[s2 addChild:s3];
+		[bn addChild:s1];
+		
+		[self addChild:bn];
+	}
+	return self;
+}
+
+-(NSString *) title
+{
+	return @"SpriteBatch - Bug 1217";
+}
+
+-(NSString*) subtitle
+{
+	return @"Adding big family to spritebatch. You shall see 3 heads";
+}
+
+@end
 
 #pragma mark -
 #pragma mark AppDelegate
@@ -4050,7 +4545,13 @@ Class restartAction()
 	// Default texture format for PNG/BMP/TIFF/JPEG/GIF images
 	// It can be RGBA8888, RGBA4444, RGB5_A1, RGB565
 	// You can change anytime.
-	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];	
+	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
+	
+    // When in iPhone RetinaDisplay, iPad, iPad RetinaDisplay mode, CCFileUtils will append the "-hd", "-ipad", "-ipadhd" to all loaded files
+	// If the -hd, -ipad, -ipadhd files are not found, it will load the non-suffixed version
+	[CCFileUtils setiPhoneRetinaDisplaySuffix:@"-hd"];		// Default on iPhone RetinaDisplay is "-hd"
+	[CCFileUtils setiPadSuffix:@"-ipad"];					// Default on iPad is "" (empty string)
+	[CCFileUtils setiPadRetinaDisplaySuffix:@"-ipadhd"];	// Default on iPad RetinaDisplay is "-ipadhd"
 	
 	// Assume that PVR images have premultiplied alpha
 	[CCTexture2D PVRImagesHavePremultipliedAlpha:YES];

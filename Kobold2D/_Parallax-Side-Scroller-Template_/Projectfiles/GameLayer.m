@@ -102,7 +102,7 @@ static GameLayer* instanceOfGameLayer;
 
 -(void) preloadParticleEffects:(NSString*)particleFile
 {
-	[ARCH_OPTIMAL_PARTICLE_SYSTEM particleWithFile:particleFile];
+	[CCParticleSystem particleWithFile:particleFile];
 }
 
 -(BulletCache*) bulletCache

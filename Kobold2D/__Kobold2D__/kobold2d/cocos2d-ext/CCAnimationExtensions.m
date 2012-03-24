@@ -15,7 +15,6 @@ FIX_CATEGORY_BUG(CCAnimation)
 +(id) animationWithName:(NSString*)name format:(NSString*)format numFrames:(int)numFrames firstIndex:(int)firstIndex delay:(float)delay
 {
 	CCAnimation* anim = [self animation];
-	anim.delay = delay;
 	
 	int maxIndex = firstIndex + numFrames;
 	for (int i = firstIndex; i < maxIndex; i++)
@@ -23,7 +22,7 @@ FIX_CATEGORY_BUG(CCAnimation)
 		NSString* frameName = [NSString stringWithFormat:format, i];
 		CCSpriteFrame* frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:frameName];
 		NSAssert(frame != nil, @"there's no sprite frame with name '%@' in CCSpriteFrameCache!");
-		[anim addFrame:frame];
+		[anim addFrame:frame delay:delay];
 	}
 	
 	return anim;

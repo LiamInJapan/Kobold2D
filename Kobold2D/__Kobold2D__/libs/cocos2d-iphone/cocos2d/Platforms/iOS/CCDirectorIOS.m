@@ -91,7 +91,7 @@ CGFloat	__ccContentScaleFactor = 1;
 			[CCDirectorDisplayLink sharedDirector];
 			break;
 		case CCDirectorTypeMainLoop:
-			[CCDirectorFastThreaded sharedDirector];
+			[CCDirectorFast sharedDirector];
 			break;
 		case CCDirectorTypeThreadMainLoop:
 			[CCDirectorFastThreaded sharedDirector];
@@ -209,8 +209,14 @@ CGFloat	__ccContentScaleFactor = 1;
 			glViewport(0, 0, size.width, size.height);
 			glMatrixMode(GL_PROJECTION);
 			glLoadIdentity();
-//			gluPerspective(60, (GLfloat)size.width/size.height, zeye-size.height/2, zeye+size.height/2 );
-			gluPerspective(60, (GLfloat)size.width/size.height, 0.5f, 1500);
+			// accommodate iPad retina while keep backward compatibility
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad &&
+                [[UIScreen mainScreen] scale] > 1.0 )
+            {
+                gluPerspective(60, (GLfloat)size.width/size.height, zeye-size.height/2, zeye+size.height/2 );
+            } else {
+                gluPerspective(60, (GLfloat)size.width/size.height, 0.5f, 1500);
+            }
 
 			glMatrixMode(GL_MODELVIEW);	
 			glLoadIdentity();
@@ -285,7 +291,10 @@ CGFloat	__ccContentScaleFactor = 1;
 		isContentScaleSupported_ = YES;
 	}
 	else
-		CCLOG(@"cocos2d: 'setContentScaleFactor:' is not supported on this device");
+	{
+		CCLOG(@"cocos2d: WARNING: calling setContentScaleFactor on iOS < 4. Using fallback mechanism");		
+		isContentScaleSupported_ = NO;
+	}
 }
 
 -(BOOL) enableRetinaDisplay:(BOOL)enabled
@@ -520,6 +529,106 @@ CGFloat	__ccContentScaleFactor = 1;
 }
 @end
 
+
+#pragma mark -
+#pragma mark Director DirectorFast
+
+@implementation CCDirectorFast
+
+- (id) init
+{
+	if(( self = [super init] )) {
+		
+#if CC_DIRECTOR_DISPATCH_FAST_EVENTS
+		CCLOG(@"cocos2d: Fast Events enabled");
+#else
+		CCLOG(@"cocos2d: Fast Events disabled");
+#endif		
+		isRunning = NO;
+		
+		// XXX:
+		// XXX: Don't create any autorelease object before calling "fast director"
+		// XXX: else it will be leaked
+		// XXX:
+		autoreleasePool = [NSAutoreleasePool new];
+	}
+
+	return self;
+}
+
+- (void) startAnimation
+{
+	NSAssert( isRunning == NO, @"isRunning must be NO. Calling startAnimation twice?");
+
+	// XXX:
+	// XXX: release autorelease objects created
+	// XXX: between "use fast director" and "runWithScene"
+	// XXX:
+	[autoreleasePool release];
+	autoreleasePool = nil;
+
+	if ( gettimeofday( &lastUpdate_, NULL) != 0 ) {
+		CCLOG(@"cocos2d: Director: Error in gettimeofday");
+	}
+	
+
+	isRunning = YES;
+
+	SEL selector = @selector(mainLoop);
+	NSMethodSignature* sig = [[[CCDirector sharedDirector] class]
+							  instanceMethodSignatureForSelector:selector];
+	NSInvocation* invocation = [NSInvocation
+								invocationWithMethodSignature:sig];
+	[invocation setTarget:[CCDirector sharedDirector]];
+	[invocation setSelector:selector];
+	[invocation performSelectorOnMainThread:@selector(invokeWithTarget:)
+								 withObject:[CCDirector sharedDirector] waitUntilDone:NO];
+	
+//	NSInvocationOperation *loopOperation = [[[NSInvocationOperation alloc]
+//											 initWithTarget:self selector:@selector(mainLoop) object:nil]
+//											autorelease];
+//	
+//	[loopOperation performSelectorOnMainThread:@selector(start) withObject:nil
+//								 waitUntilDone:NO];
+}
+
+-(void) mainLoop
+{
+	while (isRunning) {
+	
+		NSAutoreleasePool *loopPool = [NSAutoreleasePool new];
+
+#if CC_DIRECTOR_DISPATCH_FAST_EVENTS
+		while( CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.004f, FALSE) == kCFRunLoopRunHandledSource);
+#else
+		while(CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, TRUE) == kCFRunLoopRunHandledSource);
+#endif
+
+		if (isPaused_) {
+			usleep(250000); // Sleep for a quarter of a second (250,000 microseconds) so that the framerate is 4 fps.
+		}
+		
+		[self drawScene];		
+
+#if CC_DIRECTOR_DISPATCH_FAST_EVENTS
+		while( CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.004f, FALSE) == kCFRunLoopRunHandledSource);
+#else
+		while(CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, TRUE) == kCFRunLoopRunHandledSource);
+#endif
+
+		[loopPool release];
+	}	
+}
+- (void) stopAnimation
+{
+	isRunning = NO;
+}
+
+- (void)setAnimationInterval:(NSTimeInterval)interval
+{
+	NSLog(@"FastDirectory doesn't support setAnimationInterval, yet");
+}
+@end
 
 #pragma mark -
 #pragma mark Director DirectorThreadedFast

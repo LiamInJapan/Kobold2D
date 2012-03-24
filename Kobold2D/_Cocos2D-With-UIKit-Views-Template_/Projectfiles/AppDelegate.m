@@ -26,6 +26,17 @@
 -(id) alternateView
 {
 #if KK_PLATFORM_IOS
+	// =======================================================================================
+	// --- WARNING --- WARNING --- WARNING --- WARNING --- WARNING --- WARNING --- WARNING ---
+	// =======================================================================================
+	// If you do need UIKit views both behind and in front of the cocos2d view, you can uncomment the following code.
+	// However this solution will create a framebuffer twice the usual size for no apparent reason. 
+	// It may have other side-effects, too. Test thoroughly!
+
+	// no dummy view, just return nil
+	return nil;
+
+	/*
 	// we want to be a dummy view the self.view to which we add the glView plus all other UIKit views
 	KKAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
 
@@ -39,6 +50,7 @@
 	[dummyView addSubview:[CCDirector sharedDirector].openGLView];
 
 	return dummyView;
+	*/
 
 #elif KK_PLATFORM_MAC
 

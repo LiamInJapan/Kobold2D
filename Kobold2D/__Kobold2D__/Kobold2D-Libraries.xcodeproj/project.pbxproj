@@ -35,6 +35,12 @@
 		DC2024FA14939E3E0026EF0A /* JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = DC2024F714939E3E0026EF0A /* JRSwizzle.h */; };
 		DC2024FB14939E3E0026EF0A /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2024F814939E3E0026EF0A /* JRSwizzle.m */; };
 		DC2024FC14939E3E0026EF0A /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2024F814939E3E0026EF0A /* JRSwizzle.m */; };
+		DC22A1B5150FBB6100B58197 /* Cocos3DDummyClass.h in Headers */ = {isa = PBXBuildFile; fileRef = DC22A1B3150FBB6100B58197 /* Cocos3DDummyClass.h */; };
+		DC22A1B6150FBB6100B58197 /* Cocos3DDummyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = DC22A1B4150FBB6100B58197 /* Cocos3DDummyClass.m */; };
+		DC22A1C3150FC10400B58197 /* CCParticleBatchNode.h in Headers */ = {isa = PBXBuildFile; fileRef = DC22A1C1150FC10400B58197 /* CCParticleBatchNode.h */; };
+		DC22A1C4150FC10400B58197 /* CCParticleBatchNode.h in Headers */ = {isa = PBXBuildFile; fileRef = DC22A1C1150FC10400B58197 /* CCParticleBatchNode.h */; };
+		DC22A1C5150FC10400B58197 /* CCParticleBatchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DC22A1C2150FC10400B58197 /* CCParticleBatchNode.m */; };
+		DC22A1C6150FC10400B58197 /* CCParticleBatchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DC22A1C2150FC10400B58197 /* CCParticleBatchNode.m */; };
 		DC29BD7F14CC403C00F1FB25 /* lapi.c in Sources */ = {isa = PBXBuildFile; fileRef = DC29BD4B14CC403C00F1FB25 /* lapi.c */; };
 		DC29BD8014CC403C00F1FB25 /* lapi.c in Sources */ = {isa = PBXBuildFile; fileRef = DC29BD4B14CC403C00F1FB25 /* lapi.c */; };
 		DC29BD8114CC403C00F1FB25 /* lapi.h in Headers */ = {isa = PBXBuildFile; fileRef = DC29BD4C14CC403C00F1FB25 /* lapi.h */; };
@@ -288,8 +294,6 @@
 		DC72238B13FC35790014EB8F /* FixCategoryBug.h in Headers */ = {isa = PBXBuildFile; fileRef = DC72236313FC35790014EB8F /* FixCategoryBug.h */; };
 		DC7223CB13FC35E00014EB8F /* VTPG_Common.h in Headers */ = {isa = PBXBuildFile; fileRef = DC7223A313FC35E00014EB8F /* VTPG_Common.h */; };
 		DC7223CC13FC35E00014EB8F /* VTPG_Common.h in Headers */ = {isa = PBXBuildFile; fileRef = DC7223A313FC35E00014EB8F /* VTPG_Common.h */; };
-		DC73811A144DF4D900D61CC8 /* ccCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DC738119144DF4D900D61CC8 /* ccCArray.m */; };
-		DC73811B144DF4D900D61CC8 /* ccCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DC738119144DF4D900D61CC8 /* ccCArray.m */; };
 		DC7BA7D4140EECC900728E6D /* FontLabelStringDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA4213A90CAE00788FBF /* FontLabelStringDrawing.m */; };
 		DC7F433B1438884700FF7A65 /* KKTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = DC7F43391438884700FF7A65 /* KKTouch.h */; };
 		DC7F433C1438884700FF7A65 /* KKTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = DC7F43391438884700FF7A65 /* KKTouch.h */; };
@@ -609,163 +613,6 @@
 		DCC29EEB14CB03390035B0B5 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCC29E3614CB03380035B0B5 /* b2Rope.cpp */; };
 		DCC29EEC14CB03390035B0B5 /* b2Rope.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29E3714CB03380035B0B5 /* b2Rope.h */; };
 		DCC29EED14CB03390035B0B5 /* b2Rope.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29E3714CB03380035B0B5 /* b2Rope.h */; };
-		DCC29F9414CB06C50035B0B5 /* CC3ModelSampleFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29EEF14CB06C50035B0B5 /* CC3ModelSampleFactory.h */; };
-		DCC29F9514CB06C50035B0B5 /* CC3ModelSampleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29EF014CB06C50035B0B5 /* CC3ModelSampleFactory.m */; };
-		DCC29F9614CB06C50035B0B5 /* CC3PointParticleSamples.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29EF114CB06C50035B0B5 /* CC3PointParticleSamples.h */; };
-		DCC29F9714CB06C50035B0B5 /* CC3PointParticleSamples.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29EF214CB06C50035B0B5 /* CC3PointParticleSamples.m */; };
-		DCC29F9814CB06C50035B0B5 /* teapot.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29EF314CB06C50035B0B5 /* teapot.h */; };
-		DCC29F9914CB06C50035B0B5 /* CC3IdentifiablePODExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29EF514CB06C50035B0B5 /* CC3IdentifiablePODExtensions.h */; };
-		DCC29F9A14CB06C50035B0B5 /* CC3IdentifiablePODExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29EF614CB06C50035B0B5 /* CC3IdentifiablePODExtensions.m */; };
-		DCC29F9B14CB06C50035B0B5 /* CC3NodePODExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29EF714CB06C50035B0B5 /* CC3NodePODExtensions.h */; };
-		DCC29F9C14CB06C50035B0B5 /* CC3NodePODExtensions.mm in Sources */ = {isa = PBXBuildFile; fileRef = DCC29EF814CB06C50035B0B5 /* CC3NodePODExtensions.mm */; };
-		DCC29F9D14CB06C50035B0B5 /* CC3PODCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29EF914CB06C50035B0B5 /* CC3PODCamera.h */; };
-		DCC29F9E14CB06C50035B0B5 /* CC3PODCamera.mm in Sources */ = {isa = PBXBuildFile; fileRef = DCC29EFA14CB06C50035B0B5 /* CC3PODCamera.mm */; };
-		DCC29F9F14CB06C50035B0B5 /* CC3PODLight.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29EFB14CB06C50035B0B5 /* CC3PODLight.h */; };
-		DCC29FA014CB06C50035B0B5 /* CC3PODLight.mm in Sources */ = {isa = PBXBuildFile; fileRef = DCC29EFC14CB06C50035B0B5 /* CC3PODLight.mm */; };
-		DCC29FA114CB06C50035B0B5 /* CC3PODMaterial.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29EFD14CB06C50035B0B5 /* CC3PODMaterial.h */; };
-		DCC29FA214CB06C50035B0B5 /* CC3PODMaterial.mm in Sources */ = {isa = PBXBuildFile; fileRef = DCC29EFE14CB06C50035B0B5 /* CC3PODMaterial.mm */; };
-		DCC29FA314CB06C50035B0B5 /* CC3PODMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29EFF14CB06C50035B0B5 /* CC3PODMesh.h */; };
-		DCC29FA414CB06C50035B0B5 /* CC3PODMesh.mm in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F0014CB06C50035B0B5 /* CC3PODMesh.mm */; };
-		DCC29FA514CB06C50035B0B5 /* CC3PODMeshNode.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F0114CB06C50035B0B5 /* CC3PODMeshNode.h */; };
-		DCC29FA614CB06C50035B0B5 /* CC3PODMeshNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F0214CB06C50035B0B5 /* CC3PODMeshNode.mm */; };
-		DCC29FA714CB06C50035B0B5 /* CC3PODNode.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F0314CB06C50035B0B5 /* CC3PODNode.h */; };
-		DCC29FA814CB06C50035B0B5 /* CC3PODNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F0414CB06C50035B0B5 /* CC3PODNode.m */; };
-		DCC29FA914CB06C50035B0B5 /* CC3PODResource.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F0514CB06C50035B0B5 /* CC3PODResource.h */; };
-		DCC29FAA14CB06C50035B0B5 /* CC3PODResource.mm in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F0614CB06C50035B0B5 /* CC3PODResource.mm */; };
-		DCC29FAB14CB06C50035B0B5 /* CC3PODResourceNode.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F0714CB06C50035B0B5 /* CC3PODResourceNode.h */; };
-		DCC29FAC14CB06C50035B0B5 /* CC3PODResourceNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F0814CB06C50035B0B5 /* CC3PODResourceNode.m */; };
-		DCC29FAD14CB06C50035B0B5 /* CC3PODVertexSkinning.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F0914CB06C50035B0B5 /* CC3PODVertexSkinning.h */; };
-		DCC29FAE14CB06C50035B0B5 /* CC3PODVertexSkinning.mm in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F0A14CB06C50035B0B5 /* CC3PODVertexSkinning.mm */; };
-		DCC29FAF14CB06C50035B0B5 /* CC3PVRFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F0B14CB06C50035B0B5 /* CC3PVRFoundation.h */; };
-		DCC29FB014CB06C50035B0B5 /* CC3PVRFoundation.mm in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F0C14CB06C50035B0B5 /* CC3PVRFoundation.mm */; };
-		DCC29FB114CB06C50035B0B5 /* CC3PVRTModelPOD.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F0D14CB06C50035B0B5 /* CC3PVRTModelPOD.h */; };
-		DCC29FB214CB06C50035B0B5 /* CC3VertexArraysPODExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F0E14CB06C50035B0B5 /* CC3VertexArraysPODExtensions.h */; };
-		DCC29FB314CB06C50035B0B5 /* CC3VertexArraysPODExtensions.mm in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F0F14CB06C50035B0B5 /* CC3VertexArraysPODExtensions.mm */; };
-		DCC29FB414CB06C50035B0B5 /* PVRTContext.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F1214CB06C50035B0B5 /* PVRTContext.h */; };
-		DCC29FB514CB06C50035B0B5 /* PVRTFixedPointAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F1314CB06C50035B0B5 /* PVRTFixedPointAPI.h */; };
-		DCC29FB614CB06C50035B0B5 /* PVRTglesExt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F1414CB06C50035B0B5 /* PVRTglesExt.cpp */; };
-		DCC29FB714CB06C50035B0B5 /* PVRTglesExt.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F1514CB06C50035B0B5 /* PVRTglesExt.h */; };
-		DCC29FB814CB06C50035B0B5 /* PVRTBoneBatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F1714CB06C50035B0B5 /* PVRTBoneBatch.cpp */; };
-		DCC29FB914CB06C50035B0B5 /* PVRTBoneBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F1814CB06C50035B0B5 /* PVRTBoneBatch.h */; };
-		DCC29FBA14CB06C50035B0B5 /* PVRTError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F1914CB06C50035B0B5 /* PVRTError.cpp */; };
-		DCC29FBB14CB06C50035B0B5 /* PVRTError.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F1A14CB06C50035B0B5 /* PVRTError.h */; };
-		DCC29FBC14CB06C50035B0B5 /* PVRTFixedPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F1B14CB06C50035B0B5 /* PVRTFixedPoint.cpp */; };
-		DCC29FBD14CB06C50035B0B5 /* PVRTFixedPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F1C14CB06C50035B0B5 /* PVRTFixedPoint.h */; };
-		DCC29FBE14CB06C50035B0B5 /* PVRTGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F1D14CB06C50035B0B5 /* PVRTGlobal.h */; };
-		DCC29FBF14CB06C50035B0B5 /* PVRTMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F1E14CB06C50035B0B5 /* PVRTMatrix.h */; };
-		DCC29FC014CB06C50035B0B5 /* PVRTMatrixF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F1F14CB06C50035B0B5 /* PVRTMatrixF.cpp */; };
-		DCC29FC114CB06C50035B0B5 /* PVRTMemoryFileSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F2014CB06C50035B0B5 /* PVRTMemoryFileSystem.h */; };
-		DCC29FC214CB06C50035B0B5 /* PVRTModelPOD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F2114CB06C50035B0B5 /* PVRTModelPOD.cpp */; };
-		DCC29FC314CB06C50035B0B5 /* PVRTModelPOD.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F2214CB06C50035B0B5 /* PVRTModelPOD.h */; };
-		DCC29FC414CB06C50035B0B5 /* PVRTQuaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F2314CB06C50035B0B5 /* PVRTQuaternion.h */; };
-		DCC29FC514CB06C50035B0B5 /* PVRTQuaternionF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F2414CB06C50035B0B5 /* PVRTQuaternionF.cpp */; };
-		DCC29FC614CB06C50035B0B5 /* PVRTResourceFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F2514CB06C50035B0B5 /* PVRTResourceFile.cpp */; };
-		DCC29FC714CB06C50035B0B5 /* PVRTResourceFile.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F2614CB06C50035B0B5 /* PVRTResourceFile.h */; };
-		DCC29FC814CB06C50035B0B5 /* PVRTString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F2714CB06C50035B0B5 /* PVRTString.cpp */; };
-		DCC29FC914CB06C50035B0B5 /* PVRTString.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F2814CB06C50035B0B5 /* PVRTString.h */; };
-		DCC29FCA14CB06C50035B0B5 /* PVRTTrans.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F2914CB06C50035B0B5 /* PVRTTrans.cpp */; };
-		DCC29FCB14CB06C50035B0B5 /* PVRTTrans.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F2A14CB06C50035B0B5 /* PVRTTrans.h */; };
-		DCC29FCC14CB06C50035B0B5 /* PVRTVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F2B14CB06C50035B0B5 /* PVRTVector.cpp */; };
-		DCC29FCD14CB06C50035B0B5 /* PVRTVector.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F2C14CB06C50035B0B5 /* PVRTVector.h */; };
-		DCC29FCE14CB06C50035B0B5 /* PVRTVertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F2D14CB06C50035B0B5 /* PVRTVertex.cpp */; };
-		DCC29FCF14CB06C50035B0B5 /* PVRTVertex.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F2E14CB06C50035B0B5 /* PVRTVertex.h */; };
-		DCC29FD014CB06C50035B0B5 /* CCNodeController.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F3014CB06C50035B0B5 /* CCNodeController.h */; };
-		DCC29FD114CB06C50035B0B5 /* CCNodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F3114CB06C50035B0B5 /* CCNodeController.m */; };
-		DCC29FD214CB06C50035B0B5 /* ControllableCCLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F3214CB06C50035B0B5 /* ControllableCCLayer.h */; };
-		DCC29FD314CB06C50035B0B5 /* ControllableCCLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F3314CB06C50035B0B5 /* ControllableCCLayer.m */; };
-		DCC29FD414CB06C50035B0B5 /* CC3ActionInterval.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F3514CB06C50035B0B5 /* CC3ActionInterval.h */; };
-		DCC29FD514CB06C50035B0B5 /* CC3ActionInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F3614CB06C50035B0B5 /* CC3ActionInterval.m */; };
-		DCC29FD614CB06C50035B0B5 /* CC3Billboard.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F3714CB06C50035B0B5 /* CC3Billboard.h */; };
-		DCC29FD714CB06C50035B0B5 /* CC3Billboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F3814CB06C50035B0B5 /* CC3Billboard.m */; };
-		DCC29FD814CB06C50035B0B5 /* CC3BoundingVolumes.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F3914CB06C50035B0B5 /* CC3BoundingVolumes.h */; };
-		DCC29FD914CB06C50035B0B5 /* CC3BoundingVolumes.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F3A14CB06C50035B0B5 /* CC3BoundingVolumes.m */; };
-		DCC29FDA14CB06C50035B0B5 /* CC3Camera.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F3B14CB06C50035B0B5 /* CC3Camera.h */; };
-		DCC29FDB14CB06C50035B0B5 /* CC3Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F3C14CB06C50035B0B5 /* CC3Camera.m */; };
-		DCC29FDC14CB06C50035B0B5 /* CC3Fog.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F3D14CB06C50035B0B5 /* CC3Fog.h */; };
-		DCC29FDD14CB06C50035B0B5 /* CC3Fog.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F3E14CB06C50035B0B5 /* CC3Fog.m */; };
-		DCC29FDE14CB06C50035B0B5 /* CC3Identifiable.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F3F14CB06C50035B0B5 /* CC3Identifiable.h */; };
-		DCC29FDF14CB06C50035B0B5 /* CC3Identifiable.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F4014CB06C50035B0B5 /* CC3Identifiable.m */; };
-		DCC29FE014CB06C50035B0B5 /* CC3Layer.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F4114CB06C50035B0B5 /* CC3Layer.h */; };
-		DCC29FE114CB06C50035B0B5 /* CC3Layer.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F4214CB06C50035B0B5 /* CC3Layer.m */; };
-		DCC29FE214CB06C50035B0B5 /* CC3Light.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F4314CB06C50035B0B5 /* CC3Light.h */; };
-		DCC29FE314CB06C50035B0B5 /* CC3Light.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F4414CB06C50035B0B5 /* CC3Light.m */; };
-		DCC29FE414CB06C50035B0B5 /* CC3Material.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F4514CB06C50035B0B5 /* CC3Material.h */; };
-		DCC29FE514CB06C50035B0B5 /* CC3Material.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F4614CB06C50035B0B5 /* CC3Material.m */; };
-		DCC29FE614CB06C50035B0B5 /* CC3Mesh.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F4714CB06C50035B0B5 /* CC3Mesh.h */; };
-		DCC29FE714CB06C50035B0B5 /* CC3Mesh.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F4814CB06C50035B0B5 /* CC3Mesh.m */; };
-		DCC29FE814CB06C50035B0B5 /* CC3MeshNode.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F4914CB06C50035B0B5 /* CC3MeshNode.h */; };
-		DCC29FE914CB06C50035B0B5 /* CC3MeshNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F4A14CB06C50035B0B5 /* CC3MeshNode.m */; };
-		DCC29FEA14CB06C50035B0B5 /* CC3Node.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F4B14CB06C50035B0B5 /* CC3Node.h */; };
-		DCC29FEB14CB06C50035B0B5 /* CC3Node.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F4C14CB06C50035B0B5 /* CC3Node.m */; };
-		DCC29FEC14CB06C50035B0B5 /* CC3NodeAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F4D14CB06C50035B0B5 /* CC3NodeAnimation.h */; };
-		DCC29FED14CB06C50035B0B5 /* CC3NodeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F4E14CB06C50035B0B5 /* CC3NodeAnimation.m */; };
-		DCC29FEE14CB06C50035B0B5 /* CC3NodeSequencer.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F4F14CB06C50035B0B5 /* CC3NodeSequencer.h */; };
-		DCC29FEF14CB06C50035B0B5 /* CC3NodeSequencer.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F5014CB06C50035B0B5 /* CC3NodeSequencer.m */; };
-		DCC29FF014CB06C50035B0B5 /* CC3NodeVisitor.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F5114CB06C50035B0B5 /* CC3NodeVisitor.h */; };
-		DCC29FF114CB06C50035B0B5 /* CC3NodeVisitor.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F5214CB06C50035B0B5 /* CC3NodeVisitor.m */; };
-		DCC29FF214CB06C50035B0B5 /* CC3ParametricMeshNodes.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F5314CB06C50035B0B5 /* CC3ParametricMeshNodes.h */; };
-		DCC29FF314CB06C50035B0B5 /* CC3ParametricMeshNodes.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F5414CB06C50035B0B5 /* CC3ParametricMeshNodes.m */; };
-		DCC29FF414CB06C50035B0B5 /* CC3PerformanceStatistics.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F5514CB06C50035B0B5 /* CC3PerformanceStatistics.h */; };
-		DCC29FF514CB06C50035B0B5 /* CC3PerformanceStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F5614CB06C50035B0B5 /* CC3PerformanceStatistics.m */; };
-		DCC29FF614CB06C50035B0B5 /* CC3PointParticles.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F5714CB06C50035B0B5 /* CC3PointParticles.h */; };
-		DCC29FF714CB06C50035B0B5 /* CC3PointParticles.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F5814CB06C50035B0B5 /* CC3PointParticles.m */; };
-		DCC29FF814CB06C50035B0B5 /* CC3Resource.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F5914CB06C50035B0B5 /* CC3Resource.h */; };
-		DCC29FF914CB06C50035B0B5 /* CC3Resource.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F5A14CB06C50035B0B5 /* CC3Resource.m */; };
-		DCC29FFA14CB06C50035B0B5 /* CC3ResourceNode.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F5B14CB06C50035B0B5 /* CC3ResourceNode.h */; };
-		DCC29FFB14CB06C50035B0B5 /* CC3ResourceNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F5C14CB06C50035B0B5 /* CC3ResourceNode.m */; };
-		DCC29FFC14CB06C50035B0B5 /* CC3TargettingNode.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F5D14CB06C50035B0B5 /* CC3TargettingNode.h */; };
-		DCC29FFD14CB06C50035B0B5 /* CC3TargettingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F5E14CB06C50035B0B5 /* CC3TargettingNode.m */; };
-		DCC29FFE14CB06C50035B0B5 /* CC3Texture.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F5F14CB06C50035B0B5 /* CC3Texture.h */; };
-		DCC29FFF14CB06C50035B0B5 /* CC3Texture.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F6014CB06C50035B0B5 /* CC3Texture.m */; };
-		DCC2A00014CB06C50035B0B5 /* CC3TextureUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F6114CB06C50035B0B5 /* CC3TextureUnit.h */; };
-		DCC2A00114CB06C50035B0B5 /* CC3TextureUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F6214CB06C50035B0B5 /* CC3TextureUnit.m */; };
-		DCC2A00214CB06C50035B0B5 /* CC3VertexArrayMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F6314CB06C50035B0B5 /* CC3VertexArrayMesh.h */; };
-		DCC2A00314CB06C50035B0B5 /* CC3VertexArrayMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F6414CB06C50035B0B5 /* CC3VertexArrayMesh.m */; };
-		DCC2A00414CB06C50035B0B5 /* CC3VertexArrays.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F6514CB06C50035B0B5 /* CC3VertexArrays.h */; };
-		DCC2A00514CB06C50035B0B5 /* CC3VertexArrays.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F6614CB06C50035B0B5 /* CC3VertexArrays.m */; };
-		DCC2A00614CB06C50035B0B5 /* CC3VertexSkinning.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F6714CB06C50035B0B5 /* CC3VertexSkinning.h */; };
-		DCC2A00714CB06C50035B0B5 /* CC3VertexSkinning.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F6814CB06C50035B0B5 /* CC3VertexSkinning.m */; };
-		DCC2A00814CB06C50035B0B5 /* CC3World.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F6914CB06C50035B0B5 /* CC3World.h */; };
-		DCC2A00914CB06C50035B0B5 /* CC3World.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F6A14CB06C50035B0B5 /* CC3World.m */; };
-		DCC2A00A14CB06C50035B0B5 /* CC3EAGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F6C14CB06C50035B0B5 /* CC3EAGLView.h */; };
-		DCC2A00B14CB06C50035B0B5 /* CC3EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F6D14CB06C50035B0B5 /* CC3EAGLView.m */; };
-		DCC2A00C14CB06C50035B0B5 /* CC3OpenGLES11Capabilities.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F6E14CB06C50035B0B5 /* CC3OpenGLES11Capabilities.h */; };
-		DCC2A00D14CB06C50035B0B5 /* CC3OpenGLES11Capabilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F6F14CB06C50035B0B5 /* CC3OpenGLES11Capabilities.m */; };
-		DCC2A00E14CB06C50035B0B5 /* CC3OpenGLES11Engine.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F7014CB06C50035B0B5 /* CC3OpenGLES11Engine.h */; };
-		DCC2A00F14CB06C50035B0B5 /* CC3OpenGLES11Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F7114CB06C50035B0B5 /* CC3OpenGLES11Engine.m */; };
-		DCC2A01014CB06C50035B0B5 /* CC3OpenGLES11Fog.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F7214CB06C50035B0B5 /* CC3OpenGLES11Fog.h */; };
-		DCC2A01114CB06C50035B0B5 /* CC3OpenGLES11Fog.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F7314CB06C50035B0B5 /* CC3OpenGLES11Fog.m */; };
-		DCC2A01214CB06C50035B0B5 /* CC3OpenGLES11Foundation.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F7414CB06C50035B0B5 /* CC3OpenGLES11Foundation.h */; };
-		DCC2A01314CB06C50035B0B5 /* CC3OpenGLES11Foundation.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F7514CB06C50035B0B5 /* CC3OpenGLES11Foundation.m */; };
-		DCC2A01414CB06C50035B0B5 /* CC3OpenGLES11Hints.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F7614CB06C50035B0B5 /* CC3OpenGLES11Hints.h */; };
-		DCC2A01514CB06C50035B0B5 /* CC3OpenGLES11Hints.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F7714CB06C50035B0B5 /* CC3OpenGLES11Hints.m */; };
-		DCC2A01614CB06C50035B0B5 /* CC3OpenGLES11Intercept.c in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F7814CB06C50035B0B5 /* CC3OpenGLES11Intercept.c */; };
-		DCC2A01714CB06C50035B0B5 /* CC3OpenGLES11Intercept.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F7914CB06C50035B0B5 /* CC3OpenGLES11Intercept.h */; };
-		DCC2A01814CB06C50035B0B5 /* CC3OpenGLES11Lighting.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F7A14CB06C50035B0B5 /* CC3OpenGLES11Lighting.h */; };
-		DCC2A01914CB06C50035B0B5 /* CC3OpenGLES11Lighting.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F7B14CB06C50035B0B5 /* CC3OpenGLES11Lighting.m */; };
-		DCC2A01A14CB06C50035B0B5 /* CC3OpenGLES11Materials.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F7C14CB06C50035B0B5 /* CC3OpenGLES11Materials.h */; };
-		DCC2A01B14CB06C50035B0B5 /* CC3OpenGLES11Materials.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F7D14CB06C50035B0B5 /* CC3OpenGLES11Materials.m */; };
-		DCC2A01C14CB06C50035B0B5 /* CC3OpenGLES11Matrices.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F7E14CB06C50035B0B5 /* CC3OpenGLES11Matrices.h */; };
-		DCC2A01D14CB06C50035B0B5 /* CC3OpenGLES11Matrices.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F7F14CB06C50035B0B5 /* CC3OpenGLES11Matrices.m */; };
-		DCC2A01E14CB06C50035B0B5 /* CC3OpenGLES11Platform.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F8014CB06C50035B0B5 /* CC3OpenGLES11Platform.h */; };
-		DCC2A01F14CB06C50035B0B5 /* CC3OpenGLES11Platform.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F8114CB06C50035B0B5 /* CC3OpenGLES11Platform.m */; };
-		DCC2A02014CB06C50035B0B5 /* CC3OpenGLES11State.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F8214CB06C50035B0B5 /* CC3OpenGLES11State.h */; };
-		DCC2A02114CB06C50035B0B5 /* CC3OpenGLES11State.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F8314CB06C50035B0B5 /* CC3OpenGLES11State.m */; };
-		DCC2A02214CB06C50035B0B5 /* CC3OpenGLES11StateTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F8414CB06C50035B0B5 /* CC3OpenGLES11StateTracker.h */; };
-		DCC2A02314CB06C50035B0B5 /* CC3OpenGLES11StateTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F8514CB06C50035B0B5 /* CC3OpenGLES11StateTracker.m */; };
-		DCC2A02414CB06C50035B0B5 /* CC3OpenGLES11Textures.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F8614CB06C50035B0B5 /* CC3OpenGLES11Textures.h */; };
-		DCC2A02514CB06C50035B0B5 /* CC3OpenGLES11Textures.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F8714CB06C50035B0B5 /* CC3OpenGLES11Textures.m */; };
-		DCC2A02614CB06C50035B0B5 /* CC3OpenGLES11Utility.c in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F8814CB06C50035B0B5 /* CC3OpenGLES11Utility.c */; };
-		DCC2A02714CB06C50035B0B5 /* CC3OpenGLES11Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F8914CB06C50035B0B5 /* CC3OpenGLES11Utility.h */; };
-		DCC2A02814CB06C50035B0B5 /* CC3OpenGLES11VertexArrays.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F8A14CB06C50035B0B5 /* CC3OpenGLES11VertexArrays.h */; };
-		DCC2A02914CB06C50035B0B5 /* CC3OpenGLES11VertexArrays.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F8B14CB06C50035B0B5 /* CC3OpenGLES11VertexArrays.m */; };
-		DCC2A02A14CB06C50035B0B5 /* CC3Foundation.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F8D14CB06C50035B0B5 /* CC3Foundation.h */; };
-		DCC2A02B14CB06C50035B0B5 /* CC3Foundation.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F8E14CB06C50035B0B5 /* CC3Foundation.m */; };
-		DCC2A02C14CB06C50035B0B5 /* CC3GLMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F8F14CB06C50035B0B5 /* CC3GLMatrix.h */; };
-		DCC2A02D14CB06C50035B0B5 /* CC3GLMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC29F9014CB06C50035B0B5 /* CC3GLMatrix.m */; };
-		DCC2A02E14CB06C50035B0B5 /* CC3Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F9114CB06C50035B0B5 /* CC3Logging.h */; };
-		DCC2A02F14CB06C50035B0B5 /* CC3Math.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F9214CB06C50035B0B5 /* CC3Math.h */; };
-		DCC2A03014CB06C50035B0B5 /* CC3MatrixMath.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC29F9314CB06C50035B0B5 /* CC3MatrixMath.h */; };
 		DCCC448C13A926E600EE6641 /* cpCCNode.h in Headers */ = {isa = PBXBuildFile; fileRef = DCCC425C13A926E600EE6641 /* cpCCNode.h */; };
 		DCCC448D13A926E600EE6641 /* cpCCNode.h in Headers */ = {isa = PBXBuildFile; fileRef = DCCC425C13A926E600EE6641 /* cpCCNode.h */; };
 		DCCC448E13A926E600EE6641 /* cpCCNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCC425D13A926E600EE6641 /* cpCCNode.m */; };
@@ -1313,6 +1160,10 @@
 		DC1FBACA1416A31600036F5F /* TMXGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMXGenerator.m; sourceTree = "<group>"; };
 		DC2024F714939E3E0026EF0A /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
 		DC2024F814939E3E0026EF0A /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
+		DC22A1B3150FBB6100B58197 /* Cocos3DDummyClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cocos3DDummyClass.h; sourceTree = "<group>"; };
+		DC22A1B4150FBB6100B58197 /* Cocos3DDummyClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cocos3DDummyClass.m; sourceTree = "<group>"; };
+		DC22A1C1150FC10400B58197 /* CCParticleBatchNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCParticleBatchNode.h; sourceTree = "<group>"; };
+		DC22A1C2150FC10400B58197 /* CCParticleBatchNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCParticleBatchNode.m; sourceTree = "<group>"; };
 		DC29BD4B14CC403C00F1FB25 /* lapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lapi.c; path = libs/lua/src/lapi.c; sourceTree = "<group>"; };
 		DC29BD4C14CC403C00F1FB25 /* lapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lapi.h; path = libs/lua/src/lapi.h; sourceTree = "<group>"; };
 		DC29BD4D14CC403C00F1FB25 /* lauxlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lauxlib.c; path = libs/lua/src/lauxlib.c; sourceTree = "<group>"; };
@@ -1470,7 +1321,6 @@
 		DC72236213FC35790014EB8F /* cocos2d-extensions.README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "cocos2d-extensions.README.txt"; sourceTree = "<group>"; };
 		DC72236313FC35790014EB8F /* FixCategoryBug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixCategoryBug.h; sourceTree = "<group>"; };
 		DC7223A313FC35E00014EB8F /* VTPG_Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTPG_Common.h; sourceTree = "<group>"; };
-		DC738119144DF4D900D61CC8 /* ccCArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccCArray.m; sourceTree = "<group>"; };
 		DC7F43391438884700FF7A65 /* KKTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKTouch.h; sourceTree = "<group>"; };
 		DC7F433A1438884700FF7A65 /* KKTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKTouch.m; sourceTree = "<group>"; };
 		DC87CBF3143DD816001875E7 /* kkUserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kkUserConfig.h; sourceTree = "<group>"; };
@@ -1653,164 +1503,6 @@
 		DCC29E3414CB03380035B0B5 /* b2WheelJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2WheelJoint.h; sourceTree = "<group>"; };
 		DCC29E3614CB03380035B0B5 /* b2Rope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2Rope.cpp; sourceTree = "<group>"; };
 		DCC29E3714CB03380035B0B5 /* b2Rope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2Rope.h; sourceTree = "<group>"; };
-		DCC29EEF14CB06C50035B0B5 /* CC3ModelSampleFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3ModelSampleFactory.h; sourceTree = "<group>"; };
-		DCC29EF014CB06C50035B0B5 /* CC3ModelSampleFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3ModelSampleFactory.m; sourceTree = "<group>"; };
-		DCC29EF114CB06C50035B0B5 /* CC3PointParticleSamples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3PointParticleSamples.h; sourceTree = "<group>"; };
-		DCC29EF214CB06C50035B0B5 /* CC3PointParticleSamples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3PointParticleSamples.m; sourceTree = "<group>"; };
-		DCC29EF314CB06C50035B0B5 /* teapot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teapot.h; sourceTree = "<group>"; };
-		DCC29EF514CB06C50035B0B5 /* CC3IdentifiablePODExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3IdentifiablePODExtensions.h; sourceTree = "<group>"; };
-		DCC29EF614CB06C50035B0B5 /* CC3IdentifiablePODExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3IdentifiablePODExtensions.m; sourceTree = "<group>"; };
-		DCC29EF714CB06C50035B0B5 /* CC3NodePODExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3NodePODExtensions.h; sourceTree = "<group>"; };
-		DCC29EF814CB06C50035B0B5 /* CC3NodePODExtensions.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CC3NodePODExtensions.mm; sourceTree = "<group>"; };
-		DCC29EF914CB06C50035B0B5 /* CC3PODCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3PODCamera.h; sourceTree = "<group>"; };
-		DCC29EFA14CB06C50035B0B5 /* CC3PODCamera.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CC3PODCamera.mm; sourceTree = "<group>"; };
-		DCC29EFB14CB06C50035B0B5 /* CC3PODLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3PODLight.h; sourceTree = "<group>"; };
-		DCC29EFC14CB06C50035B0B5 /* CC3PODLight.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CC3PODLight.mm; sourceTree = "<group>"; };
-		DCC29EFD14CB06C50035B0B5 /* CC3PODMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3PODMaterial.h; sourceTree = "<group>"; };
-		DCC29EFE14CB06C50035B0B5 /* CC3PODMaterial.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CC3PODMaterial.mm; sourceTree = "<group>"; };
-		DCC29EFF14CB06C50035B0B5 /* CC3PODMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3PODMesh.h; sourceTree = "<group>"; };
-		DCC29F0014CB06C50035B0B5 /* CC3PODMesh.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CC3PODMesh.mm; sourceTree = "<group>"; };
-		DCC29F0114CB06C50035B0B5 /* CC3PODMeshNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3PODMeshNode.h; sourceTree = "<group>"; };
-		DCC29F0214CB06C50035B0B5 /* CC3PODMeshNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CC3PODMeshNode.mm; sourceTree = "<group>"; };
-		DCC29F0314CB06C50035B0B5 /* CC3PODNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3PODNode.h; sourceTree = "<group>"; };
-		DCC29F0414CB06C50035B0B5 /* CC3PODNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3PODNode.m; sourceTree = "<group>"; };
-		DCC29F0514CB06C50035B0B5 /* CC3PODResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3PODResource.h; sourceTree = "<group>"; };
-		DCC29F0614CB06C50035B0B5 /* CC3PODResource.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CC3PODResource.mm; sourceTree = "<group>"; };
-		DCC29F0714CB06C50035B0B5 /* CC3PODResourceNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3PODResourceNode.h; sourceTree = "<group>"; };
-		DCC29F0814CB06C50035B0B5 /* CC3PODResourceNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3PODResourceNode.m; sourceTree = "<group>"; };
-		DCC29F0914CB06C50035B0B5 /* CC3PODVertexSkinning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3PODVertexSkinning.h; sourceTree = "<group>"; };
-		DCC29F0A14CB06C50035B0B5 /* CC3PODVertexSkinning.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CC3PODVertexSkinning.mm; sourceTree = "<group>"; };
-		DCC29F0B14CB06C50035B0B5 /* CC3PVRFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3PVRFoundation.h; sourceTree = "<group>"; };
-		DCC29F0C14CB06C50035B0B5 /* CC3PVRFoundation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CC3PVRFoundation.mm; sourceTree = "<group>"; };
-		DCC29F0D14CB06C50035B0B5 /* CC3PVRTModelPOD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3PVRTModelPOD.h; sourceTree = "<group>"; };
-		DCC29F0E14CB06C50035B0B5 /* CC3VertexArraysPODExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3VertexArraysPODExtensions.h; sourceTree = "<group>"; };
-		DCC29F0F14CB06C50035B0B5 /* CC3VertexArraysPODExtensions.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CC3VertexArraysPODExtensions.mm; sourceTree = "<group>"; };
-		DCC29F1214CB06C50035B0B5 /* PVRTContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTContext.h; sourceTree = "<group>"; };
-		DCC29F1314CB06C50035B0B5 /* PVRTFixedPointAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTFixedPointAPI.h; sourceTree = "<group>"; };
-		DCC29F1414CB06C50035B0B5 /* PVRTglesExt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTglesExt.cpp; sourceTree = "<group>"; };
-		DCC29F1514CB06C50035B0B5 /* PVRTglesExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTglesExt.h; sourceTree = "<group>"; };
-		DCC29F1614CB06C50035B0B5 /* PVRT_Removed_Files.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PVRT_Removed_Files.txt; sourceTree = "<group>"; };
-		DCC29F1714CB06C50035B0B5 /* PVRTBoneBatch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTBoneBatch.cpp; sourceTree = "<group>"; };
-		DCC29F1814CB06C50035B0B5 /* PVRTBoneBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTBoneBatch.h; sourceTree = "<group>"; };
-		DCC29F1914CB06C50035B0B5 /* PVRTError.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTError.cpp; sourceTree = "<group>"; };
-		DCC29F1A14CB06C50035B0B5 /* PVRTError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTError.h; sourceTree = "<group>"; };
-		DCC29F1B14CB06C50035B0B5 /* PVRTFixedPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTFixedPoint.cpp; sourceTree = "<group>"; };
-		DCC29F1C14CB06C50035B0B5 /* PVRTFixedPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTFixedPoint.h; sourceTree = "<group>"; };
-		DCC29F1D14CB06C50035B0B5 /* PVRTGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTGlobal.h; sourceTree = "<group>"; };
-		DCC29F1E14CB06C50035B0B5 /* PVRTMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTMatrix.h; sourceTree = "<group>"; };
-		DCC29F1F14CB06C50035B0B5 /* PVRTMatrixF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTMatrixF.cpp; sourceTree = "<group>"; };
-		DCC29F2014CB06C50035B0B5 /* PVRTMemoryFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTMemoryFileSystem.h; sourceTree = "<group>"; };
-		DCC29F2114CB06C50035B0B5 /* PVRTModelPOD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTModelPOD.cpp; sourceTree = "<group>"; };
-		DCC29F2214CB06C50035B0B5 /* PVRTModelPOD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTModelPOD.h; sourceTree = "<group>"; };
-		DCC29F2314CB06C50035B0B5 /* PVRTQuaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTQuaternion.h; sourceTree = "<group>"; };
-		DCC29F2414CB06C50035B0B5 /* PVRTQuaternionF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTQuaternionF.cpp; sourceTree = "<group>"; };
-		DCC29F2514CB06C50035B0B5 /* PVRTResourceFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTResourceFile.cpp; sourceTree = "<group>"; };
-		DCC29F2614CB06C50035B0B5 /* PVRTResourceFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTResourceFile.h; sourceTree = "<group>"; };
-		DCC29F2714CB06C50035B0B5 /* PVRTString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTString.cpp; sourceTree = "<group>"; };
-		DCC29F2814CB06C50035B0B5 /* PVRTString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTString.h; sourceTree = "<group>"; };
-		DCC29F2914CB06C50035B0B5 /* PVRTTrans.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTTrans.cpp; sourceTree = "<group>"; };
-		DCC29F2A14CB06C50035B0B5 /* PVRTTrans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTTrans.h; sourceTree = "<group>"; };
-		DCC29F2B14CB06C50035B0B5 /* PVRTVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTVector.cpp; sourceTree = "<group>"; };
-		DCC29F2C14CB06C50035B0B5 /* PVRTVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTVector.h; sourceTree = "<group>"; };
-		DCC29F2D14CB06C50035B0B5 /* PVRTVertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PVRTVertex.cpp; sourceTree = "<group>"; };
-		DCC29F2E14CB06C50035B0B5 /* PVRTVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTVertex.h; sourceTree = "<group>"; };
-		DCC29F3014CB06C50035B0B5 /* CCNodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNodeController.h; sourceTree = "<group>"; };
-		DCC29F3114CB06C50035B0B5 /* CCNodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNodeController.m; sourceTree = "<group>"; };
-		DCC29F3214CB06C50035B0B5 /* ControllableCCLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllableCCLayer.h; sourceTree = "<group>"; };
-		DCC29F3314CB06C50035B0B5 /* ControllableCCLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllableCCLayer.m; sourceTree = "<group>"; };
-		DCC29F3514CB06C50035B0B5 /* CC3ActionInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3ActionInterval.h; sourceTree = "<group>"; };
-		DCC29F3614CB06C50035B0B5 /* CC3ActionInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3ActionInterval.m; sourceTree = "<group>"; };
-		DCC29F3714CB06C50035B0B5 /* CC3Billboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Billboard.h; sourceTree = "<group>"; };
-		DCC29F3814CB06C50035B0B5 /* CC3Billboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3Billboard.m; sourceTree = "<group>"; };
-		DCC29F3914CB06C50035B0B5 /* CC3BoundingVolumes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3BoundingVolumes.h; sourceTree = "<group>"; };
-		DCC29F3A14CB06C50035B0B5 /* CC3BoundingVolumes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3BoundingVolumes.m; sourceTree = "<group>"; };
-		DCC29F3B14CB06C50035B0B5 /* CC3Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Camera.h; sourceTree = "<group>"; };
-		DCC29F3C14CB06C50035B0B5 /* CC3Camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3Camera.m; sourceTree = "<group>"; };
-		DCC29F3D14CB06C50035B0B5 /* CC3Fog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Fog.h; sourceTree = "<group>"; };
-		DCC29F3E14CB06C50035B0B5 /* CC3Fog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3Fog.m; sourceTree = "<group>"; };
-		DCC29F3F14CB06C50035B0B5 /* CC3Identifiable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Identifiable.h; sourceTree = "<group>"; };
-		DCC29F4014CB06C50035B0B5 /* CC3Identifiable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3Identifiable.m; sourceTree = "<group>"; };
-		DCC29F4114CB06C50035B0B5 /* CC3Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Layer.h; sourceTree = "<group>"; };
-		DCC29F4214CB06C50035B0B5 /* CC3Layer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3Layer.m; sourceTree = "<group>"; };
-		DCC29F4314CB06C50035B0B5 /* CC3Light.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Light.h; sourceTree = "<group>"; };
-		DCC29F4414CB06C50035B0B5 /* CC3Light.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3Light.m; sourceTree = "<group>"; };
-		DCC29F4514CB06C50035B0B5 /* CC3Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Material.h; sourceTree = "<group>"; };
-		DCC29F4614CB06C50035B0B5 /* CC3Material.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3Material.m; sourceTree = "<group>"; };
-		DCC29F4714CB06C50035B0B5 /* CC3Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Mesh.h; sourceTree = "<group>"; };
-		DCC29F4814CB06C50035B0B5 /* CC3Mesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3Mesh.m; sourceTree = "<group>"; };
-		DCC29F4914CB06C50035B0B5 /* CC3MeshNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3MeshNode.h; sourceTree = "<group>"; };
-		DCC29F4A14CB06C50035B0B5 /* CC3MeshNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3MeshNode.m; sourceTree = "<group>"; };
-		DCC29F4B14CB06C50035B0B5 /* CC3Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Node.h; sourceTree = "<group>"; };
-		DCC29F4C14CB06C50035B0B5 /* CC3Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3Node.m; sourceTree = "<group>"; };
-		DCC29F4D14CB06C50035B0B5 /* CC3NodeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3NodeAnimation.h; sourceTree = "<group>"; };
-		DCC29F4E14CB06C50035B0B5 /* CC3NodeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3NodeAnimation.m; sourceTree = "<group>"; };
-		DCC29F4F14CB06C50035B0B5 /* CC3NodeSequencer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3NodeSequencer.h; sourceTree = "<group>"; };
-		DCC29F5014CB06C50035B0B5 /* CC3NodeSequencer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3NodeSequencer.m; sourceTree = "<group>"; };
-		DCC29F5114CB06C50035B0B5 /* CC3NodeVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3NodeVisitor.h; sourceTree = "<group>"; };
-		DCC29F5214CB06C50035B0B5 /* CC3NodeVisitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3NodeVisitor.m; sourceTree = "<group>"; };
-		DCC29F5314CB06C50035B0B5 /* CC3ParametricMeshNodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3ParametricMeshNodes.h; sourceTree = "<group>"; };
-		DCC29F5414CB06C50035B0B5 /* CC3ParametricMeshNodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3ParametricMeshNodes.m; sourceTree = "<group>"; };
-		DCC29F5514CB06C50035B0B5 /* CC3PerformanceStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3PerformanceStatistics.h; sourceTree = "<group>"; };
-		DCC29F5614CB06C50035B0B5 /* CC3PerformanceStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3PerformanceStatistics.m; sourceTree = "<group>"; };
-		DCC29F5714CB06C50035B0B5 /* CC3PointParticles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3PointParticles.h; sourceTree = "<group>"; };
-		DCC29F5814CB06C50035B0B5 /* CC3PointParticles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3PointParticles.m; sourceTree = "<group>"; };
-		DCC29F5914CB06C50035B0B5 /* CC3Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Resource.h; sourceTree = "<group>"; };
-		DCC29F5A14CB06C50035B0B5 /* CC3Resource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3Resource.m; sourceTree = "<group>"; };
-		DCC29F5B14CB06C50035B0B5 /* CC3ResourceNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3ResourceNode.h; sourceTree = "<group>"; };
-		DCC29F5C14CB06C50035B0B5 /* CC3ResourceNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3ResourceNode.m; sourceTree = "<group>"; };
-		DCC29F5D14CB06C50035B0B5 /* CC3TargettingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3TargettingNode.h; sourceTree = "<group>"; };
-		DCC29F5E14CB06C50035B0B5 /* CC3TargettingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3TargettingNode.m; sourceTree = "<group>"; };
-		DCC29F5F14CB06C50035B0B5 /* CC3Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Texture.h; sourceTree = "<group>"; };
-		DCC29F6014CB06C50035B0B5 /* CC3Texture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3Texture.m; sourceTree = "<group>"; };
-		DCC29F6114CB06C50035B0B5 /* CC3TextureUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3TextureUnit.h; sourceTree = "<group>"; };
-		DCC29F6214CB06C50035B0B5 /* CC3TextureUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3TextureUnit.m; sourceTree = "<group>"; };
-		DCC29F6314CB06C50035B0B5 /* CC3VertexArrayMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3VertexArrayMesh.h; sourceTree = "<group>"; };
-		DCC29F6414CB06C50035B0B5 /* CC3VertexArrayMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3VertexArrayMesh.m; sourceTree = "<group>"; };
-		DCC29F6514CB06C50035B0B5 /* CC3VertexArrays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3VertexArrays.h; sourceTree = "<group>"; };
-		DCC29F6614CB06C50035B0B5 /* CC3VertexArrays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3VertexArrays.m; sourceTree = "<group>"; };
-		DCC29F6714CB06C50035B0B5 /* CC3VertexSkinning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3VertexSkinning.h; sourceTree = "<group>"; };
-		DCC29F6814CB06C50035B0B5 /* CC3VertexSkinning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3VertexSkinning.m; sourceTree = "<group>"; };
-		DCC29F6914CB06C50035B0B5 /* CC3World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3World.h; sourceTree = "<group>"; };
-		DCC29F6A14CB06C50035B0B5 /* CC3World.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3World.m; sourceTree = "<group>"; };
-		DCC29F6C14CB06C50035B0B5 /* CC3EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3EAGLView.h; sourceTree = "<group>"; };
-		DCC29F6D14CB06C50035B0B5 /* CC3EAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3EAGLView.m; sourceTree = "<group>"; };
-		DCC29F6E14CB06C50035B0B5 /* CC3OpenGLES11Capabilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3OpenGLES11Capabilities.h; sourceTree = "<group>"; };
-		DCC29F6F14CB06C50035B0B5 /* CC3OpenGLES11Capabilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3OpenGLES11Capabilities.m; sourceTree = "<group>"; };
-		DCC29F7014CB06C50035B0B5 /* CC3OpenGLES11Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3OpenGLES11Engine.h; sourceTree = "<group>"; };
-		DCC29F7114CB06C50035B0B5 /* CC3OpenGLES11Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3OpenGLES11Engine.m; sourceTree = "<group>"; };
-		DCC29F7214CB06C50035B0B5 /* CC3OpenGLES11Fog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3OpenGLES11Fog.h; sourceTree = "<group>"; };
-		DCC29F7314CB06C50035B0B5 /* CC3OpenGLES11Fog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3OpenGLES11Fog.m; sourceTree = "<group>"; };
-		DCC29F7414CB06C50035B0B5 /* CC3OpenGLES11Foundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3OpenGLES11Foundation.h; sourceTree = "<group>"; };
-		DCC29F7514CB06C50035B0B5 /* CC3OpenGLES11Foundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3OpenGLES11Foundation.m; sourceTree = "<group>"; };
-		DCC29F7614CB06C50035B0B5 /* CC3OpenGLES11Hints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3OpenGLES11Hints.h; sourceTree = "<group>"; };
-		DCC29F7714CB06C50035B0B5 /* CC3OpenGLES11Hints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3OpenGLES11Hints.m; sourceTree = "<group>"; };
-		DCC29F7814CB06C50035B0B5 /* CC3OpenGLES11Intercept.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CC3OpenGLES11Intercept.c; sourceTree = "<group>"; };
-		DCC29F7914CB06C50035B0B5 /* CC3OpenGLES11Intercept.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3OpenGLES11Intercept.h; sourceTree = "<group>"; };
-		DCC29F7A14CB06C50035B0B5 /* CC3OpenGLES11Lighting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3OpenGLES11Lighting.h; sourceTree = "<group>"; };
-		DCC29F7B14CB06C50035B0B5 /* CC3OpenGLES11Lighting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3OpenGLES11Lighting.m; sourceTree = "<group>"; };
-		DCC29F7C14CB06C50035B0B5 /* CC3OpenGLES11Materials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3OpenGLES11Materials.h; sourceTree = "<group>"; };
-		DCC29F7D14CB06C50035B0B5 /* CC3OpenGLES11Materials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3OpenGLES11Materials.m; sourceTree = "<group>"; };
-		DCC29F7E14CB06C50035B0B5 /* CC3OpenGLES11Matrices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3OpenGLES11Matrices.h; sourceTree = "<group>"; };
-		DCC29F7F14CB06C50035B0B5 /* CC3OpenGLES11Matrices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3OpenGLES11Matrices.m; sourceTree = "<group>"; };
-		DCC29F8014CB06C50035B0B5 /* CC3OpenGLES11Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3OpenGLES11Platform.h; sourceTree = "<group>"; };
-		DCC29F8114CB06C50035B0B5 /* CC3OpenGLES11Platform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3OpenGLES11Platform.m; sourceTree = "<group>"; };
-		DCC29F8214CB06C50035B0B5 /* CC3OpenGLES11State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3OpenGLES11State.h; sourceTree = "<group>"; };
-		DCC29F8314CB06C50035B0B5 /* CC3OpenGLES11State.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3OpenGLES11State.m; sourceTree = "<group>"; };
-		DCC29F8414CB06C50035B0B5 /* CC3OpenGLES11StateTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3OpenGLES11StateTracker.h; sourceTree = "<group>"; };
-		DCC29F8514CB06C50035B0B5 /* CC3OpenGLES11StateTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3OpenGLES11StateTracker.m; sourceTree = "<group>"; };
-		DCC29F8614CB06C50035B0B5 /* CC3OpenGLES11Textures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3OpenGLES11Textures.h; sourceTree = "<group>"; };
-		DCC29F8714CB06C50035B0B5 /* CC3OpenGLES11Textures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3OpenGLES11Textures.m; sourceTree = "<group>"; };
-		DCC29F8814CB06C50035B0B5 /* CC3OpenGLES11Utility.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CC3OpenGLES11Utility.c; sourceTree = "<group>"; };
-		DCC29F8914CB06C50035B0B5 /* CC3OpenGLES11Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3OpenGLES11Utility.h; sourceTree = "<group>"; };
-		DCC29F8A14CB06C50035B0B5 /* CC3OpenGLES11VertexArrays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3OpenGLES11VertexArrays.h; sourceTree = "<group>"; };
-		DCC29F8B14CB06C50035B0B5 /* CC3OpenGLES11VertexArrays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3OpenGLES11VertexArrays.m; sourceTree = "<group>"; };
-		DCC29F8D14CB06C50035B0B5 /* CC3Foundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Foundation.h; sourceTree = "<group>"; };
-		DCC29F8E14CB06C50035B0B5 /* CC3Foundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3Foundation.m; sourceTree = "<group>"; };
-		DCC29F8F14CB06C50035B0B5 /* CC3GLMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3GLMatrix.h; sourceTree = "<group>"; };
-		DCC29F9014CB06C50035B0B5 /* CC3GLMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CC3GLMatrix.m; sourceTree = "<group>"; };
-		DCC29F9114CB06C50035B0B5 /* CC3Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Logging.h; sourceTree = "<group>"; };
-		DCC29F9214CB06C50035B0B5 /* CC3Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3Math.h; sourceTree = "<group>"; };
-		DCC29F9314CB06C50035B0B5 /* CC3MatrixMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CC3MatrixMath.h; sourceTree = "<group>"; };
 		DCCC3FB213A923F700EE6641 /* libchipmunk-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libchipmunk-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCC3FBE13A9240100EE6641 /* libchipmunk-mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libchipmunk-mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCC40CF13A926A400EE6641 /* libchipmunk-spacemanager-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libchipmunk-spacemanager-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2624,10 +2316,8 @@
 		DCA6155113A9312400D781D5 /* cocos3d */ = {
 			isa = PBXGroup;
 			children = (
-				DCC29EEE14CB06C50035B0B5 /* cc3Extras */,
-				DCC29EF414CB06C50035B0B5 /* cc3PVR */,
-				DCC29F2F14CB06C50035B0B5 /* CCNodeController */,
-				DCC29F3414CB06C50035B0B5 /* cocos3d */,
+				DC22A1B3150FBB6100B58197 /* Cocos3DDummyClass.h */,
+				DC22A1B4150FBB6100B58197 /* Cocos3DDummyClass.m */,
 			);
 			name = cocos3d;
 			path = libs/cocos3d/cocos3d;
@@ -2916,224 +2606,6 @@
 			name = Rope;
 			path = libs/Box2D/Box2D/Rope;
 			sourceTree = SOURCE_ROOT;
-		};
-		DCC29EEE14CB06C50035B0B5 /* cc3Extras */ = {
-			isa = PBXGroup;
-			children = (
-				DCC29EEF14CB06C50035B0B5 /* CC3ModelSampleFactory.h */,
-				DCC29EF014CB06C50035B0B5 /* CC3ModelSampleFactory.m */,
-				DCC29EF114CB06C50035B0B5 /* CC3PointParticleSamples.h */,
-				DCC29EF214CB06C50035B0B5 /* CC3PointParticleSamples.m */,
-				DCC29EF314CB06C50035B0B5 /* teapot.h */,
-			);
-			path = cc3Extras;
-			sourceTree = "<group>";
-		};
-		DCC29EF414CB06C50035B0B5 /* cc3PVR */ = {
-			isa = PBXGroup;
-			children = (
-				DCC29EF514CB06C50035B0B5 /* CC3IdentifiablePODExtensions.h */,
-				DCC29EF614CB06C50035B0B5 /* CC3IdentifiablePODExtensions.m */,
-				DCC29EF714CB06C50035B0B5 /* CC3NodePODExtensions.h */,
-				DCC29EF814CB06C50035B0B5 /* CC3NodePODExtensions.mm */,
-				DCC29EF914CB06C50035B0B5 /* CC3PODCamera.h */,
-				DCC29EFA14CB06C50035B0B5 /* CC3PODCamera.mm */,
-				DCC29EFB14CB06C50035B0B5 /* CC3PODLight.h */,
-				DCC29EFC14CB06C50035B0B5 /* CC3PODLight.mm */,
-				DCC29EFD14CB06C50035B0B5 /* CC3PODMaterial.h */,
-				DCC29EFE14CB06C50035B0B5 /* CC3PODMaterial.mm */,
-				DCC29EFF14CB06C50035B0B5 /* CC3PODMesh.h */,
-				DCC29F0014CB06C50035B0B5 /* CC3PODMesh.mm */,
-				DCC29F0114CB06C50035B0B5 /* CC3PODMeshNode.h */,
-				DCC29F0214CB06C50035B0B5 /* CC3PODMeshNode.mm */,
-				DCC29F0314CB06C50035B0B5 /* CC3PODNode.h */,
-				DCC29F0414CB06C50035B0B5 /* CC3PODNode.m */,
-				DCC29F0514CB06C50035B0B5 /* CC3PODResource.h */,
-				DCC29F0614CB06C50035B0B5 /* CC3PODResource.mm */,
-				DCC29F0714CB06C50035B0B5 /* CC3PODResourceNode.h */,
-				DCC29F0814CB06C50035B0B5 /* CC3PODResourceNode.m */,
-				DCC29F0914CB06C50035B0B5 /* CC3PODVertexSkinning.h */,
-				DCC29F0A14CB06C50035B0B5 /* CC3PODVertexSkinning.mm */,
-				DCC29F0B14CB06C50035B0B5 /* CC3PVRFoundation.h */,
-				DCC29F0C14CB06C50035B0B5 /* CC3PVRFoundation.mm */,
-				DCC29F0D14CB06C50035B0B5 /* CC3PVRTModelPOD.h */,
-				DCC29F0E14CB06C50035B0B5 /* CC3VertexArraysPODExtensions.h */,
-				DCC29F0F14CB06C50035B0B5 /* CC3VertexArraysPODExtensions.mm */,
-				DCC29F1014CB06C50035B0B5 /* PVRT 2.09 */,
-			);
-			path = cc3PVR;
-			sourceTree = "<group>";
-		};
-		DCC29F1014CB06C50035B0B5 /* PVRT 2.09 */ = {
-			isa = PBXGroup;
-			children = (
-				DCC29F1114CB06C50035B0B5 /* OGLES */,
-				DCC29F1614CB06C50035B0B5 /* PVRT_Removed_Files.txt */,
-				DCC29F1714CB06C50035B0B5 /* PVRTBoneBatch.cpp */,
-				DCC29F1814CB06C50035B0B5 /* PVRTBoneBatch.h */,
-				DCC29F1914CB06C50035B0B5 /* PVRTError.cpp */,
-				DCC29F1A14CB06C50035B0B5 /* PVRTError.h */,
-				DCC29F1B14CB06C50035B0B5 /* PVRTFixedPoint.cpp */,
-				DCC29F1C14CB06C50035B0B5 /* PVRTFixedPoint.h */,
-				DCC29F1D14CB06C50035B0B5 /* PVRTGlobal.h */,
-				DCC29F1E14CB06C50035B0B5 /* PVRTMatrix.h */,
-				DCC29F1F14CB06C50035B0B5 /* PVRTMatrixF.cpp */,
-				DCC29F2014CB06C50035B0B5 /* PVRTMemoryFileSystem.h */,
-				DCC29F2114CB06C50035B0B5 /* PVRTModelPOD.cpp */,
-				DCC29F2214CB06C50035B0B5 /* PVRTModelPOD.h */,
-				DCC29F2314CB06C50035B0B5 /* PVRTQuaternion.h */,
-				DCC29F2414CB06C50035B0B5 /* PVRTQuaternionF.cpp */,
-				DCC29F2514CB06C50035B0B5 /* PVRTResourceFile.cpp */,
-				DCC29F2614CB06C50035B0B5 /* PVRTResourceFile.h */,
-				DCC29F2714CB06C50035B0B5 /* PVRTString.cpp */,
-				DCC29F2814CB06C50035B0B5 /* PVRTString.h */,
-				DCC29F2914CB06C50035B0B5 /* PVRTTrans.cpp */,
-				DCC29F2A14CB06C50035B0B5 /* PVRTTrans.h */,
-				DCC29F2B14CB06C50035B0B5 /* PVRTVector.cpp */,
-				DCC29F2C14CB06C50035B0B5 /* PVRTVector.h */,
-				DCC29F2D14CB06C50035B0B5 /* PVRTVertex.cpp */,
-				DCC29F2E14CB06C50035B0B5 /* PVRTVertex.h */,
-			);
-			path = "PVRT 2.09";
-			sourceTree = "<group>";
-		};
-		DCC29F1114CB06C50035B0B5 /* OGLES */ = {
-			isa = PBXGroup;
-			children = (
-				DCC29F1214CB06C50035B0B5 /* PVRTContext.h */,
-				DCC29F1314CB06C50035B0B5 /* PVRTFixedPointAPI.h */,
-				DCC29F1414CB06C50035B0B5 /* PVRTglesExt.cpp */,
-				DCC29F1514CB06C50035B0B5 /* PVRTglesExt.h */,
-			);
-			path = OGLES;
-			sourceTree = "<group>";
-		};
-		DCC29F2F14CB06C50035B0B5 /* CCNodeController */ = {
-			isa = PBXGroup;
-			children = (
-				DCC29F3014CB06C50035B0B5 /* CCNodeController.h */,
-				DCC29F3114CB06C50035B0B5 /* CCNodeController.m */,
-				DCC29F3214CB06C50035B0B5 /* ControllableCCLayer.h */,
-				DCC29F3314CB06C50035B0B5 /* ControllableCCLayer.m */,
-			);
-			path = CCNodeController;
-			sourceTree = "<group>";
-		};
-		DCC29F3414CB06C50035B0B5 /* cocos3d */ = {
-			isa = PBXGroup;
-			children = (
-				DCC29F3514CB06C50035B0B5 /* CC3ActionInterval.h */,
-				DCC29F3614CB06C50035B0B5 /* CC3ActionInterval.m */,
-				DCC29F3714CB06C50035B0B5 /* CC3Billboard.h */,
-				DCC29F3814CB06C50035B0B5 /* CC3Billboard.m */,
-				DCC29F3914CB06C50035B0B5 /* CC3BoundingVolumes.h */,
-				DCC29F3A14CB06C50035B0B5 /* CC3BoundingVolumes.m */,
-				DCC29F3B14CB06C50035B0B5 /* CC3Camera.h */,
-				DCC29F3C14CB06C50035B0B5 /* CC3Camera.m */,
-				DCC29F3D14CB06C50035B0B5 /* CC3Fog.h */,
-				DCC29F3E14CB06C50035B0B5 /* CC3Fog.m */,
-				DCC29F3F14CB06C50035B0B5 /* CC3Identifiable.h */,
-				DCC29F4014CB06C50035B0B5 /* CC3Identifiable.m */,
-				DCC29F4114CB06C50035B0B5 /* CC3Layer.h */,
-				DCC29F4214CB06C50035B0B5 /* CC3Layer.m */,
-				DCC29F4314CB06C50035B0B5 /* CC3Light.h */,
-				DCC29F4414CB06C50035B0B5 /* CC3Light.m */,
-				DCC29F4514CB06C50035B0B5 /* CC3Material.h */,
-				DCC29F4614CB06C50035B0B5 /* CC3Material.m */,
-				DCC29F4714CB06C50035B0B5 /* CC3Mesh.h */,
-				DCC29F4814CB06C50035B0B5 /* CC3Mesh.m */,
-				DCC29F4914CB06C50035B0B5 /* CC3MeshNode.h */,
-				DCC29F4A14CB06C50035B0B5 /* CC3MeshNode.m */,
-				DCC29F4B14CB06C50035B0B5 /* CC3Node.h */,
-				DCC29F4C14CB06C50035B0B5 /* CC3Node.m */,
-				DCC29F4D14CB06C50035B0B5 /* CC3NodeAnimation.h */,
-				DCC29F4E14CB06C50035B0B5 /* CC3NodeAnimation.m */,
-				DCC29F4F14CB06C50035B0B5 /* CC3NodeSequencer.h */,
-				DCC29F5014CB06C50035B0B5 /* CC3NodeSequencer.m */,
-				DCC29F5114CB06C50035B0B5 /* CC3NodeVisitor.h */,
-				DCC29F5214CB06C50035B0B5 /* CC3NodeVisitor.m */,
-				DCC29F5314CB06C50035B0B5 /* CC3ParametricMeshNodes.h */,
-				DCC29F5414CB06C50035B0B5 /* CC3ParametricMeshNodes.m */,
-				DCC29F5514CB06C50035B0B5 /* CC3PerformanceStatistics.h */,
-				DCC29F5614CB06C50035B0B5 /* CC3PerformanceStatistics.m */,
-				DCC29F5714CB06C50035B0B5 /* CC3PointParticles.h */,
-				DCC29F5814CB06C50035B0B5 /* CC3PointParticles.m */,
-				DCC29F5914CB06C50035B0B5 /* CC3Resource.h */,
-				DCC29F5A14CB06C50035B0B5 /* CC3Resource.m */,
-				DCC29F5B14CB06C50035B0B5 /* CC3ResourceNode.h */,
-				DCC29F5C14CB06C50035B0B5 /* CC3ResourceNode.m */,
-				DCC29F5D14CB06C50035B0B5 /* CC3TargettingNode.h */,
-				DCC29F5E14CB06C50035B0B5 /* CC3TargettingNode.m */,
-				DCC29F5F14CB06C50035B0B5 /* CC3Texture.h */,
-				DCC29F6014CB06C50035B0B5 /* CC3Texture.m */,
-				DCC29F6114CB06C50035B0B5 /* CC3TextureUnit.h */,
-				DCC29F6214CB06C50035B0B5 /* CC3TextureUnit.m */,
-				DCC29F6314CB06C50035B0B5 /* CC3VertexArrayMesh.h */,
-				DCC29F6414CB06C50035B0B5 /* CC3VertexArrayMesh.m */,
-				DCC29F6514CB06C50035B0B5 /* CC3VertexArrays.h */,
-				DCC29F6614CB06C50035B0B5 /* CC3VertexArrays.m */,
-				DCC29F6714CB06C50035B0B5 /* CC3VertexSkinning.h */,
-				DCC29F6814CB06C50035B0B5 /* CC3VertexSkinning.m */,
-				DCC29F6914CB06C50035B0B5 /* CC3World.h */,
-				DCC29F6A14CB06C50035B0B5 /* CC3World.m */,
-				DCC29F6B14CB06C50035B0B5 /* OpenGLES11 */,
-				DCC29F8C14CB06C50035B0B5 /* Utility */,
-			);
-			path = cocos3d;
-			sourceTree = "<group>";
-		};
-		DCC29F6B14CB06C50035B0B5 /* OpenGLES11 */ = {
-			isa = PBXGroup;
-			children = (
-				DCC29F6C14CB06C50035B0B5 /* CC3EAGLView.h */,
-				DCC29F6D14CB06C50035B0B5 /* CC3EAGLView.m */,
-				DCC29F6E14CB06C50035B0B5 /* CC3OpenGLES11Capabilities.h */,
-				DCC29F6F14CB06C50035B0B5 /* CC3OpenGLES11Capabilities.m */,
-				DCC29F7014CB06C50035B0B5 /* CC3OpenGLES11Engine.h */,
-				DCC29F7114CB06C50035B0B5 /* CC3OpenGLES11Engine.m */,
-				DCC29F7214CB06C50035B0B5 /* CC3OpenGLES11Fog.h */,
-				DCC29F7314CB06C50035B0B5 /* CC3OpenGLES11Fog.m */,
-				DCC29F7414CB06C50035B0B5 /* CC3OpenGLES11Foundation.h */,
-				DCC29F7514CB06C50035B0B5 /* CC3OpenGLES11Foundation.m */,
-				DCC29F7614CB06C50035B0B5 /* CC3OpenGLES11Hints.h */,
-				DCC29F7714CB06C50035B0B5 /* CC3OpenGLES11Hints.m */,
-				DCC29F7814CB06C50035B0B5 /* CC3OpenGLES11Intercept.c */,
-				DCC29F7914CB06C50035B0B5 /* CC3OpenGLES11Intercept.h */,
-				DCC29F7A14CB06C50035B0B5 /* CC3OpenGLES11Lighting.h */,
-				DCC29F7B14CB06C50035B0B5 /* CC3OpenGLES11Lighting.m */,
-				DCC29F7C14CB06C50035B0B5 /* CC3OpenGLES11Materials.h */,
-				DCC29F7D14CB06C50035B0B5 /* CC3OpenGLES11Materials.m */,
-				DCC29F7E14CB06C50035B0B5 /* CC3OpenGLES11Matrices.h */,
-				DCC29F7F14CB06C50035B0B5 /* CC3OpenGLES11Matrices.m */,
-				DCC29F8014CB06C50035B0B5 /* CC3OpenGLES11Platform.h */,
-				DCC29F8114CB06C50035B0B5 /* CC3OpenGLES11Platform.m */,
-				DCC29F8214CB06C50035B0B5 /* CC3OpenGLES11State.h */,
-				DCC29F8314CB06C50035B0B5 /* CC3OpenGLES11State.m */,
-				DCC29F8414CB06C50035B0B5 /* CC3OpenGLES11StateTracker.h */,
-				DCC29F8514CB06C50035B0B5 /* CC3OpenGLES11StateTracker.m */,
-				DCC29F8614CB06C50035B0B5 /* CC3OpenGLES11Textures.h */,
-				DCC29F8714CB06C50035B0B5 /* CC3OpenGLES11Textures.m */,
-				DCC29F8814CB06C50035B0B5 /* CC3OpenGLES11Utility.c */,
-				DCC29F8914CB06C50035B0B5 /* CC3OpenGLES11Utility.h */,
-				DCC29F8A14CB06C50035B0B5 /* CC3OpenGLES11VertexArrays.h */,
-				DCC29F8B14CB06C50035B0B5 /* CC3OpenGLES11VertexArrays.m */,
-			);
-			path = OpenGLES11;
-			sourceTree = "<group>";
-		};
-		DCC29F8C14CB06C50035B0B5 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				DCC29F8D14CB06C50035B0B5 /* CC3Foundation.h */,
-				DCC29F8E14CB06C50035B0B5 /* CC3Foundation.m */,
-				DCC29F8F14CB06C50035B0B5 /* CC3GLMatrix.h */,
-				DCC29F9014CB06C50035B0B5 /* CC3GLMatrix.m */,
-				DCC29F9114CB06C50035B0B5 /* CC3Logging.h */,
-				DCC29F9214CB06C50035B0B5 /* CC3Math.h */,
-				DCC29F9314CB06C50035B0B5 /* CC3MatrixMath.h */,
-			);
-			path = Utility;
-			sourceTree = "<group>";
 		};
 		DCCC3FC613A924BA00EE6641 /* Chipmunk */ = {
 			isa = PBXGroup;
@@ -3554,7 +3026,6 @@
 				DCECAA2A13A90CAE00788FBF /* CCArray.h */,
 				DCECAA2B13A90CAE00788FBF /* CCArray.m */,
 				DCECAA2C13A90CAE00788FBF /* ccCArray.h */,
-				DC738119144DF4D900D61CC8 /* ccCArray.m */,
 				DCECAA2D13A90CAE00788FBF /* CCFileUtils.h */,
 				DCECAA2E13A90CAE00788FBF /* CCFileUtils.m */,
 				DCECAA2F13A90CAE00788FBF /* CCProfiling.h */,
@@ -3644,6 +3115,8 @@
 		DCF6B7BE142A1D4900BC9803 /* Particles */ = {
 			isa = PBXGroup;
 			children = (
+				DC22A1C1150FC10400B58197 /* CCParticleBatchNode.h */,
+				DC22A1C2150FC10400B58197 /* CCParticleBatchNode.m */,
 				DCECA9D613A90CAE00788FBF /* CCParticleExamples.h */,
 				DCECA9D713A90CAE00788FBF /* CCParticleExamples.m */,
 				DCECA9D813A90CAE00788FBF /* CCParticleSystem.h */,
@@ -3774,89 +3247,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCC29F9414CB06C50035B0B5 /* CC3ModelSampleFactory.h in Headers */,
-				DCC29F9614CB06C50035B0B5 /* CC3PointParticleSamples.h in Headers */,
-				DCC29F9814CB06C50035B0B5 /* teapot.h in Headers */,
-				DCC29F9914CB06C50035B0B5 /* CC3IdentifiablePODExtensions.h in Headers */,
-				DCC29F9B14CB06C50035B0B5 /* CC3NodePODExtensions.h in Headers */,
-				DCC29F9D14CB06C50035B0B5 /* CC3PODCamera.h in Headers */,
-				DCC29F9F14CB06C50035B0B5 /* CC3PODLight.h in Headers */,
-				DCC29FA114CB06C50035B0B5 /* CC3PODMaterial.h in Headers */,
-				DCC29FA314CB06C50035B0B5 /* CC3PODMesh.h in Headers */,
-				DCC29FA514CB06C50035B0B5 /* CC3PODMeshNode.h in Headers */,
-				DCC29FA714CB06C50035B0B5 /* CC3PODNode.h in Headers */,
-				DCC29FA914CB06C50035B0B5 /* CC3PODResource.h in Headers */,
-				DCC29FAB14CB06C50035B0B5 /* CC3PODResourceNode.h in Headers */,
-				DCC29FAD14CB06C50035B0B5 /* CC3PODVertexSkinning.h in Headers */,
-				DCC29FAF14CB06C50035B0B5 /* CC3PVRFoundation.h in Headers */,
-				DCC29FB114CB06C50035B0B5 /* CC3PVRTModelPOD.h in Headers */,
-				DCC29FB214CB06C50035B0B5 /* CC3VertexArraysPODExtensions.h in Headers */,
-				DCC29FB414CB06C50035B0B5 /* PVRTContext.h in Headers */,
-				DCC29FB514CB06C50035B0B5 /* PVRTFixedPointAPI.h in Headers */,
-				DCC29FB714CB06C50035B0B5 /* PVRTglesExt.h in Headers */,
-				DCC29FB914CB06C50035B0B5 /* PVRTBoneBatch.h in Headers */,
-				DCC29FBB14CB06C50035B0B5 /* PVRTError.h in Headers */,
-				DCC29FBD14CB06C50035B0B5 /* PVRTFixedPoint.h in Headers */,
-				DCC29FBE14CB06C50035B0B5 /* PVRTGlobal.h in Headers */,
-				DCC29FBF14CB06C50035B0B5 /* PVRTMatrix.h in Headers */,
-				DCC29FC114CB06C50035B0B5 /* PVRTMemoryFileSystem.h in Headers */,
-				DCC29FC314CB06C50035B0B5 /* PVRTModelPOD.h in Headers */,
-				DCC29FC414CB06C50035B0B5 /* PVRTQuaternion.h in Headers */,
-				DCC29FC714CB06C50035B0B5 /* PVRTResourceFile.h in Headers */,
-				DCC29FC914CB06C50035B0B5 /* PVRTString.h in Headers */,
-				DCC29FCB14CB06C50035B0B5 /* PVRTTrans.h in Headers */,
-				DCC29FCD14CB06C50035B0B5 /* PVRTVector.h in Headers */,
-				DCC29FCF14CB06C50035B0B5 /* PVRTVertex.h in Headers */,
-				DCC29FD014CB06C50035B0B5 /* CCNodeController.h in Headers */,
-				DCC29FD214CB06C50035B0B5 /* ControllableCCLayer.h in Headers */,
-				DCC29FD414CB06C50035B0B5 /* CC3ActionInterval.h in Headers */,
-				DCC29FD614CB06C50035B0B5 /* CC3Billboard.h in Headers */,
-				DCC29FD814CB06C50035B0B5 /* CC3BoundingVolumes.h in Headers */,
-				DCC29FDA14CB06C50035B0B5 /* CC3Camera.h in Headers */,
-				DCC29FDC14CB06C50035B0B5 /* CC3Fog.h in Headers */,
-				DCC29FDE14CB06C50035B0B5 /* CC3Identifiable.h in Headers */,
-				DCC29FE014CB06C50035B0B5 /* CC3Layer.h in Headers */,
-				DCC29FE214CB06C50035B0B5 /* CC3Light.h in Headers */,
-				DCC29FE414CB06C50035B0B5 /* CC3Material.h in Headers */,
-				DCC29FE614CB06C50035B0B5 /* CC3Mesh.h in Headers */,
-				DCC29FE814CB06C50035B0B5 /* CC3MeshNode.h in Headers */,
-				DCC29FEA14CB06C50035B0B5 /* CC3Node.h in Headers */,
-				DCC29FEC14CB06C50035B0B5 /* CC3NodeAnimation.h in Headers */,
-				DCC29FEE14CB06C50035B0B5 /* CC3NodeSequencer.h in Headers */,
-				DCC29FF014CB06C50035B0B5 /* CC3NodeVisitor.h in Headers */,
-				DCC29FF214CB06C50035B0B5 /* CC3ParametricMeshNodes.h in Headers */,
-				DCC29FF414CB06C50035B0B5 /* CC3PerformanceStatistics.h in Headers */,
-				DCC29FF614CB06C50035B0B5 /* CC3PointParticles.h in Headers */,
-				DCC29FF814CB06C50035B0B5 /* CC3Resource.h in Headers */,
-				DCC29FFA14CB06C50035B0B5 /* CC3ResourceNode.h in Headers */,
-				DCC29FFC14CB06C50035B0B5 /* CC3TargettingNode.h in Headers */,
-				DCC29FFE14CB06C50035B0B5 /* CC3Texture.h in Headers */,
-				DCC2A00014CB06C50035B0B5 /* CC3TextureUnit.h in Headers */,
-				DCC2A00214CB06C50035B0B5 /* CC3VertexArrayMesh.h in Headers */,
-				DCC2A00414CB06C50035B0B5 /* CC3VertexArrays.h in Headers */,
-				DCC2A00614CB06C50035B0B5 /* CC3VertexSkinning.h in Headers */,
-				DCC2A00814CB06C50035B0B5 /* CC3World.h in Headers */,
-				DCC2A00A14CB06C50035B0B5 /* CC3EAGLView.h in Headers */,
-				DCC2A00C14CB06C50035B0B5 /* CC3OpenGLES11Capabilities.h in Headers */,
-				DCC2A00E14CB06C50035B0B5 /* CC3OpenGLES11Engine.h in Headers */,
-				DCC2A01014CB06C50035B0B5 /* CC3OpenGLES11Fog.h in Headers */,
-				DCC2A01214CB06C50035B0B5 /* CC3OpenGLES11Foundation.h in Headers */,
-				DCC2A01414CB06C50035B0B5 /* CC3OpenGLES11Hints.h in Headers */,
-				DCC2A01714CB06C50035B0B5 /* CC3OpenGLES11Intercept.h in Headers */,
-				DCC2A01814CB06C50035B0B5 /* CC3OpenGLES11Lighting.h in Headers */,
-				DCC2A01A14CB06C50035B0B5 /* CC3OpenGLES11Materials.h in Headers */,
-				DCC2A01C14CB06C50035B0B5 /* CC3OpenGLES11Matrices.h in Headers */,
-				DCC2A01E14CB06C50035B0B5 /* CC3OpenGLES11Platform.h in Headers */,
-				DCC2A02014CB06C50035B0B5 /* CC3OpenGLES11State.h in Headers */,
-				DCC2A02214CB06C50035B0B5 /* CC3OpenGLES11StateTracker.h in Headers */,
-				DCC2A02414CB06C50035B0B5 /* CC3OpenGLES11Textures.h in Headers */,
-				DCC2A02714CB06C50035B0B5 /* CC3OpenGLES11Utility.h in Headers */,
-				DCC2A02814CB06C50035B0B5 /* CC3OpenGLES11VertexArrays.h in Headers */,
-				DCC2A02A14CB06C50035B0B5 /* CC3Foundation.h in Headers */,
-				DCC2A02C14CB06C50035B0B5 /* CC3GLMatrix.h in Headers */,
-				DCC2A02E14CB06C50035B0B5 /* CC3Logging.h in Headers */,
-				DCC2A02F14CB06C50035B0B5 /* CC3Math.h in Headers */,
-				DCC2A03014CB06C50035B0B5 /* CC3MatrixMath.h in Headers */,
+				DC22A1B5150FBB6100B58197 /* Cocos3DDummyClass.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4467,6 +3858,7 @@
 				DCECABAE13A90CAE00788FBF /* ZAttributedString.h in Headers */,
 				DCECABB213A90CAE00788FBF /* ZAttributedStringPrivate.h in Headers */,
 				DCECABB413A90CAE00788FBF /* ZFont.h in Headers */,
+				DC22A1C3150FC10400B58197 /* CCParticleBatchNode.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4568,6 +3960,7 @@
 				DCECABAF13A90CAE00788FBF /* ZAttributedString.h in Headers */,
 				DCECABB313A90CAE00788FBF /* ZAttributedStringPrivate.h in Headers */,
 				DCECABB513A90CAE00788FBF /* ZFont.h in Headers */,
+				DC22A1C4150FC10400B58197 /* CCParticleBatchNode.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4979,80 +4372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCC29F9514CB06C50035B0B5 /* CC3ModelSampleFactory.m in Sources */,
-				DCC29F9714CB06C50035B0B5 /* CC3PointParticleSamples.m in Sources */,
-				DCC29F9A14CB06C50035B0B5 /* CC3IdentifiablePODExtensions.m in Sources */,
-				DCC29F9C14CB06C50035B0B5 /* CC3NodePODExtensions.mm in Sources */,
-				DCC29F9E14CB06C50035B0B5 /* CC3PODCamera.mm in Sources */,
-				DCC29FA014CB06C50035B0B5 /* CC3PODLight.mm in Sources */,
-				DCC29FA214CB06C50035B0B5 /* CC3PODMaterial.mm in Sources */,
-				DCC29FA414CB06C50035B0B5 /* CC3PODMesh.mm in Sources */,
-				DCC29FA614CB06C50035B0B5 /* CC3PODMeshNode.mm in Sources */,
-				DCC29FA814CB06C50035B0B5 /* CC3PODNode.m in Sources */,
-				DCC29FAA14CB06C50035B0B5 /* CC3PODResource.mm in Sources */,
-				DCC29FAC14CB06C50035B0B5 /* CC3PODResourceNode.m in Sources */,
-				DCC29FAE14CB06C50035B0B5 /* CC3PODVertexSkinning.mm in Sources */,
-				DCC29FB014CB06C50035B0B5 /* CC3PVRFoundation.mm in Sources */,
-				DCC29FB314CB06C50035B0B5 /* CC3VertexArraysPODExtensions.mm in Sources */,
-				DCC29FB614CB06C50035B0B5 /* PVRTglesExt.cpp in Sources */,
-				DCC29FB814CB06C50035B0B5 /* PVRTBoneBatch.cpp in Sources */,
-				DCC29FBA14CB06C50035B0B5 /* PVRTError.cpp in Sources */,
-				DCC29FBC14CB06C50035B0B5 /* PVRTFixedPoint.cpp in Sources */,
-				DCC29FC014CB06C50035B0B5 /* PVRTMatrixF.cpp in Sources */,
-				DCC29FC214CB06C50035B0B5 /* PVRTModelPOD.cpp in Sources */,
-				DCC29FC514CB06C50035B0B5 /* PVRTQuaternionF.cpp in Sources */,
-				DCC29FC614CB06C50035B0B5 /* PVRTResourceFile.cpp in Sources */,
-				DCC29FC814CB06C50035B0B5 /* PVRTString.cpp in Sources */,
-				DCC29FCA14CB06C50035B0B5 /* PVRTTrans.cpp in Sources */,
-				DCC29FCC14CB06C50035B0B5 /* PVRTVector.cpp in Sources */,
-				DCC29FCE14CB06C50035B0B5 /* PVRTVertex.cpp in Sources */,
-				DCC29FD114CB06C50035B0B5 /* CCNodeController.m in Sources */,
-				DCC29FD314CB06C50035B0B5 /* ControllableCCLayer.m in Sources */,
-				DCC29FD514CB06C50035B0B5 /* CC3ActionInterval.m in Sources */,
-				DCC29FD714CB06C50035B0B5 /* CC3Billboard.m in Sources */,
-				DCC29FD914CB06C50035B0B5 /* CC3BoundingVolumes.m in Sources */,
-				DCC29FDB14CB06C50035B0B5 /* CC3Camera.m in Sources */,
-				DCC29FDD14CB06C50035B0B5 /* CC3Fog.m in Sources */,
-				DCC29FDF14CB06C50035B0B5 /* CC3Identifiable.m in Sources */,
-				DCC29FE114CB06C50035B0B5 /* CC3Layer.m in Sources */,
-				DCC29FE314CB06C50035B0B5 /* CC3Light.m in Sources */,
-				DCC29FE514CB06C50035B0B5 /* CC3Material.m in Sources */,
-				DCC29FE714CB06C50035B0B5 /* CC3Mesh.m in Sources */,
-				DCC29FE914CB06C50035B0B5 /* CC3MeshNode.m in Sources */,
-				DCC29FEB14CB06C50035B0B5 /* CC3Node.m in Sources */,
-				DCC29FED14CB06C50035B0B5 /* CC3NodeAnimation.m in Sources */,
-				DCC29FEF14CB06C50035B0B5 /* CC3NodeSequencer.m in Sources */,
-				DCC29FF114CB06C50035B0B5 /* CC3NodeVisitor.m in Sources */,
-				DCC29FF314CB06C50035B0B5 /* CC3ParametricMeshNodes.m in Sources */,
-				DCC29FF514CB06C50035B0B5 /* CC3PerformanceStatistics.m in Sources */,
-				DCC29FF714CB06C50035B0B5 /* CC3PointParticles.m in Sources */,
-				DCC29FF914CB06C50035B0B5 /* CC3Resource.m in Sources */,
-				DCC29FFB14CB06C50035B0B5 /* CC3ResourceNode.m in Sources */,
-				DCC29FFD14CB06C50035B0B5 /* CC3TargettingNode.m in Sources */,
-				DCC29FFF14CB06C50035B0B5 /* CC3Texture.m in Sources */,
-				DCC2A00114CB06C50035B0B5 /* CC3TextureUnit.m in Sources */,
-				DCC2A00314CB06C50035B0B5 /* CC3VertexArrayMesh.m in Sources */,
-				DCC2A00514CB06C50035B0B5 /* CC3VertexArrays.m in Sources */,
-				DCC2A00714CB06C50035B0B5 /* CC3VertexSkinning.m in Sources */,
-				DCC2A00914CB06C50035B0B5 /* CC3World.m in Sources */,
-				DCC2A00B14CB06C50035B0B5 /* CC3EAGLView.m in Sources */,
-				DCC2A00D14CB06C50035B0B5 /* CC3OpenGLES11Capabilities.m in Sources */,
-				DCC2A00F14CB06C50035B0B5 /* CC3OpenGLES11Engine.m in Sources */,
-				DCC2A01114CB06C50035B0B5 /* CC3OpenGLES11Fog.m in Sources */,
-				DCC2A01314CB06C50035B0B5 /* CC3OpenGLES11Foundation.m in Sources */,
-				DCC2A01514CB06C50035B0B5 /* CC3OpenGLES11Hints.m in Sources */,
-				DCC2A01614CB06C50035B0B5 /* CC3OpenGLES11Intercept.c in Sources */,
-				DCC2A01914CB06C50035B0B5 /* CC3OpenGLES11Lighting.m in Sources */,
-				DCC2A01B14CB06C50035B0B5 /* CC3OpenGLES11Materials.m in Sources */,
-				DCC2A01D14CB06C50035B0B5 /* CC3OpenGLES11Matrices.m in Sources */,
-				DCC2A01F14CB06C50035B0B5 /* CC3OpenGLES11Platform.m in Sources */,
-				DCC2A02114CB06C50035B0B5 /* CC3OpenGLES11State.m in Sources */,
-				DCC2A02314CB06C50035B0B5 /* CC3OpenGLES11StateTracker.m in Sources */,
-				DCC2A02514CB06C50035B0B5 /* CC3OpenGLES11Textures.m in Sources */,
-				DCC2A02614CB06C50035B0B5 /* CC3OpenGLES11Utility.c in Sources */,
-				DCC2A02914CB06C50035B0B5 /* CC3OpenGLES11VertexArrays.m in Sources */,
-				DCC2A02B14CB06C50035B0B5 /* CC3Foundation.m in Sources */,
-				DCC2A02D14CB06C50035B0B5 /* CC3GLMatrix.m in Sources */,
+				DC22A1B6150FBB6100B58197 /* Cocos3DDummyClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5639,7 +4959,7 @@
 				DCECABAC13A90CAE00788FBF /* FontManager.m in Sources */,
 				DCECABB013A90CAE00788FBF /* ZAttributedString.m in Sources */,
 				DCECABB613A90CAE00788FBF /* ZFont.m in Sources */,
-				DC73811A144DF4D900D61CC8 /* ccCArray.m in Sources */,
+				DC22A1C5150FC10400B58197 /* CCParticleBatchNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5723,7 +5043,7 @@
 				DCECAB9513A90CAE00788FBF /* TGAlib.m in Sources */,
 				DCECAB9913A90CAE00788FBF /* TransformUtils.m in Sources */,
 				DCECABA113A90CAE00788FBF /* ZipUtils.m in Sources */,
-				DC73811B144DF4D900D61CC8 /* ccCArray.m in Sources */,
+				DC22A1C6150FC10400B58197 /* CCParticleBatchNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

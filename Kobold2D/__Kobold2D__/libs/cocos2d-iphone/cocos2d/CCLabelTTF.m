@@ -111,6 +111,23 @@
 										 fontName:fontName_
 										 fontSize:fontSize_];
 
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+    if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+        if( CC_CONTENT_SCALE_FACTOR() == 2 )
+            [tex setResolutionType:kCCResolutioniPadRetinaDisplay];
+        else
+            [tex setResolutionType:kCCResolutioniPad];
+    }
+    // iPhone ?
+    else
+    {
+        if( CC_CONTENT_SCALE_FACTOR() == 2 )
+            [tex setResolutionType:kCCResolutioniPhoneRetinaDisplay];
+        else
+            [tex setResolutionType:kCCResolutioniPhone];
+    }
+#endif
+
 	[self setTexture:tex];
 	[tex release];
 

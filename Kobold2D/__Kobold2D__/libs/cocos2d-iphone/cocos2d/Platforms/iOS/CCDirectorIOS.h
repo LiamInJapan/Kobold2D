@@ -103,7 +103,7 @@ typedef enum {
 	CCDirectorTypeThreadMainLoop = kCCDirectorTypeThreadMainLoop,
 	CCDirectorTypeDisplayLink = kCCDirectorTypeDisplayLink,
 	CCDirectorTypeDefault = kCCDirectorTypeDefault,
-
+	
 	
 } ccDirectorType;
 
@@ -139,8 +139,7 @@ typedef enum {
  This is the recommened way to enable Retina Display.
  @since v0.99.5
  */
--(BOOL) enableRetinaDisplay:(BOOL)yes;
-
+-(BOOL) enableRetinaDisplay:(BOOL)enable;
 
 /** returns the content scale factor */
 -(CGFloat) contentScaleFactor;
@@ -181,6 +180,22 @@ typedef enum {
 	BOOL	isContentScaleSupported_;
 	
 }
+@end
+
+/** FastDirector is a Director that triggers the main loop as fast as possible.
+ *
+ * Features and Limitations:
+ *  - Faster than "normal" director
+ *  - Consumes more battery than the "normal" director
+ *  - It has some issues while using UIKit objects
+ */
+@interface CCDirectorFast : CCDirectorIOS
+{
+	BOOL isRunning;
+	
+	id autoreleasePool;
+}
+-(void) mainLoop;
 @end
 
 /** ThreadedFastDirector is a Director that triggers the main loop from a thread.

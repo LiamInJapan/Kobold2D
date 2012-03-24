@@ -13,8 +13,8 @@
 
 
 /** Quick and dirty rectangle drawing. Should be improved to render a triangle strip instead. */
-static inline void ccDrawRect(CGRect rect);
-static inline void ccDrawRect(CGRect rect)
+static inline void kkDrawRect(CGRect rect);
+static inline void kkDrawRect(CGRect rect)
 {
 	CGPoint pt1 = rect.origin;
 	CGPoint pt2 = CGPointMake(rect.origin.x + rect.size.width, rect.origin.y);
@@ -24,13 +24,6 @@ static inline void ccDrawRect(CGRect rect)
 	ccDrawLine(pt2, pt3);
 	ccDrawLine(pt3, pt4);
 	ccDrawLine(pt4, pt1);
-}
-
-/** creates and returns a ccColor4F struct */
-static inline ccColor4F ccc4f(const GLfloat r, const GLfloat g, const GLfloat b, const GLfloat o)
-{
-	ccColor4F c = {r, g, b, o};
-	return c;
 }
 
 //! Cyan Color (0,255,255)

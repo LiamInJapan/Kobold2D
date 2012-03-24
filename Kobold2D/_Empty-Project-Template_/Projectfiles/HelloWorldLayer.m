@@ -19,9 +19,9 @@
 		glClearColor(0.1f, 0.1f, 0.3f, 1.0f);
 
 		// "empty" as in "minimal code & resources"
-		CCLabelTTF* label = [CCLabelTTF labelWithString:@"Empty Project"
+		CCLabelTTF* label = [CCLabelTTF labelWithString:@"Minimalistic Kobold2D Project"
 											   fontName:@"Arial"
-											   fontSize:40];
+											   fontSize:32];
 		label.position = [CCDirector sharedDirector].screenCenter;
 		label.color = ccCYAN;
 		[self addChild:label];

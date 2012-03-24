@@ -43,10 +43,10 @@ local config =
 		EnableStatusBar = YES,
 
 		-- Orientation & Autorotation
-		DeviceOrientation = DeviceOrientation.LandscapeLeft,
+		DeviceOrientation = DeviceOrientation.Portrait,
 		AutorotationType = Autorotation.UIViewController,
 		ShouldAutorotateToLandscapeOrientations = YES,
-		ShouldAutorotateToPortraitOrientations = NO,
+		ShouldAutorotateToPortraitOrientations = YES,
 		AllowAutorotateOnFirstAndSecondGenerationDevices = YES,
 	
 		-- iAd setup

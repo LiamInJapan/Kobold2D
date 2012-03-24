@@ -287,6 +287,13 @@
 	return [[(CCLayerColor*)[self alloc] initWithColor:color] autorelease];
 }
 
+-(id) init
+{
+	CGSize s = [[CCDirector sharedDirector] winSize];
+	return [self initWithColor:ccc4(0,0,0,0) width:s.width height:s.height];
+}
+
+// Designated initializer
 - (id) initWithColor:(ccColor4B)color width:(GLfloat)w  height:(GLfloat) h
 {
 	if( (self=[super init]) ) {

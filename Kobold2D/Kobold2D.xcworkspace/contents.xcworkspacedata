@@ -8,9 +8,6 @@
       location = "group:_Hello-Kobold2D-Template_/_Hello-Kobold2D-Template_.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:_Hello-Cocos3D-Template_/_Hello-Cocos3D-Template_.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:_Particle-Effects-Template_/_Particle-Effects-Template_.xcodeproj">
    </FileRef>
    <FileRef

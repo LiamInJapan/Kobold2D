@@ -161,8 +161,8 @@
     
     [openGLView_ setNeedsDisplay:YES];
 #else
-//#error Full screen is not supported for Mac OS 10.5 or older yet
-//#error If you don't want FullScreen support, you can safely remove these 2 lines
+#error Full screen is not supported for Mac OS 10.5 or older yet
+#error If you don't want FullScreen support, you can safely remove these 2 lines
 #endif
 }
 
@@ -464,9 +464,13 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 		[openGLView_ setEventDelegate: eventDispatcher];
 		[eventDispatcher setDispatchEvents: YES];
 		
+
 		// Enable Touches. Default no.
+		// Only available on OS X 10.6+
+#if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_5
 		[view setAcceptsTouchEvents:NO];
 //		[view setAcceptsTouchEvents:YES];
+#endif
 		
 
 		// Synchronize buffer swaps with vertical refresh rate

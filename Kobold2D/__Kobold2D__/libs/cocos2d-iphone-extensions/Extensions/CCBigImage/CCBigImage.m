@@ -148,7 +148,7 @@
 	if (self.sprite)
 		return; //< already loaded
 	
-	[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA4444];
+	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
 	
 	
 	if ([NSThread currentThread] != [[CCDirector sharedDirector] runningThread] )

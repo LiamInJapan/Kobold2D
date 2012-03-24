@@ -42,13 +42,13 @@ enum
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
 @interface CCTouchDispatcher (targetedHandlersGetter)
 
-- (NSMutableArray *) targetedHandlers;
+- (CCArray *) targetedHandlers;
 
 @end
 
 @implementation CCTouchDispatcher (targetedHandlersGetter)
 
-- (NSMutableArray *) targetedHandlers
+- (CCArray *) targetedHandlers
 {
 	return targetedHandlers;
 }
@@ -326,7 +326,9 @@ enum
 - (void) claimTouch: (UITouch *) aTouch
 {
 	// Enumerate through all targeted handlers.
-	for ( CCTargetedTouchHandler *handler in [[CCTouchDispatcher sharedDispatcher] targetedHandlers] )
+	CCArray* targetedHandlers = [[CCTouchDispatcher sharedDispatcher] targetedHandlers];
+	CCTargetedTouchHandler* handler;
+	CCARRAY_FOREACH(targetedHandlers, handler)
 	{
 		// Only our handler should claim the touch.
 		if (handler.delegate == self)

@@ -48,9 +48,7 @@
 	{
 			// effects designed with Particle Designer http://particledesigner.71squared.com/
 		case ParticleTypeDesignedFX:
-			// by using ARCH_OPTIMAL_PARTICLE_SYSTEM either the CCQuadParticleSystem or CCPointParticleSystem class is
-			// used depending on the current target.
-			system = [ARCH_OPTIMAL_PARTICLE_SYSTEM particleWithFile:@"designed-fx.plist"];
+			system = [CCParticleSystemQuad particleWithFile:@"designed-fx.plist"];
 			break;
 		case ParticleTypeDesignedFX2:
 			// uses a plist with the texture already embedded
