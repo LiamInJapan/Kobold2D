@@ -1,0 +1,3 @@
+[submodule "Kobold2D/XMLLevelLoader"]
+	path = Kobold2D/XMLLevelLoader
+	url = git@github.com:LiamInJapan/XMLLevelLoader
