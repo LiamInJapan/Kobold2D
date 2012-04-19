@@ -2,49 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:_Empty-Project-Template_/_Empty-Project-Template_.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:_Hello-Kobold2D-Template_/_Hello-Kobold2D-Template_.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:_Hello-Cocos3D-Template_/_Hello-Cocos3D-Template_.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:_Particle-Effects-Template_/_Particle-Effects-Template_.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:_Sprite-Performance-Template_/_Sprite-Performance-Template_.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:_Physics-Box2D-Template_/_Physics-Box2D-Template_.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:_Physics-Chipmunk-Template_/_Physics-Chipmunk-Template_.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:_Physics-Chipmunk-SpaceManager-Template_/_Physics-Chipmunk-SpaceManager-Template_.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:_User-Input-Template_/_User-Input-Template_.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:_Cocos2D-With-UIKit-Views-Template_/_Cocos2D-With-UIKit-Views-Template_.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:_Doodle-Drop-Template_/_Doodle-Drop-Template_.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:_Orthogonal-Tilemap-Template_/_Orthogonal-Tilemap-Template_.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:_Isometric-Tilemap-Template_/_Isometric-Tilemap-Template_.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:_Parallax-Side-Scroller-Template_/_Parallax-Side-Scroller-Template_.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:_Pinball-Game-Template_/_Pinball-Game-Template_.xcodeproj">
+      location = "group:XMLLevelLoader/XMLLevelLoader.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:__Kobold2D__/Kobold2D-Libraries.xcodeproj">
